@@ -1,0 +1,11 @@
+_estaVazia: CODE, 431 0 10
+_remover: CODE, 307 0 42
+_Interrupcao: CODE, 21 0 65
+_main: CODE, 149 0 59
+_inserir: CODE, 349 0 40
+_Serial_9600_Init: CODE, 259 0 48
+_Setup: CODE, 208 0 51
+_Serial_Interrupt: CODE, 86 0 63
+__initialization: CODE, 389 0 27
+_estaCheia: CODE, 420 0 11
+Total: 416

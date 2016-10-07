@@ -1,0 +1,1 @@
+	Projeto feito no MPLAB para programação de um microcontrolador PIC16F877A.

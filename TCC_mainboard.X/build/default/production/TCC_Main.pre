@@ -1450,7 +1450,11 @@ char estaCheia(Fila *buf);
 #pragma config WRT = OFF
 #pragma config CP = OFF
 
-# 31
+# 29
+typedef char boolean;
+
+
+
 struct ModuloCM {
 char status;
 int corrente[4];
@@ -1465,9 +1469,10 @@ char minuto;
 unsigned int Temporizador1=0;
 unsigned int TemporizadorSerialW=0;
 unsigned int TemporizadorSerialR=0;
+unsigned int TemporizadorPortb = 0;
 char Tensao[3] = {123,122,0};
 
-unsigned int temporizador = 0;
+boolean clearPORTB = 0;
 
 
 void interrupt Interrupcao(void)
@@ -1476,14 +1481,14 @@ if (INTCONbits.T0IF == 1)
 {
 INTCONbits.T0IF = 0;
 TMR0 += 130;
-if (temporizador > 0)
-temporizador --;
 if (Temporizador1 > 0)
 Temporizador1 --;
 if (TemporizadorSerialW > 0)
 TemporizadorSerialW--;
 if (TemporizadorSerialR > 0)
 TemporizadorSerialR--;
+if (TemporizadorPortb > 0)
+TemporizadorPortb--;
 }
 
 Serial_Interrupt();
@@ -1517,15 +1522,27 @@ void TrataComandoESP()
 {
 if(TemporizadorSerialR == 0)
 {
-TemporizadorSerialR = 10000;
+TemporizadorSerialR = 5000;
+
 while(Serial_Available())
 {
-if(Serial_Read() == 0xF0)
-{
+
+
+Serial_Read();
+clearPORTB = 1;
+TemporizadorPortb = 2000;
+PORTDbits.RD0 = 1;
 PORTB = Serial_Read();
 Serial_Flush();
+
 }
 }
+
+if(clearPORTB == 1 && TemporizadorPortb == 0)
+{
+clearPORTB = 0;
+PORTB = 0;
+PORTDbits.RD0 = 0;
 }
 }
 
@@ -1571,36 +1588,16 @@ TemporizadorSerialW = 20000;
 int main(void)
 {
 Setup();
-char estado = 0;
+PORTDbits.RD0 = 1;
 while(1)
 {
+EnvioDadosSerial();
+TrataComandoESP();
 
-# 163
-if( temporizador == 0 )
+if (Temporizador1 == 0)
 {
-switch(estado)
-{
-case 0:
-PORTBbits.RB0 = 1;
-temporizador = 1000;
-estado = 1;
-break;
-case 1:
-PORTBbits.RB0 = 0;
-temporizador = 30000;
-estado = 2;
-break;
-case 2:
-PORTBbits.RB1 = 1;
-temporizador = 1000;
-estado = 3;
-break;
-case 3:
-PORTBbits.RB1 = 0;
-temporizador = 30000;
-estado = 0;
-break;
-}
+Temporizador1 = 5000;
+
 }
 }
 }

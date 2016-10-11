@@ -22,9 +22,11 @@
 #define SetBit(a,n) (a |= (1<<n))
 #define ClearBit(a,n) ( a &= ~(1<<n))
 
-#define COMMAND 0xF0
+#define COMMAND 0x77
 #define TRUE  1
 #define FALSE 0
+
+typedef char boolean;
 
 // ============ ESTRUTURAS ===============
 
@@ -42,9 +44,10 @@ struct RTC {
 unsigned int Temporizador1=0;
 unsigned int TemporizadorSerialW=0;
 unsigned int TemporizadorSerialR=0;
+unsigned int TemporizadorPortb = 0;
 char Tensao[3] = {123,122,0};
 
-unsigned int temporizador = 0;
+boolean clearPORTB = FALSE;
 
 //================ FUNÇÕES ================
 void interrupt Interrupcao(void)
@@ -53,14 +56,14 @@ void interrupt Interrupcao(void)
     {
        INTCONbits.T0IF = 0;
        TMR0 += 130;
-       if (temporizador > 0)
-           temporizador --;
        if (Temporizador1 > 0)
            Temporizador1 --;
        if (TemporizadorSerialW > 0)
            TemporizadorSerialW--;
        if (TemporizadorSerialR > 0)
            TemporizadorSerialR--;
+       if (TemporizadorPortb > 0)
+           TemporizadorPortb--;
     }
 
     Serial_Interrupt();
@@ -94,15 +97,27 @@ void TrataComandoESP()
 {
     if(TemporizadorSerialR == 0)
     {
-        TemporizadorSerialR = 10000;
+        TemporizadorSerialR = 5000;
+
         while(Serial_Available())
         {
-            if(Serial_Read() == COMMAND)
-            {
+            //if(Serial_Read() == COMMAND)
+            //{
+            Serial_Read();
+                clearPORTB = TRUE;
+                TemporizadorPortb = 2000;
+                PORTDbits.RD0 = 1; //PISCA LED
                 PORTB = Serial_Read();
                 Serial_Flush();
-            }
+            //}
         }
+    }
+
+    if(clearPORTB == TRUE && TemporizadorPortb == 0)
+    {
+        clearPORTB = FALSE;
+        PORTB = 0;
+        PORTDbits.RD0 = 0; //PISCA LED
     }
 }
 
@@ -148,16 +163,16 @@ void Setup()
 int main(void)
 {
     Setup();
-    
+    PORTDbits.RD0 = 1; //PISCA LED
     while(1)
     {
         EnvioDadosSerial();
         TrataComandoESP();
-
+        
         if (Temporizador1 == 0)
         {
            Temporizador1 = 5000;
-           PORTDbits.RD0 ^= 1; //PISCA LED
+           //PORTDbits.RD0 ^= 1; //PISCA LED
         }
     }
 }

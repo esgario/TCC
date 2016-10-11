@@ -106,40 +106,50 @@
 [v _Serial_9600_Init Serial_9600_Init `(v  1 e 0 0 ]
 "36
 [v _Serial_Interrupt Serial_Interrupt `(v  1 e 0 0 ]
-"56
+"63
 [v _Serial_Write Serial_Write `(v  1 e 0 0 ]
-"62
+"69
 [v _Serial_Read Serial_Read `(uc  1 e 1 0 ]
-"68
+"77
 [v _Serial_Available Serial_Available `(uc  1 e 1 0 ]
-"73
-[v _Serial_Flush Serial_Flush `(v  1 e 0 0 ]
 "82
+[v _Serial_Flush Serial_Flush `(v  1 e 0 0 ]
+"91
 [v _inserir inserir `(v  1 e 0 0 ]
-"92
+[v i1_inserir inserir `(v  1 e 0 0 ]
+[v i1_inserir inserir `(v  1 e 0 0 ]
+"101
 [v _remover remover `(uc  1 e 1 0 ]
-"103
+[v i1_remover remover `(uc  1 e 1 0 ]
+[v i1_remover remover `(uc  1 e 1 0 ]
+"112
 [v _estaVazia estaVazia `(uc  1 e 1 0 ]
-"108
+[v i1_estaVazia estaVazia `(uc  1 e 1 0 ]
+[v i1_estaVazia estaVazia `(uc  1 e 1 0 ]
+"117
 [v _estaCheia estaCheia `(uc  1 e 1 0 ]
-"51 C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c
+[v i1_estaCheia estaCheia `(uc  1 e 1 0 ]
+[v i1_estaCheia estaCheia `(uc  1 e 1 0 ]
+"54 C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c
 [v _Interrupcao Interrupcao `II(v  1 e 0 0 ]
-"70
+"73
 [v _EnvioDadosSerial EnvioDadosSerial `(v  1 e 0 0 ]
-"94
+"97
 [v _TrataComandoESP TrataComandoESP `(v  1 e 0 0 ]
-"110
-[v _I2C_Master_Start I2C_Master_Start `(v  1 e 0 0 ]
-"115
-[v _I2C_Master_Init I2C_Master_Init `(v  1 e 0 0 ]
 "125
+[v _I2C_Master_Start I2C_Master_Start `(v  1 e 0 0 ]
+"130
+[v _I2C_Master_Init I2C_Master_Init `(v  1 e 0 0 ]
+"140
 [v _Setup Setup `(v  1 e 0 0 ]
-"149
+"164
 [v _main main `(i  1 e 2 0 ]
 "50 C:\Program Files (x86)\Microchip\xc8\v1.20\include\pic16f877a.h
 [v _TMR0 TMR0 `VEuc  1 e 1 @1 ]
 "204
 [v _PORTB PORTB `VEuc  1 e 1 @6 ]
+"326
+[v _PORTD PORTD `VEuc  1 e 1 @8 ]
 [s S27 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 CCP1IE 1 0 :1:2 
@@ -149,16 +159,12 @@
 `uc 1 ADIE 1 0 :1:6 
 `uc 1 PSPIE 1 0 :1:7 
 ]
-"221
-[u S36 . 1 `S27 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES36  1 e 1 @6 ]
-"326
-[v _PORTD PORTD `VEuc  1 e 1 @8 ]
 "343
+[u S36 . 1 `S27 1 . 1 0 ]
 [v _PORTDbits PORTDbits `VES36  1 e 1 @8 ]
 "437
 [v _INTCON INTCON `VEuc  1 e 1 @11 ]
-[s S232 . 1 `uc 1 RBIF 1 0 :1:0 
+[s S285 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -168,19 +174,41 @@
 `uc 1 GIE 1 0 :1:7 
 ]
 "460
-[s S241 . 1 `uc 1 . 1 0 :2:0 
+[s S294 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 T0IE 1 0 :1:5 
 ]
-[u S246 . 1 `S232 1 . 1 0 `S241 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES246  1 e 1 @11 ]
+[u S299 . 1 `S285 1 . 1 0 `S294 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES299  1 e 1 @11 ]
 "531
 [v _PIR1bits PIR1bits `VES36  1 e 1 @12 ]
 "788
 [v _SSPCON SSPCON `VEuc  1 e 1 @20 ]
 "932
 [v _RCSTA RCSTA `VEuc  1 e 1 @24 ]
+[s S117 . 1 `uc 1 RX9D 1 0 :1:0 
+`uc 1 OERR 1 0 :1:1 
+`uc 1 FERR 1 0 :1:2 
+`uc 1 ADDEN 1 0 :1:3 
+`uc 1 CREN 1 0 :1:4 
+`uc 1 SREN 1 0 :1:5 
+`uc 1 RX9 1 0 :1:6 
+`uc 1 SPEN 1 0 :1:7 
+]
+"962
+[s S126 . 1 `uc 1 RCD8 1 0 :1:0 
+`uc 1 . 1 0 :5:1 
+`uc 1 RC9 1 0 :1:6 
+]
+[s S130 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 nRC8 1 0 :1:6 
+]
+[s S133 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 RC8_9 1 0 :1:6 
+]
+[u S136 . 1 `S117 1 . 1 0 `S126 1 . 1 0 `S130 1 . 1 0 `S133 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES136  1 e 1 @24 ]
 "1026
 [v _TXREG TXREG `VEuc  1 e 1 @25 ]
 "1032
@@ -250,33 +278,33 @@
 "4 C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c
 [v _BufferWrite BufferWrite `S19  1 e 19 0 ]
 [v _BufferRead BufferRead `S19  1 e 19 0 ]
-[s S226 ModuloCM 9 `uc 1 status 1 0 `[4]i 1 corrente 8 1 ]
-"34 C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c
-[v _ModuloCM ModuloCM `S226  1 e 9 0 ]
-[s S229 RTC 2 `uc 1 hora 1 0 `uc 1 minuto 1 1 ]
-"39
-[v _RTC RTC `S229  1 e 2 0 ]
-"42
-[v _Temporizador1 Temporizador1 `ui  1 e 2 0 ]
-"43
-[v _TemporizadorSerialW TemporizadorSerialW `ui  1 e 2 0 ]
+[s S279 ModuloCM 9 `uc 1 status 1 0 `[4]i 1 corrente 8 1 ]
+"36 C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c
+[v _ModuloCM ModuloCM `S279  1 e 9 0 ]
+[s S282 RTC 2 `uc 1 hora 1 0 `uc 1 minuto 1 1 ]
+"41
+[v _RTC RTC `S282  1 e 2 0 ]
 "44
-[v _TemporizadorSerialR TemporizadorSerialR `ui  1 e 2 0 ]
+[v _Temporizador1 Temporizador1 `ui  1 e 2 0 ]
 "45
-[v _Tensao Tensao `[3]uc  1 e 3 0 ]
+[v _TemporizadorSerialW TemporizadorSerialW `ui  1 e 2 0 ]
+"46
+[v _TemporizadorSerialR TemporizadorSerialR `ui  1 e 2 0 ]
 "47
-[v _temporizador temporizador `ui  1 e 2 0 ]
-"149
+[v _TemporizadorPortb TemporizadorPortb `ui  1 e 2 0 ]
+"48
+[v _Tensao Tensao `[3]uc  1 e 3 0 ]
+"50
+[v _clearPORTB clearPORTB `uc  1 e 1 0 ]
+"164
 [v _main main `(i  1 e 2 0 ]
 {
-"151
-[v main@estado estado `uc  1 a 1 4 ]
-"190
+"178
 } 0
-"125
+"140
 [v _Setup Setup `(v  1 e 0 0 ]
 {
-"146
+"161
 } 0
 "7 C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c
 [v _Serial_9600_Init Serial_9600_Init `(v  1 e 0 0 ]
@@ -284,49 +312,117 @@
 [v Serial_9600_Init@osc_freq osc_freq `i  1 p 2 0 ]
 "33
 } 0
-"51 C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c
-[v _Interrupcao Interrupcao `II(v  1 e 0 0 ]
+"97 C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c
+[v _TrataComandoESP TrataComandoESP `(v  1 e 0 0 ]
 {
-"67
+"122
 } 0
-"36 C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c
-[v _Serial_Interrupt Serial_Interrupt `(v  1 e 0 0 ]
+"82 C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c
+[v _Serial_Flush Serial_Flush `(v  1 e 0 0 ]
 {
-"53
+"86
 } 0
-"82
+"77
+[v _Serial_Available Serial_Available `(uc  1 e 1 0 ]
+{
+"79
+} 0
+"69
+[v _Serial_Read Serial_Read `(uc  1 e 1 0 ]
+{
+"74
+} 0
+"101
+[v _remover remover `(uc  1 e 1 0 ]
+{
+[s S19 fila 19 `[16]uc 1 dados 16 0 `uc 1 primeiro 1 16 `uc 1 ultimo 1 17 `uc 1 nItens 1 18 ]
+[v remover@buf buf `*.4S19  1 a 1 5 ]
+"102
+[v remover@temp temp `i  1 a 2 3 ]
+"101
+[v remover@buf buf `*.4S19  1 a 1 5 ]
+"109
+} 0
+"112
+[v _estaVazia estaVazia `(uc  1 e 1 0 ]
+{
+[s S19 fila 19 `[16]uc 1 dados 16 0 `uc 1 primeiro 1 16 `uc 1 ultimo 1 17 `uc 1 nItens 1 18 ]
+[v estaVazia@buf buf `*.4S19  1 a 1 0 ]
+[v estaVazia@buf buf `*.4S19  1 a 1 0 ]
+"114
+} 0
+"73 C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c
+[v _EnvioDadosSerial EnvioDadosSerial `(v  1 e 0 0 ]
+{
+"94
+} 0
+"63 C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c
+[v _Serial_Write Serial_Write `(v  1 e 0 0 ]
+{
+[v Serial_Write@Valor Valor `uc  1 a 1 5 ]
+[v Serial_Write@Valor Valor `uc  1 a 1 5 ]
+"66
+} 0
+"91
 [v _inserir inserir `(v  1 e 0 0 ]
 {
 [s S19 fila 19 `[16]uc 1 dados 16 0 `uc 1 primeiro 1 16 `uc 1 ultimo 1 17 `uc 1 nItens 1 18 ]
 [v inserir@buf buf `*.4S19  1 a 1 3 ]
 [v inserir@buf buf `*.4S19  1 a 1 3 ]
 [v inserir@Valor Valor `uc  1 p 1 0 ]
-"89
+"98
 } 0
-"108
+"117
 [v _estaCheia estaCheia `(uc  1 e 1 0 ]
 {
 [s S19 fila 19 `[16]uc 1 dados 16 0 `uc 1 primeiro 1 16 `uc 1 ultimo 1 17 `uc 1 nItens 1 18 ]
 [v estaCheia@buf buf `*.4S19  1 a 1 0 ]
 [v estaCheia@buf buf `*.4S19  1 a 1 0 ]
-"110
+"119
 } 0
-"92
-[v _remover remover `(uc  1 e 1 0 ]
+"54 C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c
+[v _Interrupcao Interrupcao `II(v  1 e 0 0 ]
+{
+"70
+} 0
+"36 C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c
+[v _Serial_Interrupt Serial_Interrupt `(v  1 e 0 0 ]
+{
+"50
+[v Serial_Interrupt@tmp tmp `uc  1 a 1 7 ]
+"60
+} 0
+"117
+[v i1_estaCheia estaCheia `(uc  1 e 1 0 ]
 {
 [s S19 fila 19 `[16]uc 1 dados 16 0 `uc 1 primeiro 1 16 `uc 1 ultimo 1 17 `uc 1 nItens 1 18 ]
-[v remover@buf buf `*.4S19  1 a 1 5 ]
-"93
-[v remover@temp temp `i  1 a 2 3 ]
-"92
-[v remover@buf buf `*.4S19  1 a 1 5 ]
-"100
+[v i1estaCheia@buf estaCheia `*.4S19  1 a 1 0 ]
+[v i1estaCheia@buf estaCheia `*.4S19  1 a 1 0 ]
+"119
 } 0
-"103
-[v _estaVazia estaVazia `(uc  1 e 1 0 ]
+"112
+[v i1_estaVazia estaVazia `(uc  1 e 1 0 ]
 {
 [s S19 fila 19 `[16]uc 1 dados 16 0 `uc 1 primeiro 1 16 `uc 1 ultimo 1 17 `uc 1 nItens 1 18 ]
-[v estaVazia@buf buf `*.4S19  1 a 1 0 ]
-[v estaVazia@buf buf `*.4S19  1 a 1 0 ]
-"105
+[v i1estaVazia@buf estaVazia `*.4S19  1 a 1 0 ]
+[v i1estaVazia@buf estaVazia `*.4S19  1 a 1 0 ]
+"114
+} 0
+"101
+[v i1_remover remover `(uc  1 e 1 0 ]
+{
+[s S19 fila 19 `[16]uc 1 dados 16 0 `uc 1 primeiro 1 16 `uc 1 ultimo 1 17 `uc 1 nItens 1 18 ]
+[v i1remover@buf remover `*.4S19  1 a 1 5 ]
+[v i1remover@temp remover `i  1 a 2 3 ]
+[v i1remover@buf remover `*.4S19  1 a 1 5 ]
+"109
+} 0
+"91
+[v i1_inserir inserir `(v  1 e 0 0 ]
+{
+[s S19 fila 19 `[16]uc 1 dados 16 0 `uc 1 primeiro 1 16 `uc 1 ultimo 1 17 `uc 1 nItens 1 18 ]
+[v i1inserir@buf inserir `*.4S19  1 a 1 3 ]
+[v i1inserir@buf inserir `*.4S19  1 a 1 3 ]
+[v i1inserir@Valor inserir `uc  1 p 1 0 ]
+"98
 } 0

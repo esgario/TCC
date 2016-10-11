@@ -3,14 +3,14 @@
 
 Fila BufferWrite, BufferRead;
 
-void Serial_9600_Init(int osc_freq)
+void Serial_9600_Init(char osc_freq)
 {
-    TXSTA = 0b00100110;
+    TXSTA = 0b00100100; // (2) BRGH 1 - HIGH SPEED | 0 - LOW SPEED
     RCSTA = 0b10010000;
     switch(osc_freq)
     {
         case 10:
-            SPBRG = 64;
+            SPBRG = 64; // BRGH 1 SPBRG 64 | BRGH 0 SPBRG 15
         break;
         case 16:
             SPBRG = 103;
@@ -45,8 +45,15 @@ void Serial_Interrupt()
 
     if (PIR1bits.RCIF == 1)
     {
+        if(RCSTAbits.OERR == 1)
+        {
+            char tmp = RCREG;
+            tmp = RCREG;
+            RCSTAbits.CREN = 0;
+            RCSTAbits.CREN = 1;
+        }
+        PORTDbits.RD0 = 0;
         //PIR1bits.RCIF = 0; //limpa sozinho quando lê
-        PORTDbits.RD0 ^= 1; //PISCA LED
         if(!estaCheia(&BufferRead))
             inserir(&BufferRead, RCREG);
     }
@@ -61,7 +68,9 @@ void Serial_Write(char Valor)
 char Serial_Read()
 {
     if(!estaVazia(&BufferRead))
-        remover(&BufferRead);
+        return remover(&BufferRead);
+    else
+        return 0;
 }
 
 char Serial_Available()

@@ -1,11 +1,21 @@
-_estaVazia: CODE, 431 0 10
-_remover: CODE, 307 0 42
-_Interrupcao: CODE, 21 0 65
-_main: CODE, 149 0 59
-_inserir: CODE, 349 0 40
-_Serial_9600_Init: CODE, 259 0 48
-_Setup: CODE, 208 0 51
-_Serial_Interrupt: CODE, 86 0 63
-__initialization: CODE, 389 0 27
-_estaCheia: CODE, 420 0 11
-Total: 416
+_estaVazia: CODE, 724 0 12
+_TrataComandoESP: CODE, 287 0 60
+_remover: CODE, 446 0 44
+_Interrupcao: CODE, 222 0 65
+_Serial_Read: CODE, 695 0 16
+_main: CODE, 643 0 29
+_Serial_Write: CODE, 672 0 23
+_Serial_Flush: CODE, 774 0 6
+_inserir: CODE, 490 0 42
+_Serial_Available: CODE, 757 0 9
+i1_estaCheia: CODE, 736 0 11
+i1_remover: CODE, 532 0 42
+_Serial_9600_Init: CODE, 398 0 48
+i1_estaVazia: CODE, 747 0 10
+_Setup: CODE, 347 0 51
+_Serial_Interrupt: CODE, 156 0 66
+__initialization: CODE, 614 0 25
+_EnvioDadosSerial: CODE, 21 0 135
+i1_inserir: CODE, 574 0 40
+_estaCheia: CODE, 711 0 13
+Total: 747

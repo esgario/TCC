@@ -44,7 +44,26 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _estaVazia `(uc ~T0 @X0 0 ef1`*S1 ]
 "30
 [v _remover `(uc ~T0 @X0 0 ef1`*S1 ]
-"332 C:\Program Files (x86)\Microchip\xc8\v1.20\include\pic16f877a.h
+"938 C:\Program Files (x86)\Microchip\xc8\v1.20\include\pic16f877a.h
+[s S40 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S40 . RX9D OERR FERR ADDEN CREN SREN RX9 SPEN ]
+"948
+[s S41 :1 `uc 1 :5 `uc 1 :1 `uc 1 ]
+[n S41 . RCD8 . RC9 ]
+"953
+[s S42 :6 `uc 1 :1 `uc 1 ]
+[n S42 . . nRC8 ]
+"957
+[s S43 :6 `uc 1 :1 `uc 1 ]
+[n S43 . . RC8_9 ]
+"937
+[u S39 `S40 1 `S41 1 `S42 1 `S43 1 ]
+[n S39 . . . . . ]
+"962
+[v _RCSTAbits `VS39 ~T0 @X0 0 e@24 ]
+"1032
+[v _RCREG `Vuc ~T0 @X0 0 e@26 ]
+"332
 [s S14 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S14 . RD0 RD1 RD2 RD3 RD4 RD5 RD6 RD7 ]
 "331
@@ -56,8 +75,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _estaCheia `(uc ~T0 @X0 0 ef1`*S1 ]
 "29
 [v _inserir `(v ~T0 @X0 0 ef2`*S1`uc ]
-"1032 C:\Program Files (x86)\Microchip\xc8\v1.20\include\pic16f877a.h
-[v _RCREG `Vuc ~T0 @X0 0 e@26 ]
 [; ;Serial.h: 15: typedef struct fila {
 [; ;Serial.h: 16: char dados[16];
 [; ;Serial.h: 17: char primeiro;
@@ -1097,9 +1114,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U _Serial_9600_Init ]
 [v _osc_freq `i ~T0 @X0 1 r1 ]
 [f ]
-[; ;Serial.c: 8: TXSTA = 0b00100110;
+[; ;Serial.c: 8: TXSTA = 0b00100000;
 "8
-[e = _TXSTA -> -> 38 `i `uc ]
+[e = _TXSTA -> -> 32 `i `uc ]
 [; ;Serial.c: 9: RCSTA = 0b10010000;
 "9
 [e = _RCSTA -> -> 144 `i `uc ]
@@ -1112,9 +1129,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;Serial.c: 12: case 10:
 "12
 [e :U 100 ]
-[; ;Serial.c: 13: SPBRG = 64;
+[; ;Serial.c: 13: SPBRG = 15;
 "13
-[e = _SPBRG -> -> 64 `i `uc ]
+[e = _SPBRG -> -> 15 `i `uc ]
 [; ;Serial.c: 14: break;
 "14
 [e $U 98  ]
@@ -1215,184 +1232,216 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;Serial.c: 47: {
 "47
 {
-[; ;Serial.c: 49: PORTDbits.RD0 ^= 1;
+[; ;Serial.c: 48: if(RCSTAbits.OERR == 1)
+"48
+[e $ ! == -> . . _RCSTAbits 0 1 `i -> 1 `i 107  ]
+[; ;Serial.c: 49: {
 "49
-[e =^ . . _PORTDbits 0 0 -> -> 1 `i `uc ]
-[; ;Serial.c: 50: if(!estaCheia(&BufferRead))
+{
 "50
-[e $ ! ! != -> ( _estaCheia (1 &U _BufferRead `i -> -> -> 0 `i `uc `i 107  ]
-[; ;Serial.c: 51: inserir(&BufferRead, RCREG);
+[v _tmp `uc ~T0 @X0 1 a ]
+[; ;Serial.c: 50: char tmp = RCREG;
+[e = _tmp _RCREG ]
+[; ;Serial.c: 51: tmp = RCREG;
 "51
-[e ( _inserir (2 , &U _BufferRead _RCREG ]
-[e :U 107 ]
+[e = _tmp _RCREG ]
+[; ;Serial.c: 52: RCSTAbits.CREN = 0;
 "52
+[e = . . _RCSTAbits 0 4 -> -> 0 `i `uc ]
+[; ;Serial.c: 53: RCSTAbits.CREN = 1;
+"53
+[e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
+"54
+}
+[e :U 107 ]
+[; ;Serial.c: 54: }
+[; ;Serial.c: 55: PORTDbits.RD0 = 0;
+"55
+[e = . . _PORTDbits 0 0 -> -> 0 `i `uc ]
+[; ;Serial.c: 57: if(!estaCheia(&BufferRead))
+"57
+[e $ ! ! != -> ( _estaCheia (1 &U _BufferRead `i -> -> -> 0 `i `uc `i 108  ]
+[; ;Serial.c: 58: inserir(&BufferRead, RCREG);
+"58
+[e ( _inserir (2 , &U _BufferRead _RCREG ]
+[e :U 108 ]
+"59
 }
 [e :U 106 ]
-[; ;Serial.c: 52: }
-[; ;Serial.c: 53: }
-"53
+[; ;Serial.c: 59: }
+[; ;Serial.c: 60: }
+"60
 [e :UE 103 ]
 }
-"56
+"63
 [v _Serial_Write `(v ~T0 @X0 1 ef1`uc ]
 {
-[; ;Serial.c: 55: void Serial_Write(char Valor)
-[; ;Serial.c: 56: {
+[; ;Serial.c: 62: void Serial_Write(char Valor)
+[; ;Serial.c: 63: {
 [e :U _Serial_Write ]
 [v _Valor `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;Serial.c: 57: if(!estaCheia(&BufferWrite))
-"57
-[e $ ! ! != -> ( _estaCheia (1 &U _BufferWrite `i -> -> -> 0 `i `uc `i 109  ]
-[; ;Serial.c: 58: inserir(&BufferWrite, Valor);
-"58
+[; ;Serial.c: 64: if(!estaCheia(&BufferWrite))
+"64
+[e $ ! ! != -> ( _estaCheia (1 &U _BufferWrite `i -> -> -> 0 `i `uc `i 110  ]
+[; ;Serial.c: 65: inserir(&BufferWrite, Valor);
+"65
 [e ( _inserir (2 , &U _BufferWrite _Valor ]
-[e :U 109 ]
-[; ;Serial.c: 59: }
-"59
-[e :UE 108 ]
+[e :U 110 ]
+[; ;Serial.c: 66: }
+"66
+[e :UE 109 ]
 }
-"62
+"69
 [v _Serial_Read `(uc ~T0 @X0 1 ef ]
 {
-[; ;Serial.c: 61: char Serial_Read()
-[; ;Serial.c: 62: {
+[; ;Serial.c: 68: char Serial_Read()
+[; ;Serial.c: 69: {
 [e :U _Serial_Read ]
 [f ]
-[; ;Serial.c: 63: if(!estaVazia(&BufferRead))
-"63
-[e $ ! ! != -> ( _estaVazia (1 &U _BufferRead `i -> -> -> 0 `i `uc `i 111  ]
-[; ;Serial.c: 64: remover(&BufferRead);
-"64
-[e ( _remover (1 &U _BufferRead ]
-[e :U 111 ]
-[; ;Serial.c: 65: }
-"65
-[e :UE 110 ]
+[; ;Serial.c: 70: if(!estaVazia(&BufferRead))
+"70
+[e $ ! ! != -> ( _estaVazia (1 &U _BufferRead `i -> -> -> 0 `i `uc `i 112  ]
+[; ;Serial.c: 71: return remover(&BufferRead);
+"71
+[e ) ( _remover (1 &U _BufferRead ]
+[e $UE 111  ]
+[e $U 113  ]
+"72
+[e :U 112 ]
+[; ;Serial.c: 72: else
+[; ;Serial.c: 73: return 0;
+"73
+[e ) -> -> 0 `i `uc ]
+[e $UE 111  ]
+[e :U 113 ]
+[; ;Serial.c: 74: }
+"74
+[e :UE 111 ]
 }
-"68
+"77
 [v _Serial_Available `(uc ~T0 @X0 1 ef ]
 {
-[; ;Serial.c: 67: char Serial_Available()
-[; ;Serial.c: 68: {
+[; ;Serial.c: 76: char Serial_Available()
+[; ;Serial.c: 77: {
 [e :U _Serial_Available ]
 [f ]
-[; ;Serial.c: 69: return (!estaVazia(&BufferRead));
-"69
+[; ;Serial.c: 78: return (!estaVazia(&BufferRead));
+"78
 [e ) -> -> ! != -> ( _estaVazia (1 &U _BufferRead `i -> -> -> 0 `i `uc `i `i `uc ]
-[e $UE 112  ]
-[; ;Serial.c: 70: }
-"70
-[e :UE 112 ]
-}
-"73
-[v _Serial_Flush `(v ~T0 @X0 1 ef ]
-{
-[; ;Serial.c: 72: void Serial_Flush()
-[; ;Serial.c: 73: {
-[e :U _Serial_Flush ]
-[f ]
-[; ;Serial.c: 74: BufferRead.primeiro = 0;
-"74
-[e = . _BufferRead 1 -> -> 0 `i `uc ]
-[; ;Serial.c: 75: BufferRead.ultimo = 0;
-"75
-[e = . _BufferRead 2 -> -> 0 `i `uc ]
-[; ;Serial.c: 76: BufferRead.nItens = 0;
-"76
-[e = . _BufferRead 3 -> -> 0 `i `uc ]
-[; ;Serial.c: 77: }
-"77
-[e :UE 113 ]
+[e $UE 114  ]
+[; ;Serial.c: 79: }
+"79
+[e :UE 114 ]
 }
 "82
+[v _Serial_Flush `(v ~T0 @X0 1 ef ]
+{
+[; ;Serial.c: 81: void Serial_Flush()
+[; ;Serial.c: 82: {
+[e :U _Serial_Flush ]
+[f ]
+[; ;Serial.c: 83: BufferRead.primeiro = 0;
+"83
+[e = . _BufferRead 1 -> -> 0 `i `uc ]
+[; ;Serial.c: 84: BufferRead.ultimo = 0;
+"84
+[e = . _BufferRead 2 -> -> 0 `i `uc ]
+[; ;Serial.c: 85: BufferRead.nItens = 0;
+"85
+[e = . _BufferRead 3 -> -> 0 `i `uc ]
+[; ;Serial.c: 86: }
+"86
+[e :UE 115 ]
+}
+"91
 [v _inserir `(v ~T0 @X0 1 ef2`*S1`uc ]
 {
-[; ;Serial.c: 81: void inserir(Fila *buf,char Valor)
-[; ;Serial.c: 82: {
+[; ;Serial.c: 90: void inserir(Fila *buf,char Valor)
+[; ;Serial.c: 91: {
 [e :U _inserir ]
 [v _buf `*S1 ~T0 @X0 1 r1 ]
 [v _Valor `uc ~T0 @X0 1 r2 ]
 [f ]
-[; ;Serial.c: 83: buf->dados[buf->ultimo] = Valor;
-"83
-[e = *U + &U . *U _buf 0 * -> . *U _buf 2 `ux -> -> # *U &U . *U _buf 0 `ui `ux _Valor ]
-[; ;Serial.c: 84: buf->ultimo++;
-"84
-[e ++ . *U _buf 2 -> -> 1 `i `uc ]
-[; ;Serial.c: 85: buf->nItens++;
-"85
-[e ++ . *U _buf 3 -> -> 1 `i `uc ]
-[; ;Serial.c: 87: if(buf->ultimo == 16)
-"87
-[e $ ! == -> . *U _buf 2 `i -> 16 `i 115  ]
-[; ;Serial.c: 88: buf->ultimo = 0;
-"88
-[e = . *U _buf 2 -> -> 0 `i `uc ]
-[e :U 115 ]
-[; ;Serial.c: 89: }
-"89
-[e :UE 114 ]
-}
+[; ;Serial.c: 92: buf->dados[buf->ultimo] = Valor;
 "92
+[e = *U + &U . *U _buf 0 * -> . *U _buf 2 `ux -> -> # *U &U . *U _buf 0 `ui `ux _Valor ]
+[; ;Serial.c: 93: buf->ultimo++;
+"93
+[e ++ . *U _buf 2 -> -> 1 `i `uc ]
+[; ;Serial.c: 94: buf->nItens++;
+"94
+[e ++ . *U _buf 3 -> -> 1 `i `uc ]
+[; ;Serial.c: 96: if(buf->ultimo == 16)
+"96
+[e $ ! == -> . *U _buf 2 `i -> 16 `i 117  ]
+[; ;Serial.c: 97: buf->ultimo = 0;
+"97
+[e = . *U _buf 2 -> -> 0 `i `uc ]
+[e :U 117 ]
+[; ;Serial.c: 98: }
+"98
+[e :UE 116 ]
+}
+"101
 [v _remover `(uc ~T0 @X0 1 ef1`*S1 ]
 {
-[; ;Serial.c: 91: char remover(Fila *buf)
-[; ;Serial.c: 92: {
+[; ;Serial.c: 100: char remover(Fila *buf)
+[; ;Serial.c: 101: {
 [e :U _remover ]
 [v _buf `*S1 ~T0 @X0 1 r1 ]
 [f ]
-"93
+"102
 [v _temp `i ~T0 @X0 1 a ]
-[; ;Serial.c: 93: int temp = buf->dados[buf->primeiro++];
+[; ;Serial.c: 102: int temp = buf->dados[buf->primeiro++];
 [e = _temp -> *U + &U . *U _buf 0 * -> ++ . *U _buf 1 -> -> 1 `i `uc `ux -> -> # *U &U . *U _buf 0 `ui `ux `i ]
-[; ;Serial.c: 95: if(buf->primeiro == 16)
-"95
-[e $ ! == -> . *U _buf 1 `i -> 16 `i 117  ]
-[; ;Serial.c: 96: buf->primeiro = 0;
-"96
+[; ;Serial.c: 104: if(buf->primeiro == 16)
+"104
+[e $ ! == -> . *U _buf 1 `i -> 16 `i 119  ]
+[; ;Serial.c: 105: buf->primeiro = 0;
+"105
 [e = . *U _buf 1 -> -> 0 `i `uc ]
-[e :U 117 ]
-[; ;Serial.c: 98: buf->nItens--;
-"98
+[e :U 119 ]
+[; ;Serial.c: 107: buf->nItens--;
+"107
 [e -- . *U _buf 3 -> -> 1 `i `uc ]
-[; ;Serial.c: 99: return temp;
-"99
+[; ;Serial.c: 108: return temp;
+"108
 [e ) -> _temp `uc ]
-[e $UE 116  ]
-[; ;Serial.c: 100: }
-"100
-[e :UE 116 ]
+[e $UE 118  ]
+[; ;Serial.c: 109: }
+"109
+[e :UE 118 ]
 }
-"103
+"112
 [v _estaVazia `(uc ~T0 @X0 1 ef1`*S1 ]
 {
-[; ;Serial.c: 102: char estaVazia(Fila *buf)
-[; ;Serial.c: 103: {
+[; ;Serial.c: 111: char estaVazia(Fila *buf)
+[; ;Serial.c: 112: {
 [e :U _estaVazia ]
 [v _buf `*S1 ~T0 @X0 1 r1 ]
 [f ]
-[; ;Serial.c: 104: return (buf->nItens==0);
-"104
+[; ;Serial.c: 113: return (buf->nItens==0);
+"113
 [e ) -> -> == -> . *U _buf 3 `i -> 0 `i `i `uc ]
-[e $UE 118  ]
-[; ;Serial.c: 105: }
-"105
-[e :UE 118 ]
+[e $UE 120  ]
+[; ;Serial.c: 114: }
+"114
+[e :UE 120 ]
 }
-"108
+"117
 [v _estaCheia `(uc ~T0 @X0 1 ef1`*S1 ]
 {
-[; ;Serial.c: 107: char estaCheia(Fila *buf)
-[; ;Serial.c: 108: {
+[; ;Serial.c: 116: char estaCheia(Fila *buf)
+[; ;Serial.c: 117: {
 [e :U _estaCheia ]
 [v _buf `*S1 ~T0 @X0 1 r1 ]
 [f ]
-[; ;Serial.c: 109: return (buf->nItens==16);
-"109
+[; ;Serial.c: 118: return (buf->nItens==16);
+"118
 [e ) -> -> == -> . *U _buf 3 `i -> 16 `i `i `uc ]
-[e $UE 119  ]
-[; ;Serial.c: 110: }
-"110
-[e :UE 119 ]
+[e $UE 121  ]
+[; ;Serial.c: 119: }
+"119
+[e :UE 121 ]
 }

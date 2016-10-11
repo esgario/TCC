@@ -1,10 +1,3 @@
-/*
- * ROTEIRO DE IMPLEMENTAÇÃO
- * OK  - Timer0 para contagem do tempo 0,1ms
- * OK  - Comunicação serial TX e RX
- * NOK - Tratar comandos recebidos pela porta serial
- */
-
 #include <xc.h>
 #include "Serial.h"
 

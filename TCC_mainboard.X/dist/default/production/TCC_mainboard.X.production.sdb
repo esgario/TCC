@@ -136,13 +136,13 @@
 [v _EnvioDadosSerial EnvioDadosSerial `(v  1 e 0 0 ]
 "97
 [v _TrataComandoESP TrataComandoESP `(v  1 e 0 0 ]
-"125
+"123
 [v _I2C_Master_Start I2C_Master_Start `(v  1 e 0 0 ]
-"130
+"128
 [v _I2C_Master_Init I2C_Master_Init `(v  1 e 0 0 ]
-"140
+"138
 [v _Setup Setup `(v  1 e 0 0 ]
-"164
+"162
 [v _main main `(i  1 e 2 0 ]
 "50 C:\Program Files (x86)\Microchip\xc8\v1.20\include\pic16f877a.h
 [v _TMR0 TMR0 `VEuc  1 e 1 @1 ]
@@ -164,7 +164,7 @@
 [v _PORTDbits PORTDbits `VES36  1 e 1 @8 ]
 "437
 [v _INTCON INTCON `VEuc  1 e 1 @11 ]
-[s S285 . 1 `uc 1 RBIF 1 0 :1:0 
+[s S256 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -174,13 +174,13 @@
 `uc 1 GIE 1 0 :1:7 
 ]
 "460
-[s S294 . 1 `uc 1 . 1 0 :2:0 
+[s S265 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 T0IE 1 0 :1:5 
 ]
-[u S299 . 1 `S285 1 . 1 0 `S294 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES299  1 e 1 @11 ]
+[u S270 . 1 `S256 1 . 1 0 `S265 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES270  1 e 1 @11 ]
 "531
 [v _PIR1bits PIR1bits `VES36  1 e 1 @12 ]
 "788
@@ -278,12 +278,12 @@
 "4 C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c
 [v _BufferWrite BufferWrite `S19  1 e 19 0 ]
 [v _BufferRead BufferRead `S19  1 e 19 0 ]
-[s S279 ModuloCM 9 `uc 1 status 1 0 `[4]i 1 corrente 8 1 ]
+[s S250 ModuloCM 9 `uc 1 status 1 0 `[4]i 1 corrente 8 1 ]
 "36 C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c
-[v _ModuloCM ModuloCM `S279  1 e 9 0 ]
-[s S282 RTC 2 `uc 1 hora 1 0 `uc 1 minuto 1 1 ]
+[v _ModuloCM ModuloCM `S250  1 e 9 0 ]
+[s S253 RTC 2 `uc 1 hora 1 0 `uc 1 minuto 1 1 ]
 "41
-[v _RTC RTC `S282  1 e 2 0 ]
+[v _RTC RTC `S253  1 e 2 0 ]
 "44
 [v _Temporizador1 Temporizador1 `ui  1 e 2 0 ]
 "45
@@ -296,26 +296,27 @@
 [v _Tensao Tensao `[3]uc  1 e 3 0 ]
 "50
 [v _clearPORTB clearPORTB `uc  1 e 1 0 ]
-"164
+"162
 [v _main main `(i  1 e 2 0 ]
 {
-"178
+"176
 } 0
-"140
+"138
 [v _Setup Setup `(v  1 e 0 0 ]
 {
-"161
+"159
 } 0
 "7 C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c
 [v _Serial_9600_Init Serial_9600_Init `(v  1 e 0 0 ]
 {
-[v Serial_9600_Init@osc_freq osc_freq `i  1 p 2 0 ]
+[v Serial_9600_Init@osc_freq osc_freq `uc  1 a 1 0 ]
+[v Serial_9600_Init@osc_freq osc_freq `uc  1 a 1 0 ]
 "33
 } 0
 "97 C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c
 [v _TrataComandoESP TrataComandoESP `(v  1 e 0 0 ]
 {
-"122
+"120
 } 0
 "82 C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c
 [v _Serial_Flush Serial_Flush `(v  1 e 0 0 ]
@@ -388,7 +389,7 @@
 "36 C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c
 [v _Serial_Interrupt Serial_Interrupt `(v  1 e 0 0 ]
 {
-"50
+"48
 [v Serial_Interrupt@tmp tmp `uc  1 a 1 7 ]
 "60
 } 0

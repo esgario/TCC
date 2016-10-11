@@ -1427,7 +1427,7 @@ char ultimo;
 char nItens;
 }Fila;
 
-void Serial_9600_Init(int);
+void Serial_9600_Init(char);
 void Serial_Write(char);
 char Serial_Read();
 void Serial_Interrupt();
@@ -1526,15 +1526,14 @@ TemporizadorSerialR = 5000;
 
 while(Serial_Available())
 {
-
-
-Serial_Read();
+if(Serial_Read() == 0xF0)
+{
+PORTDbits.RD0 ^= 1;
 clearPORTB = 1;
 TemporizadorPortb = 2000;
-PORTDbits.RD0 = 1;
 PORTB = Serial_Read();
 Serial_Flush();
-
+}
 }
 }
 
@@ -1542,7 +1541,6 @@ if(clearPORTB == 1 && TemporizadorPortb == 0)
 {
 clearPORTB = 0;
 PORTB = 0;
-PORTDbits.RD0 = 0;
 }
 }
 
@@ -1588,12 +1586,12 @@ TemporizadorSerialW = 20000;
 int main(void)
 {
 Setup();
-PORTDbits.RD0 = 1;
+
 while(1)
 {
 EnvioDadosSerial();
 TrataComandoESP();
-
+PORTDbits.RD0 = 1;
 if (Temporizador1 == 0)
 {
 Temporizador1 = 5000;

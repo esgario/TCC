@@ -9,7 +9,7 @@ char ultimo;
 char nItens;
 }Fila;
 
-void Serial_9600_Init(int);
+void Serial_9600_Init(char);
 void Serial_Write(char);
 char Serial_Read();
 void Serial_Interrupt();
@@ -1442,14 +1442,14 @@ extern void _delay(unsigned long);
 # 4 "Serial.c"
 Fila BufferWrite, BufferRead;
 
-void Serial_9600_Init(int osc_freq)
+void Serial_9600_Init(char osc_freq)
 {
-TXSTA = 0b00100000;
+TXSTA = 0b00100100;
 RCSTA = 0b10010000;
 switch(osc_freq)
 {
 case 10:
-SPBRG = 15;
+SPBRG = 64;
 break;
 case 16:
 SPBRG = 103;
@@ -1482,8 +1482,6 @@ TXREG = remover(&BufferWrite);
 }
 }
 
-if (PIR1bits.RCIF == 1)
-{
 if(RCSTAbits.OERR == 1)
 {
 char tmp = RCREG;
@@ -1491,7 +1489,9 @@ tmp = RCREG;
 RCSTAbits.CREN = 0;
 RCSTAbits.CREN = 1;
 }
-PORTDbits.RD0 = 0;
+
+if (PIR1bits.RCIF == 1)
+{
 
 if(!estaCheia(&BufferRead))
 inserir(&BufferRead, RCREG);

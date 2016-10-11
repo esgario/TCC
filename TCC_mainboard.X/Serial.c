@@ -43,16 +43,16 @@ void Serial_Interrupt()
         }
     }
 
+    if(RCSTAbits.OERR == 1)
+    {
+        char tmp = RCREG;
+        tmp = RCREG;
+        RCSTAbits.CREN = 0;
+        RCSTAbits.CREN = 1;
+    }
+
     if (PIR1bits.RCIF == 1)
     {
-        if(RCSTAbits.OERR == 1)
-        {
-            char tmp = RCREG;
-            tmp = RCREG;
-            RCSTAbits.CREN = 0;
-            RCSTAbits.CREN = 1;
-        }
-        PORTDbits.RD0 = 0;
         //PIR1bits.RCIF = 0; //limpa sozinho quando lê
         if(!estaCheia(&BufferRead))
             inserir(&BufferRead, RCREG);

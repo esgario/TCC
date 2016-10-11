@@ -22,7 +22,7 @@
 #define SetBit(a,n) (a |= (1<<n))
 #define ClearBit(a,n) ( a &= ~(1<<n))
 
-#define COMMAND 0x77
+#define COMMAND 0xF0
 #define TRUE  1
 #define FALSE 0
 
@@ -101,15 +101,14 @@ void TrataComandoESP()
 
         while(Serial_Available())
         {
-            //if(Serial_Read() == COMMAND)
-            //{
-            Serial_Read();
+            if(Serial_Read() == COMMAND)
+            {
+                PORTDbits.RD0 ^= 1; //PISCA LED
                 clearPORTB = TRUE;
                 TemporizadorPortb = 2000;
-                PORTDbits.RD0 = 1; //PISCA LED
                 PORTB = Serial_Read();
                 Serial_Flush();
-            //}
+            }
         }
     }
 
@@ -117,7 +116,6 @@ void TrataComandoESP()
     {
         clearPORTB = FALSE;
         PORTB = 0;
-        PORTDbits.RD0 = 0; //PISCA LED
     }
 }
 
@@ -163,12 +161,12 @@ void Setup()
 int main(void)
 {
     Setup();
-    PORTDbits.RD0 = 1; //PISCA LED
+    
     while(1)
     {
         EnvioDadosSerial();
         TrataComandoESP();
-        
+        PORTDbits.RD0 = 1; //PISCA LED
         if (Temporizador1 == 0)
         {
            Temporizador1 = 5000;

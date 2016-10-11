@@ -19,7 +19,7 @@ extern "C" {
         char nItens;
     }Fila;
 
-    void Serial_9600_Init(int);
+    void Serial_9600_Init(char);
     void Serial_Write(char);
     char Serial_Read();
     void Serial_Interrupt();

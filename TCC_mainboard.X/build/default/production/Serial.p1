@@ -63,14 +63,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _RCSTAbits `VS39 ~T0 @X0 0 e@24 ]
 "1032
 [v _RCREG `Vuc ~T0 @X0 0 e@26 ]
-"332
-[s S14 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S14 . RD0 RD1 RD2 RD3 RD4 RD5 RD6 RD7 ]
-"331
-[u S13 `S14 1 ]
-[n S13 . . ]
-"343
-[v _PORTDbits `VS13 ~T0 @X0 0 e@8 ]
 "32 Serial.h
 [v _estaCheia `(uc ~T0 @X0 0 ef1`*S1 ]
 "29
@@ -81,7 +73,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;Serial.h: 18: char ultimo;
 [; ;Serial.h: 19: char nItens;
 [; ;Serial.h: 20: }Fila;
-[; ;Serial.h: 22: void Serial_9600_Init(int);
+[; ;Serial.h: 22: void Serial_9600_Init(char);
 [; ;Serial.h: 23: void Serial_Write(char);
 [; ;Serial.h: 24: char Serial_Read();
 [; ;Serial.h: 25: void Serial_Interrupt();
@@ -1107,16 +1099,16 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _BufferRead `S1 ~T0 @X0 1 e ]
 [; ;Serial.c: 4: Fila BufferWrite, BufferRead;
 "7
-[v _Serial_9600_Init `(v ~T0 @X0 1 ef1`i ]
+[v _Serial_9600_Init `(v ~T0 @X0 1 ef1`uc ]
 {
-[; ;Serial.c: 6: void Serial_9600_Init(int osc_freq)
+[; ;Serial.c: 6: void Serial_9600_Init(char osc_freq)
 [; ;Serial.c: 7: {
 [e :U _Serial_9600_Init ]
-[v _osc_freq `i ~T0 @X0 1 r1 ]
+[v _osc_freq `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;Serial.c: 8: TXSTA = 0b00100000;
+[; ;Serial.c: 8: TXSTA = 0b00100100;
 "8
-[e = _TXSTA -> -> 32 `i `uc ]
+[e = _TXSTA -> -> 36 `i `uc ]
 [; ;Serial.c: 9: RCSTA = 0b10010000;
 "9
 [e = _RCSTA -> -> 144 `i `uc ]
@@ -1129,9 +1121,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;Serial.c: 12: case 10:
 "12
 [e :U 100 ]
-[; ;Serial.c: 13: SPBRG = 15;
+[; ;Serial.c: 13: SPBRG = 64;
 "13
-[e = _SPBRG -> -> 15 `i `uc ]
+[e = _SPBRG -> -> 64 `i `uc ]
 [; ;Serial.c: 14: break;
 "14
 [e $U 98  ]
@@ -1159,9 +1151,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $U 98  ]
 "10
 [e :U 99 ]
-[e [\ _osc_freq , $ -> 10 `i 100
- , $ -> 16 `i 101
- , $ -> 20 `i 102
+[e [\ _osc_freq , $ -> -> 10 `i `uc 100
+ , $ -> -> 16 `i `uc 101
+ , $ -> -> 20 `i `uc 102
  98 ]
 "21
 [e :U 98 ]
@@ -1226,38 +1218,35 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U 104 ]
 [; ;Serial.c: 43: }
 [; ;Serial.c: 44: }
-[; ;Serial.c: 46: if (PIR1bits.RCIF == 1)
+[; ;Serial.c: 46: if(RCSTAbits.OERR == 1)
 "46
-[e $ ! == -> . . _PIR1bits 0 5 `i -> 1 `i 106  ]
+[e $ ! == -> . . _RCSTAbits 0 1 `i -> 1 `i 106  ]
 [; ;Serial.c: 47: {
 "47
 {
-[; ;Serial.c: 48: if(RCSTAbits.OERR == 1)
 "48
-[e $ ! == -> . . _RCSTAbits 0 1 `i -> 1 `i 107  ]
-[; ;Serial.c: 49: {
-"49
-{
-"50
 [v _tmp `uc ~T0 @X0 1 a ]
-[; ;Serial.c: 50: char tmp = RCREG;
+[; ;Serial.c: 48: char tmp = RCREG;
 [e = _tmp _RCREG ]
-[; ;Serial.c: 51: tmp = RCREG;
-"51
+[; ;Serial.c: 49: tmp = RCREG;
+"49
 [e = _tmp _RCREG ]
-[; ;Serial.c: 52: RCSTAbits.CREN = 0;
-"52
+[; ;Serial.c: 50: RCSTAbits.CREN = 0;
+"50
 [e = . . _RCSTAbits 0 4 -> -> 0 `i `uc ]
-[; ;Serial.c: 53: RCSTAbits.CREN = 1;
-"53
+[; ;Serial.c: 51: RCSTAbits.CREN = 1;
+"51
 [e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
-"54
+"52
 }
-[e :U 107 ]
-[; ;Serial.c: 54: }
-[; ;Serial.c: 55: PORTDbits.RD0 = 0;
+[e :U 106 ]
+[; ;Serial.c: 52: }
+[; ;Serial.c: 54: if (PIR1bits.RCIF == 1)
+"54
+[e $ ! == -> . . _PIR1bits 0 5 `i -> 1 `i 107  ]
+[; ;Serial.c: 55: {
 "55
-[e = . . _PORTDbits 0 0 -> -> 0 `i `uc ]
+{
 [; ;Serial.c: 57: if(!estaCheia(&BufferRead))
 "57
 [e $ ! ! != -> ( _estaCheia (1 &U _BufferRead `i -> -> -> 0 `i `uc `i 108  ]
@@ -1267,7 +1256,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U 108 ]
 "59
 }
-[e :U 106 ]
+[e :U 107 ]
 [; ;Serial.c: 59: }
 [; ;Serial.c: 60: }
 "60

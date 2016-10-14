@@ -102,6 +102,18 @@
 [v ___tmul __tmul `(um  1 e 3 0 ]
 "3 C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\wmul.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
+"8 C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c
+[v _ADC_Interrupt ADC_Interrupt `(v  1 e 0 0 ]
+"23
+[v _ADC_Init ADC_Init `(v  1 e 0 0 ]
+"34
+[v _ADC_Run ADC_Run `(v  1 e 0 0 ]
+"54
+[v _ADC_Read ADC_Read `(i  1 e 2 0 ]
+"60
+[v _ADC_Select_Channel ADC_Select_Channel `(v  1 e 0 0 ]
+"66
+[v _ADC_Available ADC_Available `(uc  1 e 1 0 ]
 "7 C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c
 [v _Serial_9600_Init Serial_9600_Init `(v  1 e 0 0 ]
 "36
@@ -130,19 +142,23 @@
 [v _estaCheia estaCheia `(uc  1 e 1 0 ]
 [v i1_estaCheia estaCheia `(uc  1 e 1 0 ]
 [v i1_estaCheia estaCheia `(uc  1 e 1 0 ]
-"54 C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c
+"52 C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c
 [v _Interrupcao Interrupcao `II(v  1 e 0 0 ]
-"73
+"72
 [v _EnvioDadosSerial EnvioDadosSerial `(v  1 e 0 0 ]
-"97
+"96
 [v _TrataComandoESP TrataComandoESP `(v  1 e 0 0 ]
-"123
+"140
 [v _I2C_Master_Start I2C_Master_Start `(v  1 e 0 0 ]
-"128
+"145
 [v _I2C_Master_Init I2C_Master_Init `(v  1 e 0 0 ]
-"138
+"155
+[v _ControleLed ControleLed `(v  1 e 0 0 ]
+"191
+[v _MedirTensao MedirTensao `(v  1 e 0 0 ]
+"215
 [v _Setup Setup `(v  1 e 0 0 ]
-"162
+"241
 [v _main main `(i  1 e 2 0 ]
 "50 C:\Program Files (x86)\Microchip\xc8\v1.20\include\pic16f877a.h
 [v _TMR0 TMR0 `VEuc  1 e 1 @1 ]
@@ -164,7 +180,7 @@
 [v _PORTDbits PORTDbits `VES36  1 e 1 @8 ]
 "437
 [v _INTCON INTCON `VEuc  1 e 1 @11 ]
-[s S256 . 1 `uc 1 RBIF 1 0 :1:0 
+[s S250 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -174,13 +190,13 @@
 `uc 1 GIE 1 0 :1:7 
 ]
 "460
-[s S265 . 1 `uc 1 . 1 0 :2:0 
+[s S259 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 T0IE 1 0 :1:5 
 ]
-[u S270 . 1 `S256 1 . 1 0 `S265 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES270  1 e 1 @11 ]
+[u S264 . 1 `S250 1 . 1 0 `S259 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES264  1 e 1 @11 ]
 "531
 [v _PIR1bits PIR1bits `VES36  1 e 1 @12 ]
 "788
@@ -213,8 +229,37 @@
 [v _TXREG TXREG `VEuc  1 e 1 @25 ]
 "1032
 [v _RCREG RCREG `VEuc  1 e 1 @26 ]
+"1113
+[v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
+"1119
+[v _ADCON0 ADCON0 `VEuc  1 e 1 @31 ]
+[s S309 . 1 `uc 1 ADON 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 GO_nDONE 1 0 :1:2 
+`uc 1 CHS 1 0 :3:3 
+`uc 1 ADCS 1 0 :2:6 
+]
+"1150
+[s S315 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 GO 1 0 :1:2 
+`uc 1 CHS0 1 0 :1:3 
+`uc 1 CHS1 1 0 :1:4 
+`uc 1 CHS2 1 0 :1:5 
+`uc 1 ADCS0 1 0 :1:6 
+`uc 1 ADCS1 1 0 :1:7 
+]
+[s S323 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nDONE 1 0 :1:2 
+]
+[s S326 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 GO_DONE 1 0 :1:2 
+]
+[u S329 . 1 `S309 1 . 1 0 `S315 1 . 1 0 `S323 1 . 1 0 `S326 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES329  1 e 1 @31 ]
 "1214
 [v _OPTION_REG OPTION_REG `VEuc  1 e 1 @129 ]
+"1283
+[v _TRISA TRISA `VEuc  1 e 1 @133 ]
 "1332
 [v _TRISB TRISB `VEuc  1 e 1 @134 ]
 "1454
@@ -252,6 +297,10 @@
 [v _TXSTAbits TXSTAbits `VES86  1 e 1 @152 ]
 "2025
 [v _SPBRG SPBRG `VEuc  1 e 1 @153 ]
+"2164
+[v _ADRESL ADRESL `VEuc  1 e 1 @158 ]
+"2170
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @159 ]
 "2228
 [v _EEDATA EEDATA `VEuc  1 e 1 @268 ]
 "2234
@@ -274,37 +323,60 @@
 [v _WR WR `VEb  1 e 0 @3169 ]
 "2758
 [v _WREN WREN `VEb  1 e 0 @3170 ]
+"4 C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c
+[v _dadoDisponivel dadoDisponivel `uc  1 e 1 0 ]
+"5
+[v _ADC_Temporizador ADC_Temporizador `uc  1 e 1 0 ]
 [s S19 fila 19 `[16]uc 1 dados 16 0 `uc 1 primeiro 1 16 `uc 1 ultimo 1 17 `uc 1 nItens 1 18 ]
 "4 C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c
 [v _BufferWrite BufferWrite `S19  1 e 19 0 ]
 [v _BufferRead BufferRead `S19  1 e 19 0 ]
-[s S250 ModuloCM 9 `uc 1 status 1 0 `[4]i 1 corrente 8 1 ]
-"36 C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c
-[v _ModuloCM ModuloCM `S250  1 e 9 0 ]
-[s S253 RTC 2 `uc 1 hora 1 0 `uc 1 minuto 1 1 ]
-"41
-[v _RTC RTC `S253  1 e 2 0 ]
-"44
-[v _Temporizador1 Temporizador1 `ui  1 e 2 0 ]
-"45
+[s S380 ModuloCM 9 `uc 1 status 1 0 `[4]i 1 corrente 8 1 ]
+"31 C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c
+[v _ModuloCM ModuloCM `S380  1 e 9 0 ]
+[s S383 RTC 2 `uc 1 hora 1 0 `uc 1 minuto 1 1 ]
+"36
+[v _RTC RTC `S383  1 e 2 0 ]
+"39
+[v _TemporizadorLed TemporizadorLed `ui  1 e 2 0 ]
+"40
 [v _TemporizadorSerialW TemporizadorSerialW `ui  1 e 2 0 ]
-"46
+"41
 [v _TemporizadorSerialR TemporizadorSerialR `ui  1 e 2 0 ]
-"47
+"42
 [v _TemporizadorPortb TemporizadorPortb `ui  1 e 2 0 ]
-"48
+"43
 [v _Tensao Tensao `[3]uc  1 e 3 0 ]
-"50
+"45
+[v _aux aux `ui  1 e 2 0 ]
+"47
 [v _clearPORTB clearPORTB `uc  1 e 1 0 ]
-"162
+"48
+[v _conectado conectado `uc  1 e 1 0 ]
+"241
 [v _main main `(i  1 e 2 0 ]
 {
-"176
+"252
 } 0
-"138
+"215
 [v _Setup Setup `(v  1 e 0 0 ]
 {
-"159
+"238
+} 0
+"60 C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c
+[v _ADC_Select_Channel ADC_Select_Channel `(v  1 e 0 0 ]
+{
+[v ADC_Select_Channel@ch ch `uc  1 a 1 2 ]
+[v ADC_Select_Channel@ch ch `uc  1 a 1 2 ]
+"63
+} 0
+"23
+[v _ADC_Init ADC_Init `(v  1 e 0 0 ]
+{
+[v ADC_Init@trisa trisa `uc  1 a 1 2 ]
+[v ADC_Init@trisa trisa `uc  1 a 1 2 ]
+[v ADC_Init@config config `uc  1 p 1 0 ]
+"31
 } 0
 "7 C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c
 [v _Serial_9600_Init Serial_9600_Init `(v  1 e 0 0 ]
@@ -313,17 +385,54 @@
 [v Serial_9600_Init@osc_freq osc_freq `uc  1 a 1 0 ]
 "33
 } 0
-"97 C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c
+"191 C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c
+[v _MedirTensao MedirTensao `(v  1 e 0 0 ]
+{
+"193
+[v MedirTensao@ultimaLeitura ultimaLeitura `ui  1 a 2 9 ]
+"192
+[v MedirTensao@n n `uc  1 s 1 n ]
+"212
+} 0
+"5 C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+{
+"6
+[v ___lwdiv@quotient quotient `ui  1 a 2 5 ]
+"7
+[v ___lwdiv@counter counter `uc  1 a 1 7 ]
+"5
+[v ___lwdiv@divisor divisor `ui  1 p 2 0 ]
+[v ___lwdiv@dividend dividend `ui  1 p 2 2 ]
+"26
+} 0
+"66 C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c
+[v _ADC_Available ADC_Available `(uc  1 e 1 0 ]
+{
+"68
+} 0
+"54
+[v _ADC_Read ADC_Read `(i  1 e 2 0 ]
+{
+"57
+} 0
+"155 C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c
+[v _ControleLed ControleLed `(v  1 e 0 0 ]
+{
+"156
+[v ControleLed@Estado Estado `uc  1 s 1 Estado ]
+"188
+} 0
+"96
 [v _TrataComandoESP TrataComandoESP `(v  1 e 0 0 ]
 {
-"120
+"102
+[v TrataComandoESP@cmd cmd `uc  1 a 1 7 ]
+"97
+[v TrataComandoESP@Estado Estado `uc  1 s 1 Estado ]
+"137
 } 0
-"82 C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c
-[v _Serial_Flush Serial_Flush `(v  1 e 0 0 ]
-{
-"86
-} 0
-"77
+"77 C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c
 [v _Serial_Available Serial_Available `(uc  1 e 1 0 ]
 {
 "79
@@ -352,10 +461,10 @@
 [v estaVazia@buf buf `*.4S19  1 a 1 0 ]
 "114
 } 0
-"73 C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c
+"72 C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c
 [v _EnvioDadosSerial EnvioDadosSerial `(v  1 e 0 0 ]
 {
-"94
+"93
 } 0
 "63 C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c
 [v _Serial_Write Serial_Write `(v  1 e 0 0 ]
@@ -381,10 +490,22 @@
 [v estaCheia@buf buf `*.4S19  1 a 1 0 ]
 "119
 } 0
-"54 C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c
+"34 C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c
+[v _ADC_Run ADC_Run `(v  1 e 0 0 ]
+{
+"35
+[v ADC_Run@Estado Estado `uc  1 s 1 Estado ]
+"51
+} 0
+"52 C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c
 [v _Interrupcao Interrupcao `II(v  1 e 0 0 ]
 {
-"70
+"69
+} 0
+"8 C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c
+[v _ADC_Interrupt ADC_Interrupt `(v  1 e 0 0 ]
+{
+"20
 } 0
 "36 C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c
 [v _Serial_Interrupt Serial_Interrupt `(v  1 e 0 0 ]

@@ -6,6 +6,8 @@
                    projectFiles="true">
       <itemPath>Serial.h</itemPath>
       <itemPath>Serial.c</itemPath>
+      <itemPath>ConversorAD.h</itemPath>
+      <itemPath>ConversorAD.c</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"

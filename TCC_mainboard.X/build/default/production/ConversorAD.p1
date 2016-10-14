@@ -1,14 +1,4 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"31 TCC_Main.c
-[s S97 `uc 1 `i -> 4 `i ]
-[n S97 ModuloCM status corrente ]
-"36
-[s S98 `uc 1 `uc 1 ]
-[n S98 RTC hora minuto ]
-"25 Serial.h
-[v _Serial_Interrupt `(v ~T0 @X0 0 ef ]
-"19 ConversorAD.h
-[v _ADC_Interrupt `(v ~T0 @X0 0 ef ]
 "443 C:\Program Files (x86)\Microchip\xc8\v1.20\include\pic16f877a.h
 [s S19 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S19 . RBIF INTF TMR0IF RBIE INTE TMR0IE PEIE GIE ]
@@ -20,67 +10,55 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S18 . . . ]
 "460
 [v _INTCONbits `VS18 ~T0 @X0 0 e@11 ]
-"50
-[v _TMR0 `Vuc ~T0 @X0 0 e@1 ]
-"23 Serial.h
-[v _Serial_Write `(v ~T0 @X0 0 ef1`uc ]
-"24
-[v _Serial_Read `(uc ~T0 @X0 0 ef ]
-"204 C:\Program Files (x86)\Microchip\xc8\v1.20\include\pic16f877a.h
-[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
-"26 Serial.h
-[v _Serial_Available `(uc ~T0 @X0 0 ef ]
-"1710 C:\Program Files (x86)\Microchip\xc8\v1.20\include\pic16f877a.h
-[s S72 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S72 . SEN RSEN PEN RCEN ACKEN ACKDT ACKSTAT GCEN ]
-"1709
-[u S71 `S72 1 ]
-[n S71 . . ]
-"1721
-[v _SSPCON2bits `VS71 ~T0 @X0 0 e@145 ]
-"788
-[v _SSPCON `Vuc ~T0 @X0 0 e@20 ]
-"1704
-[v _SSPCON2 `Vuc ~T0 @X0 0 e@145 ]
-"1771
-[v _SSPADD `Vuc ~T0 @X0 0 e@147 ]
-"1777
-[v _SSPSTAT `Vuc ~T0 @X0 0 e@148 ]
-"2704
-[v _TRISC3 `Vb ~T0 @X0 0 e@1083 ]
-"2706
-[v _TRISC4 `Vb ~T0 @X0 0 e@1084 ]
-"332
-[s S13 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S13 . RD0 RD1 RD2 RD3 RD4 RD5 RD6 RD7 ]
-"331
-[u S12 `S13 1 ]
-[n S12 . . ]
-"343
-[v _PORTDbits `VS12 ~T0 @X0 0 e@8 ]
-"23 ConversorAD.h
-[v _ADC_Available `(uc ~T0 @X0 0 ef ]
-"22
-[v _ADC_Read `(i ~T0 @X0 0 ef ]
-"1332 C:\Program Files (x86)\Microchip\xc8\v1.20\include\pic16f877a.h
-[v _TRISB `Vuc ~T0 @X0 0 e@134 ]
-"1454
-[v _TRISD `Vuc ~T0 @X0 0 e@136 ]
-"326
-[v _PORTD `Vuc ~T0 @X0 0 e@8 ]
-"1214
-[v _OPTION_REG `Vuc ~T0 @X0 0 e@129 ]
-"437
-[v _INTCON `Vuc ~T0 @X0 0 e@11 ]
-"22 Serial.h
-[v _Serial_9600_Init `(v ~T0 @X0 0 ef1`uc ]
-"18 ConversorAD.h
-[v _ADC_Init `(v ~T0 @X0 0 ef2`uc`uc ]
-"21
-[v _ADC_Select_Channel `(v ~T0 @X0 0 ef1`uc ]
-[p mainexit ]
-"20
-[v _ADC_Run `(v ~T0 @X0 0 ef ]
+"520
+[s S22 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S22 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF PSPIF ]
+"519
+[u S21 `S22 1 ]
+[n S21 . . ]
+"531
+[v _PIR1bits `VS21 ~T0 @X0 0 e@12 ]
+"1283
+[v _TRISA `Vuc ~T0 @X0 0 e@133 ]
+"1119
+[v _ADCON0 `Vuc ~T0 @X0 0 e@31 ]
+"2170
+[v _ADCON1 `Vuc ~T0 @X0 0 e@159 ]
+"1577
+[s S65 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S65 . TMR1IE TMR2IE CCP1IE SSPIE TXIE RCIE ADIE PSPIE ]
+"1576
+[u S64 `S65 1 ]
+[n S64 . . ]
+"1588
+[v _PIE1bits `VS64 ~T0 @X0 0 e@140 ]
+"1125
+[s S47 :1 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :2 `uc 1 ]
+[n S47 . ADON . GO_nDONE CHS ADCS ]
+"1132
+[s S48 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S48 . . GO CHS0 CHS1 CHS2 ADCS0 ADCS1 ]
+"1141
+[s S49 :2 `uc 1 :1 `uc 1 ]
+[n S49 . . nDONE ]
+"1145
+[s S50 :2 `uc 1 :1 `uc 1 ]
+[n S50 . . GO_DONE ]
+"1124
+[u S46 `S47 1 `S48 1 `S49 1 `S50 1 ]
+[n S46 . . . . . ]
+"1150
+[v _ADCON0bits `VS46 ~T0 @X0 0 e@31 ]
+"1113
+[v _ADRESH `Vuc ~T0 @X0 0 e@30 ]
+"2164
+[v _ADRESL `Vuc ~T0 @X0 0 e@158 ]
+[; ;ConversorAD.h: 18: void ADC_Init(char,char);
+[; ;ConversorAD.h: 19: void ADC_Interrupt();
+[; ;ConversorAD.h: 20: void ADC_Run();
+[; ;ConversorAD.h: 21: void ADC_Select_Channel(char);
+[; ;ConversorAD.h: 22: int ADC_Read();
+[; ;ConversorAD.h: 23: char ADC_Available();
 [; ;pic16f877a.h: 44: extern volatile unsigned char INDF @ 0x000;
 "46 C:\Program Files (x86)\Microchip\xc8\v1.20\include\pic16f877a.h
 [; ;pic16f877a.h: 46: asm("INDF equ 00h");
@@ -1092,729 +1070,209 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;eeprom_routines.h: 43: extern void eecpymem(volatile unsigned char *to, __eeprom unsigned char *from, unsigned char size);
 [; ;eeprom_routines.h: 44: extern void memcpyee(__eeprom unsigned char *to, const unsigned char *from, unsigned char size);
 [; ;pic.h: 151: extern void _delay(unsigned long);
-[; ;Serial.h: 15: typedef struct fila {
-[; ;Serial.h: 16: char dados[16];
-[; ;Serial.h: 17: char primeiro;
-[; ;Serial.h: 18: char ultimo;
-[; ;Serial.h: 19: char nItens;
-[; ;Serial.h: 20: }Fila;
-[; ;Serial.h: 22: void Serial_9600_Init(char);
-[; ;Serial.h: 23: void Serial_Write(char);
-[; ;Serial.h: 24: char Serial_Read();
-[; ;Serial.h: 25: void Serial_Interrupt();
-[; ;Serial.h: 26: char Serial_Available();
-[; ;Serial.h: 27: void Serial_Flush();
-[; ;Serial.h: 29: void inserir(Fila *buf,char Valor);
-[; ;Serial.h: 30: char remover(Fila *buf);
-[; ;Serial.h: 31: char estaVazia(Fila *buf);
-[; ;Serial.h: 32: char estaCheia(Fila *buf);
-[; ;ConversorAD.h: 18: void ADC_Init(char,char);
-[; ;ConversorAD.h: 19: void ADC_Interrupt();
-[; ;ConversorAD.h: 20: void ADC_Run();
-[; ;ConversorAD.h: 21: void ADC_Select_Channel(char);
-[; ;ConversorAD.h: 22: int ADC_Read();
-[; ;ConversorAD.h: 23: char ADC_Available();
-"6 TCC_Main.c
-[p x FOSC=HS ]
-"7
-[p x WDTE=OFF ]
+"4 ConversorAD.c
+[v _dadoDisponivel `uc ~T0 @X0 1 e ]
+[i _dadoDisponivel
+-> -> 0 `i `uc
+]
+[; ;ConversorAD.c: 4: char dadoDisponivel = 0;
+"5
+[v _ADC_Temporizador `uc ~T0 @X0 1 e ]
+[i _ADC_Temporizador
+-> -> 0 `i `uc
+]
+[; ;ConversorAD.c: 5: char ADC_Temporizador = 0;
 "8
-[p x PWRTE=OFF ]
+[v _ADC_Interrupt `(v ~T0 @X0 1 ef ]
+{
+[; ;ConversorAD.c: 7: void ADC_Interrupt()
+[; ;ConversorAD.c: 8: {
+[e :U _ADC_Interrupt ]
+[f ]
+[; ;ConversorAD.c: 9: if (INTCONbits.T0IF == 1)
 "9
-[p x BOREN=ON ]
+[e $ ! == -> . . _INTCONbits 1 1 `i -> 1 `i 97  ]
+[; ;ConversorAD.c: 10: {
 "10
-[p x LVP=OFF ]
+{
+[; ;ConversorAD.c: 11: if(ADC_Temporizador > 0)
 "11
-[p x CPD=OFF ]
+[e $ ! > -> _ADC_Temporizador `i -> 0 `i 98  ]
+[; ;ConversorAD.c: 12: ADC_Temporizador--;
 "12
-[p x WRT=OFF ]
+[e -- _ADC_Temporizador -> -> 1 `i `uc ]
+[e :U 98 ]
 "13
-[p x CP=OFF ]
-[; ;TCC_Main.c: 24: typedef char boolean;
+}
+[e :U 97 ]
+[; ;ConversorAD.c: 13: }
+[; ;ConversorAD.c: 15: if( PIR1bits.ADIF == 1 )
+"15
+[e $ ! == -> . . _PIR1bits 0 6 `i -> 1 `i 99  ]
+[; ;ConversorAD.c: 16: {
+"16
+{
+[; ;ConversorAD.c: 17: dadoDisponivel = 1;
+"17
+[e = _dadoDisponivel -> -> 1 `i `uc ]
+[; ;ConversorAD.c: 18: PIR1bits.ADIF = 0;
+"18
+[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
+"19
+}
+[e :U 99 ]
+[; ;ConversorAD.c: 19: }
+[; ;ConversorAD.c: 20: }
+"20
+[e :UE 96 ]
+}
+"23
+[v _ADC_Init `(v ~T0 @X0 1 ef2`uc`uc ]
+{
+[; ;ConversorAD.c: 22: void ADC_Init(char trisa, char config)
+[; ;ConversorAD.c: 23: {
+[e :U _ADC_Init ]
+[v _trisa `uc ~T0 @X0 1 r1 ]
+[v _config `uc ~T0 @X0 1 r2 ]
+[f ]
+[; ;ConversorAD.c: 24: TRISA = trisa;
+"24
+[e = _TRISA _trisa ]
+[; ;ConversorAD.c: 25: ADCON0 = 0b10000001;
+"25
+[e = _ADCON0 -> -> 129 `i `uc ]
+[; ;ConversorAD.c: 26: ADCON1 = 0b10000000;
+"26
+[e = _ADCON1 -> -> 128 `i `uc ]
+[; ;ConversorAD.c: 27: ADCON1 |= config;
+"27
+[e =| _ADCON1 _config ]
+[; ;ConversorAD.c: 29: PIR1bits.ADIF = 0;
+"29
+[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
+[; ;ConversorAD.c: 30: PIE1bits.ADIE = 1;
+"30
+[e = . . _PIE1bits 0 6 -> -> 1 `i `uc ]
+[; ;ConversorAD.c: 31: }
 "31
-[v _ModuloCM `S97 ~T0 @X0 1 e ]
-[; ;TCC_Main.c: 28: struct ModuloCM {
-[; ;TCC_Main.c: 29: char status;
-[; ;TCC_Main.c: 30: int corrente[4];
-[; ;TCC_Main.c: 31: }ModuloCM;
-"36
-[v _RTC `S98 ~T0 @X0 1 e ]
-[; ;TCC_Main.c: 33: struct RTC {
-[; ;TCC_Main.c: 34: char hora;
-[; ;TCC_Main.c: 35: char minuto;
-[; ;TCC_Main.c: 36: }RTC;
+[e :UE 100 ]
+}
+"34
+[v _ADC_Run `(v ~T0 @X0 1 ef ]
+{
+[; ;ConversorAD.c: 33: void ADC_Run()
+[; ;ConversorAD.c: 34: {
+[e :U _ADC_Run ]
+[f ]
+"35
+[v F1099 `uc ~T0 @X0 1 s Estado ]
+[i F1099
+-> -> 0 `i `uc
+]
+[; ;ConversorAD.c: 35: static char Estado = 0;
+[; ;ConversorAD.c: 37: switch(Estado)
+"37
+[e $U 103  ]
+[; ;ConversorAD.c: 38: {
+"38
+{
+[; ;ConversorAD.c: 39: case 0:
 "39
-[v _TemporizadorLed `ui ~T0 @X0 1 e ]
-[i _TemporizadorLed
--> -> 0 `i `ui
-]
-[; ;TCC_Main.c: 39: unsigned int TemporizadorLed=0;
-"40
-[v _TemporizadorSerialW `ui ~T0 @X0 1 e ]
-[i _TemporizadorSerialW
--> -> 0 `i `ui
-]
-[; ;TCC_Main.c: 40: unsigned int TemporizadorSerialW=0;
-"41
-[v _TemporizadorSerialR `ui ~T0 @X0 1 e ]
-[i _TemporizadorSerialR
--> -> 0 `i `ui
-]
-[; ;TCC_Main.c: 41: unsigned int TemporizadorSerialR=0;
-"42
-[v _TemporizadorPortb `ui ~T0 @X0 1 e ]
-[i _TemporizadorPortb
--> -> 0 `i `ui
-]
-[; ;TCC_Main.c: 42: unsigned int TemporizadorPortb = 0;
-"43
-[v _Tensao `uc ~T0 @X0 -> 3 `i e ]
-[i _Tensao
-:U ..
--> -> 123 `i `uc
--> -> 122 `i `uc
--> -> 0 `i `uc
-..
-]
-[; ;TCC_Main.c: 43: char Tensao[3] = {123,122,0};
-"45
-[v _aux `ui ~T0 @X0 1 e ]
-[i _aux
--> -> 0 `i `ui
-]
-[; ;TCC_Main.c: 45: unsigned int aux = 0;
-"47
-[v _clearPORTB `uc ~T0 @X0 1 e ]
-[i _clearPORTB
--> -> 0 `i `uc
-]
-[; ;TCC_Main.c: 47: boolean clearPORTB = 0;
-"48
-[v _conectado `uc ~T0 @X0 1 e ]
-[i _conectado
--> -> 0 `i `uc
-]
-[; ;TCC_Main.c: 48: boolean conectado = 0;
-"52
-[v F1137 `(v ~T0 @X0 1 tf ]
-[v _Interrupcao `IF1137 ~T0 @X0 1 e ]
-{
-[; ;TCC_Main.c: 51: void interrupt Interrupcao(void)
-[; ;TCC_Main.c: 52: {
-[e :U _Interrupcao ]
-[f ]
-[; ;TCC_Main.c: 53: Serial_Interrupt();
-"53
-[e ( _Serial_Interrupt ..  ]
-[; ;TCC_Main.c: 54: ADC_Interrupt();
-"54
-[e ( _ADC_Interrupt ..  ]
-[; ;TCC_Main.c: 56: if (INTCONbits.T0IF == 1)
-"56
-[e $ ! == -> . . _INTCONbits 1 1 `i -> 1 `i 100  ]
-[; ;TCC_Main.c: 57: {
-"57
-{
-[; ;TCC_Main.c: 58: INTCONbits.T0IF = 0;
-"58
-[e = . . _INTCONbits 1 1 -> -> 0 `i `uc ]
-[; ;TCC_Main.c: 59: TMR0 += 130;
-"59
-[e =+ _TMR0 -> -> 130 `i `uc ]
-[; ;TCC_Main.c: 60: if (TemporizadorLed > 0)
-"60
-[e $ ! > _TemporizadorLed -> -> 0 `i `ui 101  ]
-[; ;TCC_Main.c: 61: TemporizadorLed --;
-"61
-[e -- _TemporizadorLed -> -> 1 `i `ui ]
-[e :U 101 ]
-[; ;TCC_Main.c: 62: if (TemporizadorSerialW > 0)
-"62
-[e $ ! > _TemporizadorSerialW -> -> 0 `i `ui 102  ]
-[; ;TCC_Main.c: 63: TemporizadorSerialW--;
-"63
-[e -- _TemporizadorSerialW -> -> 1 `i `ui ]
-[e :U 102 ]
-[; ;TCC_Main.c: 64: if (TemporizadorSerialR > 0)
-"64
-[e $ ! > _TemporizadorSerialR -> -> 0 `i `ui 103  ]
-[; ;TCC_Main.c: 65: TemporizadorSerialR--;
-"65
-[e -- _TemporizadorSerialR -> -> 1 `i `ui ]
-[e :U 103 ]
-[; ;TCC_Main.c: 66: if (TemporizadorPortb > 0)
-"66
-[e $ ! > _TemporizadorPortb -> -> 0 `i `ui 104  ]
-[; ;TCC_Main.c: 67: TemporizadorPortb--;
-"67
-[e -- _TemporizadorPortb -> -> 1 `i `ui ]
 [e :U 104 ]
-"68
-}
-[e :U 100 ]
-[; ;TCC_Main.c: 68: }
-[; ;TCC_Main.c: 69: }
-"69
-[e :UE 99 ]
-}
-"72
-[v _EnvioDadosSerial `(v ~T0 @X0 1 ef ]
+[; ;ConversorAD.c: 40: if(ADC_Temporizador == 0)
+"40
+[e $ ! == -> _ADC_Temporizador `i -> 0 `i 105  ]
+[; ;ConversorAD.c: 41: {
+"41
 {
-[; ;TCC_Main.c: 71: void EnvioDadosSerial()
-[; ;TCC_Main.c: 72: {
-[e :U _EnvioDadosSerial ]
-[f ]
-[; ;TCC_Main.c: 73: if(TemporizadorSerialW == 0)
-"73
-[e $ ! == _TemporizadorSerialW -> -> 0 `i `ui 106  ]
-[; ;TCC_Main.c: 74: {
-"74
-{
-[; ;TCC_Main.c: 75: Serial_Write(0xFF);
-"75
-[e ( _Serial_Write (1 -> -> 255 `i `uc ]
-[; ;TCC_Main.c: 76: Serial_Write(0xFF);
-"76
-[e ( _Serial_Write (1 -> -> 255 `i `uc ]
-[; ;TCC_Main.c: 77: Serial_Write(Tensao[0]);
-"77
-[e ( _Serial_Write (1 *U + &U _Tensao * -> -> -> 0 `i `ui `ux -> -> # *U &U _Tensao `ui `ux ]
-[; ;TCC_Main.c: 78: Serial_Write(Tensao[1]);
-"78
-[e ( _Serial_Write (1 *U + &U _Tensao * -> -> -> 1 `i `ui `ux -> -> # *U &U _Tensao `ui `ux ]
-[; ;TCC_Main.c: 79: Serial_Write(Tensao[2]);
-"79
-[e ( _Serial_Write (1 *U + &U _Tensao * -> -> -> 2 `i `ui `ux -> -> # *U &U _Tensao `ui `ux ]
-[; ;TCC_Main.c: 80: Serial_Write(ModuloCM.status);
-"80
-[e ( _Serial_Write (1 . _ModuloCM 0 ]
-[; ;TCC_Main.c: 81: Serial_Write(ModuloCM.corrente[0]>>8);
-"81
-[e ( _Serial_Write (1 -> >> *U + &U . _ModuloCM 1 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _ModuloCM 1 `ui `ux -> 8 `i `uc ]
-[; ;TCC_Main.c: 82: Serial_Write(ModuloCM.corrente[0]&0x00FF);
-"82
-[e ( _Serial_Write (1 -> & *U + &U . _ModuloCM 1 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _ModuloCM 1 `ui `ux -> 255 `i `uc ]
-[; ;TCC_Main.c: 83: Serial_Write(ModuloCM.corrente[1]>>8);
-"83
-[e ( _Serial_Write (1 -> >> *U + &U . _ModuloCM 1 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _ModuloCM 1 `ui `ux -> 8 `i `uc ]
-[; ;TCC_Main.c: 84: Serial_Write(ModuloCM.corrente[1]&0x00FF);
-"84
-[e ( _Serial_Write (1 -> & *U + &U . _ModuloCM 1 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _ModuloCM 1 `ui `ux -> 255 `i `uc ]
-[; ;TCC_Main.c: 85: Serial_Write(ModuloCM.corrente[2]>>8);
-"85
-[e ( _Serial_Write (1 -> >> *U + &U . _ModuloCM 1 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _ModuloCM 1 `ui `ux -> 8 `i `uc ]
-[; ;TCC_Main.c: 86: Serial_Write(ModuloCM.corrente[2]&0x00FF);
-"86
-[e ( _Serial_Write (1 -> & *U + &U . _ModuloCM 1 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _ModuloCM 1 `ui `ux -> 255 `i `uc ]
-[; ;TCC_Main.c: 87: Serial_Write(ModuloCM.corrente[3]>>8);
-"87
-[e ( _Serial_Write (1 -> >> *U + &U . _ModuloCM 1 * -> -> -> 3 `i `ui `ux -> -> # *U &U . _ModuloCM 1 `ui `ux -> 8 `i `uc ]
-[; ;TCC_Main.c: 88: Serial_Write(ModuloCM.corrente[3]&0x00FF);
-"88
-[e ( _Serial_Write (1 -> & *U + &U . _ModuloCM 1 * -> -> -> 3 `i `ui `ux -> -> # *U &U . _ModuloCM 1 `ui `ux -> 255 `i `uc ]
-[; ;TCC_Main.c: 89: Serial_Write(RTC.hora);
-"89
-[e ( _Serial_Write (1 . _RTC 0 ]
-[; ;TCC_Main.c: 90: Serial_Write(RTC.minuto);
-"90
-[e ( _Serial_Write (1 . _RTC 1 ]
-[; ;TCC_Main.c: 91: TemporizadorSerialW = 30000;
-"91
-[e = _TemporizadorSerialW -> -> 30000 `i `ui ]
-"92
+[; ;ConversorAD.c: 42: ADC_Temporizador = 1;
+"42
+[e = _ADC_Temporizador -> -> 1 `i `uc ]
+[; ;ConversorAD.c: 43: Estado = 1;
+"43
+[e = F1099 -> -> 1 `i `uc ]
+"44
 }
+[e :U 105 ]
+[; ;ConversorAD.c: 44: }
+[; ;ConversorAD.c: 45: break;
+"45
+[e $U 102  ]
+[; ;ConversorAD.c: 46: case 1:
+"46
 [e :U 106 ]
-[; ;TCC_Main.c: 92: }
-[; ;TCC_Main.c: 93: }
-"93
-[e :UE 105 ]
+[; ;ConversorAD.c: 47: ADCON0bits.GO = 1;
+"47
+[e = . . _ADCON0bits 1 1 -> -> 1 `i `uc ]
+[; ;ConversorAD.c: 48: Estado = 0;
+"48
+[e = F1099 -> -> 0 `i `uc ]
+[; ;ConversorAD.c: 49: break;
+"49
+[e $U 102  ]
+"50
 }
-"96
-[v _TrataComandoESP `(v ~T0 @X0 1 ef ]
+[; ;ConversorAD.c: 50: }
+[e $U 102  ]
+"37
+[e :U 103 ]
+[e [\ F1099 , $ -> -> 0 `i `uc 104
+ , $ -> -> 1 `i `uc 106
+ 102 ]
+"50
+[e :U 102 ]
+[; ;ConversorAD.c: 51: }
+"51
+[e :UE 101 ]
+}
+"54
+[v _ADC_Read `(i ~T0 @X0 1 ef ]
 {
-[; ;TCC_Main.c: 95: void TrataComandoESP()
-[; ;TCC_Main.c: 96: {
-[e :U _TrataComandoESP ]
+[; ;ConversorAD.c: 53: int ADC_Read()
+[; ;ConversorAD.c: 54: {
+[e :U _ADC_Read ]
 [f ]
-"97
-[v F1140 `uc ~T0 @X0 1 s Estado ]
-[i F1140
--> -> 0 `i `uc
-]
-[; ;TCC_Main.c: 97: static char Estado = 0;
-[; ;TCC_Main.c: 99: if(TemporizadorSerialR == 0)
-"99
-[e $ ! == _TemporizadorSerialR -> -> 0 `i `ui 108  ]
-[; ;TCC_Main.c: 100: {
-"100
-{
-[; ;TCC_Main.c: 101: TemporizadorSerialR = 5000;
-"101
-[e = _TemporizadorSerialR -> -> 5000 `i `ui ]
-"102
-[v _cmd `uc ~T0 @X0 1 a ]
-[; ;TCC_Main.c: 102: char cmd;
-[; ;TCC_Main.c: 104: while(Serial_Available())
-"104
-[e $U 109  ]
-[e :U 110 ]
-[; ;TCC_Main.c: 105: {
-"105
-{
-[; ;TCC_Main.c: 106: switch(Estado)
-"106
-[e $U 113  ]
-[; ;TCC_Main.c: 107: {
-"107
-{
-[; ;TCC_Main.c: 108: case 0:
-"108
-[e :U 114 ]
-[; ;TCC_Main.c: 109: cmd = Serial_Read();
-"109
-[e = _cmd ( _Serial_Read ..  ]
-[; ;TCC_Main.c: 110: if(cmd == 0xF0)
-"110
-[e $ ! == -> _cmd `i -> 240 `i 115  ]
-[; ;TCC_Main.c: 111: Estado = 1;
-"111
-[e = F1140 -> -> 1 `i `uc ]
-[e $U 116  ]
-"112
-[e :U 115 ]
-[; ;TCC_Main.c: 112: else if(cmd == 0x0F)
-[e $ ! == -> _cmd `i -> 15 `i 117  ]
-[; ;TCC_Main.c: 113: Estado = 2;
-"113
-[e = F1140 -> -> 2 `i `uc ]
-[e :U 117 ]
-"114
-[e :U 116 ]
-[; ;TCC_Main.c: 114: break;
-[e $U 112  ]
-[; ;TCC_Main.c: 115: case 1:
-"115
-[e :U 118 ]
-[; ;TCC_Main.c: 116: clearPORTB = 1;
-"116
-[e = _clearPORTB -> -> 1 `i `uc ]
-[; ;TCC_Main.c: 117: TemporizadorPortb = 10000;
-"117
-[e = _TemporizadorPortb -> -> 10000 `i `ui ]
-[; ;TCC_Main.c: 118: PORTB = Serial_Read();
-"118
-[e = _PORTB ( _Serial_Read ..  ]
-[; ;TCC_Main.c: 119: Estado = 0;
-"119
-[e = F1140 -> -> 0 `i `uc ]
-[; ;TCC_Main.c: 120: break;
-"120
-[e $U 112  ]
-[; ;TCC_Main.c: 121: case 2:
-"121
-[e :U 119 ]
-[; ;TCC_Main.c: 122: if(Serial_Read() == 1)
-"122
-[e $ ! == -> ( _Serial_Read ..  `i -> 1 `i 120  ]
-[; ;TCC_Main.c: 123: conectado = 1;
-"123
-[e = _conectado -> -> 1 `i `uc ]
-[e $U 121  ]
-"124
-[e :U 120 ]
-[; ;TCC_Main.c: 124: else
-[; ;TCC_Main.c: 125: conectado = 0;
-"125
-[e = _conectado -> -> 0 `i `uc ]
-[e :U 121 ]
-[; ;TCC_Main.c: 126: Estado = 0;
-"126
-[e = F1140 -> -> 0 `i `uc ]
-[; ;TCC_Main.c: 127: break;
-"127
-[e $U 112  ]
-"128
-}
-[; ;TCC_Main.c: 128: }
-[e $U 112  ]
-"106
-[e :U 113 ]
-[e [\ F1140 , $ -> -> 0 `i `uc 114
- , $ -> -> 1 `i `uc 118
- , $ -> -> 2 `i `uc 119
- 112 ]
-"128
-[e :U 112 ]
-"129
-}
-[e :U 109 ]
-"104
-[e $ != -> ( _Serial_Available ..  `i -> -> -> 0 `i `uc `i 110  ]
-[e :U 111 ]
-"130
-}
-[e :U 108 ]
-[; ;TCC_Main.c: 129: }
-[; ;TCC_Main.c: 130: }
-[; ;TCC_Main.c: 132: if(clearPORTB == 1 && TemporizadorPortb == 0)
-"132
-[e $ ! && == -> _clearPORTB `i -> 1 `i == _TemporizadorPortb -> -> 0 `i `ui 122  ]
-[; ;TCC_Main.c: 133: {
-"133
-{
-[; ;TCC_Main.c: 134: clearPORTB = 0;
-"134
-[e = _clearPORTB -> -> 0 `i `uc ]
-[; ;TCC_Main.c: 135: PORTB = 0;
-"135
-[e = _PORTB -> -> 0 `i `uc ]
-"136
-}
-[e :U 122 ]
-[; ;TCC_Main.c: 136: }
-[; ;TCC_Main.c: 137: }
-"137
+[; ;ConversorAD.c: 55: dadoDisponivel = 0;
+"55
+[e = _dadoDisponivel -> -> 0 `i `uc ]
+[; ;ConversorAD.c: 56: return ((ADRESH<<8) | ADRESL);
+"56
+[e ) | << -> _ADRESH `i -> 8 `i -> _ADRESL `i ]
+[e $UE 107  ]
+[; ;ConversorAD.c: 57: }
+"57
 [e :UE 107 ]
 }
-"140
-[v _I2C_Master_Start `(v ~T0 @X0 1 ef ]
+"60
+[v _ADC_Select_Channel `(v ~T0 @X0 1 ef1`uc ]
 {
-[; ;TCC_Main.c: 139: void I2C_Master_Start()
-[; ;TCC_Main.c: 140: {
-[e :U _I2C_Master_Start ]
+[; ;ConversorAD.c: 59: void ADC_Select_Channel(char ch)
+[; ;ConversorAD.c: 60: {
+[e :U _ADC_Select_Channel ]
+[v _ch `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;TCC_Main.c: 141: SSPCON2bits.SEN = 1;
-"141
-[e = . . _SSPCON2bits 0 0 -> -> 1 `i `uc ]
-[; ;TCC_Main.c: 142: }
-"142
-[e :UE 123 ]
+[; ;ConversorAD.c: 61: ADCON0 &= 0b11000111;
+"61
+[e =& _ADCON0 -> -> 199 `i `uc ]
+[; ;ConversorAD.c: 62: ADCON0 |= (ch<<3);
+"62
+[e =| _ADCON0 -> << -> _ch `i -> 3 `i `uc ]
+[; ;ConversorAD.c: 63: }
+"63
+[e :UE 108 ]
 }
-"145
-[v _I2C_Master_Init `(v ~T0 @X0 1 ef ]
+"66
+[v _ADC_Available `(uc ~T0 @X0 1 ef ]
 {
-[; ;TCC_Main.c: 144: void I2C_Master_Init()
-[; ;TCC_Main.c: 145: {
-[e :U _I2C_Master_Init ]
+[; ;ConversorAD.c: 65: char ADC_Available()
+[; ;ConversorAD.c: 66: {
+[e :U _ADC_Available ]
 [f ]
-[; ;TCC_Main.c: 146: SSPCON = 0b00101000;
-"146
-[e = _SSPCON -> -> 40 `i `uc ]
-[; ;TCC_Main.c: 147: SSPCON2 = 0;
-"147
-[e = _SSPCON2 -> -> 0 `i `uc ]
-[; ;TCC_Main.c: 148: SSPADD = 24;
-"148
-[e = _SSPADD -> -> 24 `i `uc ]
-[; ;TCC_Main.c: 149: SSPSTAT = 0;
-"149
-[e = _SSPSTAT -> -> 0 `i `uc ]
-[; ;TCC_Main.c: 150: TRISC3 = 1;
-"150
-[e = _TRISC3 -> -> 1 `i `b ]
-[; ;TCC_Main.c: 151: TRISC4 = 1;
-"151
-[e = _TRISC4 -> -> 1 `i `b ]
-[; ;TCC_Main.c: 152: }
-"152
-[e :UE 124 ]
-}
-"155
-[v _ControleLed `(v ~T0 @X0 1 ef ]
-{
-[; ;TCC_Main.c: 154: void ControleLed()
-[; ;TCC_Main.c: 155: {
-[e :U _ControleLed ]
-[f ]
-"156
-[v F1145 `uc ~T0 @X0 1 s Estado ]
-[i F1145
--> -> 0 `i `uc
-]
-[; ;TCC_Main.c: 156: static char Estado = 0;
-[; ;TCC_Main.c: 157: if (TemporizadorLed == 0)
-"157
-[e $ ! == _TemporizadorLed -> -> 0 `i `ui 126  ]
-[; ;TCC_Main.c: 158: {
-"158
-{
-[; ;TCC_Main.c: 159: switch(Estado)
-"159
-[e $U 128  ]
-[; ;TCC_Main.c: 160: {
-"160
-{
-[; ;TCC_Main.c: 161: case 0:
-"161
-[e :U 129 ]
-[; ;TCC_Main.c: 162: TemporizadorLed = 2000;
-"162
-[e = _TemporizadorLed -> -> 2000 `i `ui ]
-[; ;TCC_Main.c: 163: PORTDbits.RD0 = 1;
-"163
-[e = . . _PORTDbits 0 0 -> -> 1 `i `uc ]
-[; ;TCC_Main.c: 164: Estado = 1;
-"164
-[e = F1145 -> -> 1 `i `uc ]
-[; ;TCC_Main.c: 165: break;
-"165
-[e $U 127  ]
-[; ;TCC_Main.c: 166: case 1:
-"166
-[e :U 130 ]
-[; ;TCC_Main.c: 167: PORTDbits.RD0 = 0;
-"167
-[e = . . _PORTDbits 0 0 -> -> 0 `i `uc ]
-[; ;TCC_Main.c: 168: if(conectado) {
-"168
-[e $ ! != -> _conectado `i -> -> -> 0 `i `uc `i 131  ]
-{
-[; ;TCC_Main.c: 169: TemporizadorLed = 2000;
-"169
-[e = _TemporizadorLed -> -> 2000 `i `ui ]
-[; ;TCC_Main.c: 170: Estado = 2;
-"170
-[e = F1145 -> -> 2 `i `uc ]
-"171
-}
-[; ;TCC_Main.c: 171: } else {
-[e $U 132  ]
-[e :U 131 ]
-{
-[; ;TCC_Main.c: 172: TemporizadorLed = 10000;
-"172
-[e = _TemporizadorLed -> -> 10000 `i `ui ]
-[; ;TCC_Main.c: 173: Estado = 0;
-"173
-[e = F1145 -> -> 0 `i `uc ]
-"174
-}
-[e :U 132 ]
-[; ;TCC_Main.c: 174: }
-[; ;TCC_Main.c: 175: break;
-"175
-[e $U 127  ]
-[; ;TCC_Main.c: 176: case 2:
-"176
-[e :U 133 ]
-[; ;TCC_Main.c: 177: TemporizadorLed = 2000;
-"177
-[e = _TemporizadorLed -> -> 2000 `i `ui ]
-[; ;TCC_Main.c: 178: PORTDbits.RD0 = 1;
-"178
-[e = . . _PORTDbits 0 0 -> -> 1 `i `uc ]
-[; ;TCC_Main.c: 179: Estado = 3;
-"179
-[e = F1145 -> -> 3 `i `uc ]
-[; ;TCC_Main.c: 180: break;
-"180
-[e $U 127  ]
-[; ;TCC_Main.c: 181: case 3:
-"181
-[e :U 134 ]
-[; ;TCC_Main.c: 182: TemporizadorLed = 10000;
-"182
-[e = _TemporizadorLed -> -> 10000 `i `ui ]
-[; ;TCC_Main.c: 183: PORTDbits.RD0 = 0;
-"183
-[e = . . _PORTDbits 0 0 -> -> 0 `i `uc ]
-[; ;TCC_Main.c: 184: Estado = 0;
-"184
-[e = F1145 -> -> 0 `i `uc ]
-[; ;TCC_Main.c: 185: break;
-"185
-[e $U 127  ]
-"186
-}
-[; ;TCC_Main.c: 186: }
-[e $U 127  ]
-"159
-[e :U 128 ]
-[e [\ F1145 , $ -> -> 0 `i `uc 129
- , $ -> -> 1 `i `uc 130
- , $ -> -> 2 `i `uc 133
- , $ -> -> 3 `i `uc 134
- 127 ]
-"186
-[e :U 127 ]
-"187
-}
-[e :U 126 ]
-[; ;TCC_Main.c: 187: }
-[; ;TCC_Main.c: 188: }
-"188
-[e :UE 125 ]
-}
-"191
-[v _MedirTensao `(v ~T0 @X0 1 ef ]
-{
-[; ;TCC_Main.c: 190: void MedirTensao()
-[; ;TCC_Main.c: 191: {
-[e :U _MedirTensao ]
-[f ]
-"192
-[v F1147 `uc ~T0 @X0 1 s n ]
-[i F1147
--> -> 0 `i `uc
-]
-"193
-[v _ultimaLeitura `ui ~T0 @X0 1 a ]
-[; ;TCC_Main.c: 192: static char n = 0;
-[; ;TCC_Main.c: 193: unsigned int ultimaLeitura;
-[; ;TCC_Main.c: 195: if( n < 150 )
-"195
-[e $ ! < -> F1147 `i -> 150 `i 136  ]
-[; ;TCC_Main.c: 196: {
-"196
-{
-[; ;TCC_Main.c: 197: if(ADC_Available())
-"197
-[e $ ! != -> ( _ADC_Available ..  `i -> -> -> 0 `i `uc `i 137  ]
-[; ;TCC_Main.c: 198: {
-"198
-{
-[; ;TCC_Main.c: 199: ultimaLeitura = ADC_Read();
-"199
-[e = _ultimaLeitura -> ( _ADC_Read ..  `ui ]
-[; ;TCC_Main.c: 200: if(ultimaLeitura > aux)
-"200
-[e $ ! > _ultimaLeitura _aux 138  ]
-[; ;TCC_Main.c: 201: aux = ultimaLeitura;
-"201
-[e = _aux _ultimaLeitura ]
-[e :U 138 ]
-[; ;TCC_Main.c: 202: n++;
-"202
-[e ++ F1147 -> -> 1 `i `uc ]
-"203
-}
-[e :U 137 ]
-"204
-}
-[; ;TCC_Main.c: 203: }
-[; ;TCC_Main.c: 204: }
-[e $U 139  ]
-"205
-[e :U 136 ]
-[; ;TCC_Main.c: 205: else
-[; ;TCC_Main.c: 206: {
-"206
-{
-[; ;TCC_Main.c: 207: Tensao[0] = aux / 6;
-"207
-[e = *U + &U _Tensao * -> -> -> 0 `i `ui `ux -> -> # *U &U _Tensao `ui `ux -> / _aux -> -> 6 `i `ui `uc ]
-[; ;TCC_Main.c: 209: aux = 0;
-"209
-[e = _aux -> -> 0 `i `ui ]
-[; ;TCC_Main.c: 210: n = 0;
-"210
-[e = F1147 -> -> 0 `i `uc ]
-"211
-}
-[e :U 139 ]
-[; ;TCC_Main.c: 211: }
-[; ;TCC_Main.c: 212: }
-"212
-[e :UE 135 ]
-}
-"215
-[v _Setup `(v ~T0 @X0 1 ef ]
-{
-[; ;TCC_Main.c: 214: void Setup()
-[; ;TCC_Main.c: 215: {
-[e :U _Setup ]
-[f ]
-[; ;TCC_Main.c: 216: TRISB = 0;
-"216
-[e = _TRISB -> -> 0 `i `uc ]
-[; ;TCC_Main.c: 217: PORTB = 0;
-"217
-[e = _PORTB -> -> 0 `i `uc ]
-[; ;TCC_Main.c: 218: TRISD = 0;
-"218
-[e = _TRISD -> -> 0 `i `uc ]
-[; ;TCC_Main.c: 219: PORTD = 0;
-"219
-[e = _PORTD -> -> 0 `i `uc ]
-[; ;TCC_Main.c: 221: OPTION_REG = 0b00000000;
-"221
-[e = _OPTION_REG -> -> 0 `i `uc ]
-[; ;TCC_Main.c: 222: TMR0 = 130;
-"222
-[e = _TMR0 -> -> 130 `i `uc ]
-[; ;TCC_Main.c: 223: INTCON = 0b11100000;
-"223
-[e = _INTCON -> -> 224 `i `uc ]
-[; ;TCC_Main.c: 225: Serial_9600_Init(10);
-"225
-[e ( _Serial_9600_Init (1 -> -> 10 `i `uc ]
-[; ;TCC_Main.c: 226: ADC_Init(0xFF, 0x00);
-"226
-[e ( _ADC_Init (2 , -> -> 255 `i `uc -> -> 0 `i `uc ]
-[; ;TCC_Main.c: 227: ADC_Select_Channel(0);
-"227
-[e ( _ADC_Select_Channel (1 -> -> 0 `i `uc ]
-[; ;TCC_Main.c: 231: ModuloCM.status = 0b00001100;
-"231
-[e = . _ModuloCM 0 -> -> 12 `i `uc ]
-[; ;TCC_Main.c: 232: ModuloCM.corrente[0] = 50;
-"232
-[e = *U + &U . _ModuloCM 1 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _ModuloCM 1 `ui `ux -> 50 `i ]
-[; ;TCC_Main.c: 233: ModuloCM.corrente[1] = 34;
-"233
-[e = *U + &U . _ModuloCM 1 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _ModuloCM 1 `ui `ux -> 34 `i ]
-[; ;TCC_Main.c: 234: ModuloCM.corrente[2] = 0;
-"234
-[e = *U + &U . _ModuloCM 1 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _ModuloCM 1 `ui `ux -> 0 `i ]
-[; ;TCC_Main.c: 235: ModuloCM.corrente[3] = 0;
-"235
-[e = *U + &U . _ModuloCM 1 * -> -> -> 3 `i `ui `ux -> -> # *U &U . _ModuloCM 1 `ui `ux -> 0 `i ]
-[; ;TCC_Main.c: 237: TemporizadorSerialW = 20000;
-"237
-[e = _TemporizadorSerialW -> -> 20000 `i `ui ]
-[; ;TCC_Main.c: 238: }
-"238
-[e :UE 140 ]
-}
-"241
-[v _main `(i ~T0 @X0 1 ef ]
-{
-[; ;TCC_Main.c: 240: int main(void)
-[; ;TCC_Main.c: 241: {
-[e :U _main ]
-[f ]
-[; ;TCC_Main.c: 242: Setup();
-"242
-[e ( _Setup ..  ]
-[; ;TCC_Main.c: 244: while(1)
-"244
-[e :U 143 ]
-[; ;TCC_Main.c: 245: {
-"245
-{
-[; ;TCC_Main.c: 246: ControleLed();
-"246
-[e ( _ControleLed ..  ]
-[; ;TCC_Main.c: 247: EnvioDadosSerial();
-"247
-[e ( _EnvioDadosSerial ..  ]
-[; ;TCC_Main.c: 248: TrataComandoESP();
-"248
-[e ( _TrataComandoESP ..  ]
-[; ;TCC_Main.c: 249: ADC_Run();
-"249
-[e ( _ADC_Run ..  ]
-[; ;TCC_Main.c: 250: MedirTensao();
-"250
-[e ( _MedirTensao ..  ]
-"251
-}
-[e :U 142 ]
-"244
-[e $U 143  ]
-[e :U 144 ]
-[; ;TCC_Main.c: 251: }
-[; ;TCC_Main.c: 252: }
-"252
-[e :UE 141 ]
+[; ;ConversorAD.c: 67: return dadoDisponivel;
+"67
+[e ) _dadoDisponivel ]
+[e $UE 109  ]
+[; ;ConversorAD.c: 68: }
+"68
+[e :UE 109 ]
 }

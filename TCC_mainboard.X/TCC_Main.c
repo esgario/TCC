@@ -1,5 +1,6 @@
 #include <xc.h>
 #include "Serial.h"
+#include "ConversorAD.h"
 
 // CONFIG
 #pragma config FOSC = HS        // Oscillator Selection bits (RC oscillator)
@@ -15,7 +16,8 @@
 #define SetBit(a,n) (a |= (1<<n))
 #define ClearBit(a,n) ( a &= ~(1<<n))
 
-#define COMMAND 0xF0
+#define CMD_PORTB 0xF0
+#define CMD_CONNECTION 0x0F
 #define TRUE  1
 #define FALSE 0
 
@@ -34,23 +36,29 @@ struct RTC {
 }RTC;
 
 //=============== VARIÁVEIS ===============
-unsigned int Temporizador1=0;
+unsigned int TemporizadorLed=0;
 unsigned int TemporizadorSerialW=0;
 unsigned int TemporizadorSerialR=0;
 unsigned int TemporizadorPortb = 0;
 char Tensao[3] = {123,122,0};
 
+unsigned int aux = 0;
+
 boolean clearPORTB = FALSE;
+boolean conectado = FALSE;
 
 //================ FUNÇÕES ================
 void interrupt Interrupcao(void)
 {
+    Serial_Interrupt();
+    ADC_Interrupt();
+
     if (INTCONbits.T0IF == 1)
     {
        INTCONbits.T0IF = 0;
        TMR0 += 130;
-       if (Temporizador1 > 0)
-           Temporizador1 --;
+       if (TemporizadorLed > 0)
+           TemporizadorLed --;
        if (TemporizadorSerialW > 0)
            TemporizadorSerialW--;
        if (TemporizadorSerialR > 0)
@@ -58,8 +66,6 @@ void interrupt Interrupcao(void)
        if (TemporizadorPortb > 0)
            TemporizadorPortb--;
     }
-
-    Serial_Interrupt();
 }
 
 void EnvioDadosSerial()
@@ -88,19 +94,37 @@ void EnvioDadosSerial()
 
 void TrataComandoESP()
 {
+    static char Estado = 0;
+
     if(TemporizadorSerialR == 0)
     {
         TemporizadorSerialR = 5000;
+        char cmd;
 
         while(Serial_Available())
         {
-            if(Serial_Read() == COMMAND)
+            switch(Estado)
             {
-                PORTDbits.RD0 ^= 1; //PISCA LED
-                clearPORTB = TRUE;
-                TemporizadorPortb = 2000;
-                PORTB = Serial_Read();
-                Serial_Flush();
+                case 0:
+                    cmd = Serial_Read();
+                    if(cmd == CMD_PORTB)
+                        Estado = 1;
+                    else if(cmd == CMD_CONNECTION)
+                        Estado = 2;
+                    break;
+                case 1:
+                    clearPORTB = TRUE;
+                    TemporizadorPortb = 10000;
+                    PORTB = Serial_Read();
+                    Estado = 0;
+                    break;
+                case 2:
+                    if(Serial_Read() == 1)
+                        conectado = TRUE;
+                    else
+                        conectado = FALSE;
+                    Estado = 0;
+                    break;
             }
         }
     }
@@ -127,6 +151,66 @@ void I2C_Master_Init()
   TRISC4 = 1;           //Setting as input as given in datasheet
 }
 
+void ControleLed()
+{
+    static char Estado = 0;
+    if (TemporizadorLed == 0)
+    {
+        switch(Estado)
+        {
+            case 0:
+                TemporizadorLed = 2000;
+                PORTDbits.RD0 = 1; //ACENDE LED
+                Estado = 1;
+                break;
+            case 1:
+                PORTDbits.RD0 = 0; //APAGA LED
+                if(conectado) {
+                    TemporizadorLed = 2000;
+                    Estado = 2;
+                } else {
+                    TemporizadorLed = 10000;
+                    Estado = 0;
+                }
+                break;
+            case 2:
+                TemporizadorLed = 2000;
+                PORTDbits.RD0 = 1; //ACENDE LED
+                Estado = 3;
+                break;
+            case 3:
+                TemporizadorLed = 10000;
+                PORTDbits.RD0 = 0; //ACENDE LED
+                Estado = 0;
+                break;
+        }
+    }
+}
+
+void MedirTensao()
+{
+    static char n = 0;
+    unsigned int ultimaLeitura;
+
+    if( n < 150 )
+    {
+        if(ADC_Available())
+        {
+            ultimaLeitura = ADC_Read();
+            if(ultimaLeitura > aux)
+                aux = ultimaLeitura;
+            n++;
+        }
+    }
+    else
+    {
+        Tensao[0] = aux / 6;
+        //PORTB = Tensao[0];
+        aux = 0;
+        n = 0;
+    }
+}
+
 void Setup()
 {
     TRISB = 0;
@@ -139,6 +223,8 @@ void Setup()
     INTCON = 0b11100000;
     //PIE1bits.TXIE = 1;
     Serial_9600_Init(FREQ_10MHZ);
+    ADC_Init(0xFF, ANALOG_CONF_8_0);
+    ADC_Select_Channel(0);
     //I2C_Master_Init();
     //----------- inicializando variaveis
 
@@ -157,13 +243,10 @@ int main(void)
     
     while(1)
     {
+        ControleLed();
         EnvioDadosSerial();
         TrataComandoESP();
-        PORTDbits.RD0 = 1; //PISCA LED
-        if (Temporizador1 == 0)
-        {
-           Temporizador1 = 5000;
-           //PORTDbits.RD0 ^= 1; //PISCA LED
-        }
+        ADC_Run();
+        MedirTensao();
     }
 }

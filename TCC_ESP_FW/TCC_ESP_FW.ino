@@ -23,7 +23,7 @@ typedef struct Fase {
 } fase;
 
 typedef struct ModuloCM {
-  boolean existe = true;
+  boolean existe = false;
   char nome[20] = "Modulo";
   byte estado = 0; // 0 - off | 1 - on
   int corrente = 0;
@@ -41,8 +41,8 @@ typedef struct ModuloCM {
 } modulos;
 
 struct RTC {
-  int hora = 0;
-  int minuto = 0;
+  byte hora = 0;
+  byte minuto = 0;
 } RTC;
 
 // ====================== PROTÓTIPOS
@@ -57,8 +57,13 @@ void quitPage();
 void readFlashMemory();
 void openWebPage();
 void saveModulesConfig();
+void recebeDadosSerial();
+void atualizaDadosSensores();
 
 // ====================== VARIÁVEIS
+
+byte MSG_Pic[14];
+boolean chegouDadosPic = false;
 
 // --------------------------- rede
 char ssid[20] = "Guilherme";
@@ -92,6 +97,8 @@ void setup() {
 
   Serial.begin(9600);
 
+  WiFi.setOutputPower(0);
+
   // prepare GPIO2
   pinMode(0, INPUT);
   pinMode(2, OUTPUT);
@@ -103,10 +110,6 @@ void setup() {
   // habilitando o temporizador
   os_timer_arm(&myTimer, 1, true);
 
-  Fase[0].tensao = 127;
-  Fase[0].corrente = 10;
-  Fase[0].potencia = 1270;
-
   if(!SPIFFS.begin())
     Serial.println(F("Erro no spiffs."));
   
@@ -117,16 +120,39 @@ void loop() {
   controleConexao();
   servidorWeb();
   openWebPage();
+  recebeDadosSerial();
+  atualizaDadosSensores();
 }
 
 void openWebPage()
 {
-  setup_wificonf();
   if( digitalRead(0) == LOW )
   {
     delay(50);
     if( digitalRead(0) == LOW )
       setup_wificonf();
+  }
+}
+
+void atualizaDadosSensores()
+{
+  if( chegouDadosPic )
+  {
+    chegouDadosPic = false;
+
+    Fase[0].tensao = MSG_Pic[0];
+    Fase[1].tensao = MSG_Pic[1];
+    Fase[2].tensao = MSG_Pic[2];
+    for(byte i=0;i<4;i++)
+    {
+      ModuloCM[i].existe = bitRead(MSG_Pic[3], i);
+    }
+    ModuloCM[0].corrente = (MSG_Pic[4]<<8) | MSG_Pic[5];
+    ModuloCM[1].corrente = (MSG_Pic[6]<<8) | MSG_Pic[7];
+    ModuloCM[2].corrente = (MSG_Pic[8]<<8) | MSG_Pic[9];
+    ModuloCM[3].corrente = (MSG_Pic[10]<<8) | MSG_Pic[11];
+    RTC.hora = MSG_Pic[12];
+    RTC.minuto = MSG_Pic[13];
   }
 }
 

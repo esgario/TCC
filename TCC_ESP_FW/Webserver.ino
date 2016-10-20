@@ -73,14 +73,25 @@ void servidorWeb()
     else
     {
       index--;
-      msg += ModuloCM[index].nome;
-      msg += F("#");
-      msg += ModuloCM[index].estado;
-      msg += F("#");
-      msg += float(ModuloCM[index].corrente)/10;
-      msg += F("#");
-      msg += float(ModuloCM[index].potencia)/100;
-      msg += F("#");
+
+      for(byte i=0;i<4;i++)
+      {
+        if( ModuloCM[i].existe && index > 0 )
+        {
+          index--;
+        }
+        else if( ModuloCM[i].existe )
+        {
+          msg += ModuloCM[i].nome;
+          msg += F("#");
+          msg += ModuloCM[i].estado;
+          msg += F("#");
+          msg += float(ModuloCM[i].corrente)/10;
+          msg += F("#");
+          msg += float(ModuloCM[i].potencia)/100;
+          msg += F("#");
+        }
+      }
     }
   }
   else if( req.indexOf("Set") != -1 )
@@ -109,20 +120,32 @@ void servidorWeb()
     index = req.substring(aux+5,aux2).toInt();
 
     index--;
-    msg += ModuloCM[index].nome;
-    msg += F("#");
-    msg += ModuloCM[index].fase;
-    msg += F("#");
-    msg += ModuloCM[index].tempo;
-    msg += F("#");
-    msg += ModuloCM[index].ligar.hora;
-    msg += F("#");
-    msg += ModuloCM[index].ligar.minuto;
-    msg += F("#");
-    msg += ModuloCM[index].desligar.hora;
-    msg += F("#");
-    msg += ModuloCM[index].desligar.minuto;
-    msg += F("#");
+
+    for(byte i=0;i<4;i++)
+    {
+      if( ModuloCM[i].existe && index > 0 )
+      {
+        index--;
+      }
+      else if( ModuloCM[i].existe )
+      {
+        msg += ModuloCM[i].nome;
+        msg += F("#");
+        msg += ModuloCM[i].fase;
+        msg += F("#");
+        msg += ModuloCM[i].tempo;
+        msg += F("#");
+        msg += ModuloCM[i].ligar.hora;
+        msg += F("#");
+        msg += ModuloCM[i].ligar.minuto;
+        msg += F("#");
+        msg += ModuloCM[i].desligar.hora;
+        msg += F("#");
+        msg += ModuloCM[i].desligar.minuto;
+        msg += F("#");
+      }
+    }
+
   }
   else if( req.indexOf("sConf") != -1 )
   {
@@ -787,8 +810,8 @@ void quitPage()
   "  <div  id=\"page-wrapper\">"
   "  <div  class=\"box\">"
   "    <div id=tabscontent>"
-  "    <p><h2> Sensorbox</h2></p>"
-  "    <p> Telemetry for all.</p>"
+  "    <p><h2>Sisgen</h2></p>"
+  "    <p> Technology for all.</p>"
   "  </div>"
   "  </div>"
   "  </div>"

@@ -5,7 +5,7 @@ void readFlashMemory()
   char nomeArquivo[20];
 
   // listando arquivos na memoria
-  listFile();
+  //listFile();
   
   // ================================= WIFI CONFIG ===============================
   //Serial.println(F("WiFiconfig:"));

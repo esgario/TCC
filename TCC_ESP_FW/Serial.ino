@@ -1,52 +1,73 @@
 void ControleModulos(byte funcao, byte indice)
 {
-  Serial.print(0xF0);
-  
-  if( funcao == CLEAR )
+  Serial.write(0xF0);
+
+  if ( funcao == CLEAR )
   {
-    switch(indice)
+    switch (indice)
     {
       case 0:
-        Serial.print(0b01011010);
+        Serial.write(0b01011010);
         break;
       case 1:
-        Serial.print(0b00000010);
+        Serial.write(0b00000010);
         break;
       case 2:
-        Serial.print(0b00001000);
+        Serial.write(0b00001000);
         break;
       case 3:
-        Serial.print(0b00010000);
+        Serial.write(0b00010000);
         break;
       case 4:
-        Serial.print(0b01000000);
+        Serial.write(0b01000000);
         break;
     }
   }
-  else if( funcao == SET )
+  else if ( funcao == SET )
   {
-    switch(indice)
+    switch (indice)
     {
       case 0:
-        Serial.print(0b10100101);
+        Serial.write(0b10100101);
         break;
       case 1:
-        Serial.print(0b00000001);
+        Serial.write(0b00000001);
         break;
       case 2:
-        Serial.print(0b00000100);
+        Serial.write(0b00000100);
         break;
       case 3:
-        Serial.print(0b00100000);
+        Serial.write(0b00100000);
         break;
       case 4:
-        Serial.print(0b10000000);
+        Serial.write(0b10000000);
         break;
     }
   }
 
-  delay(10);
-  Serial.print(0xF0);
-  Serial.print(0x00);
+}
+
+void recebeDadosSerial()
+{
+  if (Serial.available())
+  {
+    if (Serial.read() == 0xFF)
+    {
+      delay(1);
+      if (Serial.read() == 0xFF)
+      {
+        delay(1);
+        byte i = 0;
+        chegouDadosPic = true;
+        
+        while (Serial.available() && i < 14)
+        {
+          MSG_Pic[i] = Serial.read();
+          i++;
+          delay(1);
+        }
+      }
+    }
+  }
 }
 

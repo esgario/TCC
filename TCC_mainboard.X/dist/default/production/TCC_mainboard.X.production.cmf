@@ -11,76 +11,96 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\guilh\AppData\Local\Temp\s724.obj
+$C:\Users\guilh\AppData\Local\Temp\s4t8.obj
 end_init CODE 0 12 12 3 2
 reset_vec CODE 0 0 0 3 2
 config CONFIG 0 2007 2007 1 2
 $dist/default/production\TCC_mainboard.X.production.obj
 intentry CODE 0 4 4 E 2
-text26 CODE 0 342 342 28 2
-text25 CODE 0 318 318 2A 2
-text24 CODE 0 45B 45B A 2
-text23 CODE 0 450 450 B 2
-text22 CODE 0 1D4 1D4 41 2
-text21 CODE 0 41A 41A F 2
-text20 CODE 0 104 104 48 2
-text19 CODE 0 3C5 3C5 19 2
-text18 CODE 0 437 437 D 2
-text17 CODE 0 2EE 2EE 2A 2
-text16 CODE 0 3DE 3DE 17 2
-text15 CODE 0 15 15 87 2
-text14 CODE 0 444 444 C 2
-text13 CODE 0 2C2 2C2 2C 2
-text12 CODE 0 40A 40A 10 2
-text11 CODE 0 465 465 9 2
-text10 CODE 0 9C 9C 68 2
-text9 CODE 0 191 191 43 2
-text8 CODE 0 429 429 E 2
-text7 CODE 0 476 476 4 2
-text6 CODE 0 215 215 40 2
-text5 CODE 0 14C 14C 45 2
-text4 CODE 0 294 294 2E 2
-text3 CODE 0 3A7 3A7 1E 2
-text2 CODE 0 3F5 3F5 15 2
-text1 CODE 0 255 255 3F 2
-maintext CODE 0 36A 36A 1F 2
-cstackBANK0 BANK0 1 62 62 B 1
-cstackCOMMON COMMON 1 70 70 D 1
-clrtext CODE 0 46E 46E 8 2
-dataBANK0 BANK0 1 6D 6D 3 1
-bssBANK0 BANK0 1 20 20 37 1
-bssCOMMON COMMON 1 7D 7D 1 1
-cinit CODE 0 389 389 1E 2
-nvBANK0 BANK0 1 57 57 B 1
-idataBANK0 CODE 0 47A 47A 3 2
+text37 CODE 0 DC7 DC7 5A 2
+text36 CODE 0 E21 E21 5C 2
+text35 CODE 0 AA6 AA6 11 2
+text34 CODE 0 AB7 AB7 12 2
+text33 CODE 0 CD4 CD4 4D 2
+text32 CODE 0 A97 A97 F 2
+text31 CODE 0 C8A C8A 4A 2
+text30 CODE 0 B51 B51 1D 2
+text29 CODE 0 ADC ADC 14 2
+text28 CODE 0 E7D E7D 5C 2
+text27 CODE 0 B6E B6E 1D 2
+text26 CODE 0 6C6 6C6 8F 2
+text25 CODE 0 AC9 AC9 13 2
+text24 CODE 0 ED9 ED9 5E 2
+text23 CODE 0 B1B B1B 1A 2
+text22 CODE 0 A7B A7B E 2
+text21 CODE 0 755 755 71 2
+text20 CODE 0 D70 D70 57 2
+text19 CODE 0 A89 A89 E 2
+text18 CODE 0 AF0 AF0 15 2
+text17 CODE 0 A77 A77 4 2
+text16 CODE 0 F37 F37 5F 2
+text15 CODE 0 F96 F96 6A 2
+text14 CODE 0 3E3 3E3 D3 2
+text13 CODE 0 2DA 2DA 109 2
+text12 CODE 0 B35 B35 1C 2
+text11 CODE 0 1B7 1B7 123 2
+text10 CODE 0 637 637 8F 2
+text9 CODE 0 C48 C48 42 2
+text8 CODE 0 D21 D21 4F 2
+text7 CODE 0 57F 57F B8 2
+text6 CODE 0 4B6 4B6 C9 2
+text5 CODE 0 C07 C07 41 2
+text4 CODE 0 15 15 1A2 2
+text3 CODE 0 7C6 7C6 32 2
+text2 CODE 0 BAA BAA 20 2
+text1 CODE 0 BCA BCA 3D 2
+maintext CODE 0 B8B B8B 1F 2
+cstackBANK0 BANK0 1 20 20 4A 1
+cstackCOMMON COMMON 1 70 70 C 1
+cstackBANK1 BANK1 1 CC CC 14 1
+clrtext CODE 0 7F8 7F8 8 2
+bssBANK3 BANK3 1 190 190 13 1
+bssBANK1 BANK1 1 A0 A0 2C 1
+bssBANK0 BANK0 1 6A 6A 1 1
+bssCOMMON COMMON 1 7C 7C 1 1
+cinit CODE 0 B05 B05 16 2
+nvBANK1 BANK1 1 E0 E0 B 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
 #    <class name> <range> <delta>
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
-BANK1 00A0-00EF 1
+BANK0 006B-006F 1
+BANK1 00EB-00EF 1
 BANK2 0110-016F 1
-BANK3 0190-01EF 1
+BANK3 01A3-01EF 1
 CODE 0003-0003 2
-CODE 047D-1FFF 2
+CODE 0800-0A76 2
+CODE 1000-1FFF 2
+COMMON 007D-007D 1
 CONST 0003-0003 2
-CONST 047D-1FFF 2
+CONST 0800-0A76 2
+CONST 1000-1FFF 2
 EEDATA 2100-21FF 2
 ENTRY 0003-0003 2
-ENTRY 047D-1FFF 2
+ENTRY 0800-0A76 2
+ENTRY 1000-1FFF 2
 IDLOC 2000-2003 2
-RAM 00A0-00EF 1
+RAM 006B-006F 1
+RAM 00EB-00EF 1
 RAM 0110-016F 1
-RAM 0190-01EF 1
+RAM 01A3-01EF 1
 SFR0 0000-001F 1
 SFR1 0080-009F 1
 SFR2 0100-010F 1
 SFR3 0180-018F 1
 STRCODE 0003-0003 2
-STRCODE 047D-1FFF 2
+STRCODE 0800-0A76 2
+STRCODE 1000-1FFF 2
 STRING 0003-0003 2
-STRING 047D-1FFF 2
+STRING 0800-0A76 2
+STRING 1000-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -96,274 +116,488 @@ STRING 047D-1FFF 2
 %LINETAB
 $dist/default/production\TCC_mainboard.X.production.obj
 "C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":52 4 intentry CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":73 15 text15 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":75 1B text15 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":76 21 text15 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":77 27 text15 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":78 2F text15 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":79 37 text15 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":80 3F text15 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":81 47 text15 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":82 4F text15 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":83 57 text15 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":84 5F text15 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":85 67 text15 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":86 6F text15 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":87 77 text15 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":88 7F text15 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":89 87 text15 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":90 8F text15 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":91 95 text15 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":93 9C text15 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":99 9C text10 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":101 A2 text10 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":104 A6 text10 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":109 A7 text10 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":110 B1 text10 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":111 B5 text10 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":112 B8 text10 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":113 BC text10 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":114 C0 text10 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":116 C1 text10 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":117 C3 text10 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":118 C7 text10 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":122 D0 text10 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":123 D8 text10 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":125 DD text10 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":126 E0 text10 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":104 E1 text10 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":106 E9 text10 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":104 F6 text10 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":132 F7 text10 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":134 101 text10 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":135 102 text10 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":53 104 text20 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":137 104 text10 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":54 109 text20 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":56 10E text20 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":58 110 text20 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":59 111 text20 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":60 117 text20 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":61 11B text20 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":62 121 text20 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":63 125 text20 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":64 12B text20 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":65 12F text20 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":66 135 text20 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":67 139 text20 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":69 13F text20 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":195 14C text5 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":197 152 text5 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":199 15A text5 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":200 167 text5 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":201 16F text5 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":202 175 text5 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":204 179 text5 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":207 17A text5 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":209 18D text5 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":210 18F text5 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":157 191 text9 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":212 191 text5 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":162 198 text9 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":163 19C text9 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":164 19D text9 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":165 19F text9 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":167 1A0 text9 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":168 1A1 text9 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":169 1A4 text9 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":170 1A8 text9 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":171 1AC text9 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":172 1AD text9 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":173 1B1 text9 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":175 1B2 text9 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":177 1B3 text9 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":178 1B7 text9 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":179 1B8 text9 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":180 1BC text9 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":182 1BD text9 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":183 1C1 text9 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":184 1C2 text9 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":186 1C3 text9 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":159 1C4 text9 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":186 1D2 text9 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":188 1D3 text9 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":37 1D4 text22 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":39 1DC text22 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":40 1DF text22 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":42 1E8 text22 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":46 1F1 text22 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":48 1F5 text22 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":49 1F9 text22 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":50 1FD text22 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":51 1FE text22 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":54 1FF text22 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":57 201 text22 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":58 20A text22 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\lwdiv.c":9 215 text6 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":60 215 text22 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\lwdiv.c":10 219 text6 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\lwdiv.c":11 21D text6 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\lwdiv.c":12 21F text6 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\lwdiv.c":13 221 text6 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\lwdiv.c":14 228 text6 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\lwdiv.c":12 22C text6 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\lwdiv.c":17 22D text6 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\lwdiv.c":18 234 text6 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\lwdiv.c":19 23C text6 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\lwdiv.c":20 242 text6 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\lwdiv.c":22 243 text6 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\lwdiv.c":23 24A text6 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\lwdiv.c":25 24E text6 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\lwdiv.c":26 255 text6 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":216 255 text1 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":217 258 text1 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":218 25B text1 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":219 25E text1 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":221 261 text1 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":222 264 text1 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":223 268 text1 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":225 26A text1 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":226 270 text1 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":227 279 text1 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":231 27D text1 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":232 283 text1 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":233 287 text1 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":234 28B text1 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":235 28D text1 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":237 28F text1 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":238 293 text1 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":7 294 text4 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":8 297 text4 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":9 29B text4 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":10 29F text4 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":13 2A0 text4 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":16 2A2 text4 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":19 2A4 text4 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":21 2A8 text4 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":10 2A9 text4 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":23 2B5 text4 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":25 2B8 text4 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":26 2BB text4 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":27 2BC text4 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":28 2BD text4 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":29 2BE text4 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":30 2BF text4 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":32 2C0 text4 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":33 2C1 text4 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":101 2C2 text13 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":102 2C5 text13 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":104 2DC text13 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":105 2E3 text13 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":107 2E7 text13 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":108 2EC text13 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":91 2EE text17 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":109 2EE text13 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":92 2F1 text17 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":93 2FE text17 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":94 305 text17 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":96 30C text17 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":97 313 text17 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":98 318 text17 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":101 318 text25 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":102 319 text25 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":104 330 text25 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":105 337 text25 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":107 33B text25 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":108 340 text25 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":91 342 text26 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":109 342 text25 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":92 343 text26 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":93 350 text26 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":94 357 text26 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":96 35E text26 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":97 365 text26 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":98 36A text26 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":242 36A maintext CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":246 36F maintext CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":247 374 maintext CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":248 379 maintext CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":249 37E maintext CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":250 383 maintext CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":244 388 maintext CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":252 389 maintext CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":631 389 cinit CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":634 38A cinit CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":635 38B cinit CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":636 38C cinit CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":637 38D cinit CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":638 38E cinit CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":642 393 cinit CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":643 398 cinit CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":644 399 cinit CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":645 39E cinit CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":646 39F cinit CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":647 3A2 cinit CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":654 3A3 cinit CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":655 3A4 cinit CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":23 3A7 text3 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":24 3AA text3 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":25 3AE text3 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":26 3B2 text3 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":27 3B6 text3 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":29 3BE text3 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":30 3C1 text3 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":31 3C4 text3 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":37 3C5 text19 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":40 3C6 text19 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":42 3C9 text19 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":43 3CB text19 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":45 3CF text19 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":47 3D0 text19 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":48 3D1 text19 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":50 3D2 text19 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":37 3D3 text19 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":51 3DD text19 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":63 3DE text16 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":64 3E1 text16 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":65 3EA text16 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":60 3F5 text2 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":66 3F5 text16 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":61 3F8 text2 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":62 3FC text2 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":63 409 text2 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":70 40A text12 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":71 413 text12 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":73 418 text12 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":9 41A text21 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":74 41A text12 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":11 41C text21 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":12 41F text21 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":15 421 text21 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":17 425 text21 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":18 427 text21 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":20 429 text21 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":55 429 text8 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":56 42C text8 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":57 437 text8 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":117 437 text18 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":118 43A text18 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":112 444 text14 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":119 444 text18 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":113 447 text14 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":114 450 text14 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":117 450 text23 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":118 451 text23 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":112 45B text24 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":119 45B text23 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":113 45C text24 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":78 465 text11 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":114 465 text24 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":79 46E text11 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":619 46E clrtext CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":621 46F clrtext CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":622 470 clrtext CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":623 471 clrtext CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":624 472 clrtext CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":625 473 clrtext CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":626 474 clrtext CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":627 475 clrtext CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":67 476 text7 CODE
-"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":68 47A text7 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":202 15 text4 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":205 1F text4 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":207 2A text4 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":209 32 text4 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":212 38 text4 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":213 4B text4 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":214 71 text4 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":216 72 text4 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":217 88 text4 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":219 E6 text4 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":221 EC text4 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":224 ED text4 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":226 F3 text4 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":229 FF text4 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":230 16B text4 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":232 178 text4 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":233 180 text4 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":234 184 text4 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":236 1A6 text4 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":237 1AA text4 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":239 1AC text4 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":240 1B2 text4 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\common\sqrt.c":19 1B7 text11 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":242 1B7 text4 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\common\sqrt.c":20 1CC text11 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\common\sqrt.c":21 1E1 text11 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\common\sqrt.c":22 1E7 text11 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\common\sqrt.c":24 1F0 text11 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\common\sqrt.c":30 1F8 text11 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\common\sqrt.c":31 21D text11 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\common\sqrt.c":32 225 text11 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\common\sqrt.c":34 237 text11 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\common\sqrt.c":36 23B text11 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\common\sqrt.c":37 241 text11 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\common\sqrt.c":38 25A text11 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\common\sqrt.c":39 273 text11 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\common\sqrt.c":40 28C text11 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\common\sqrt.c":41 2A5 text11 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\common\sqrt.c":42 2BE text11 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\common\sqrt.c":43 2C2 text11 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\common\sqrt.c":44 2DA text11 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftadd.c":90 2DA text13 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftadd.c":91 2E8 text13 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftadd.c":92 2F4 text13 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftadd.c":93 303 text13 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftadd.c":94 30A text13 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftadd.c":96 319 text13 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftadd.c":97 31D text13 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftadd.c":98 31E text13 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftadd.c":99 31F text13 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftadd.c":100 320 text13 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftadd.c":101 321 text13 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftadd.c":102 322 text13 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftadd.c":103 328 text13 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftadd.c":104 329 text13 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftadd.c":106 32F text13 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftadd.c":110 333 text13 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftadd.c":111 33B text13 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftadd.c":112 33D text13 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftadd.c":114 348 text13 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftadd.c":115 350 text13 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftadd.c":113 354 text13 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftadd.c":117 359 text13 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftadd.c":121 35D text13 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftadd.c":122 365 text13 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftadd.c":123 367 text13 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftadd.c":125 372 text13 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftadd.c":126 37A text13 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftadd.c":124 37E text13 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftadd.c":129 382 text13 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftadd.c":131 384 text13 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftadd.c":132 38A text13 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftadd.c":134 394 text13 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftadd.c":136 396 text13 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftadd.c":137 39C text13 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftadd.c":139 3A6 text13 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftadd.c":140 3A7 text13 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftadd.c":141 3B5 text13 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftadd.c":142 3B7 text13 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftadd.c":143 3BD text13 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftadd.c":144 3C7 text13 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftadd.c":146 3C9 text13 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftmul.c":56 3E3 text14 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftadd.c":148 3E3 text13 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftmul.c":57 3F4 text14 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftmul.c":58 3FB text14 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftmul.c":59 40A text14 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftmul.c":60 411 text14 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftmul.c":61 416 text14 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftmul.c":62 428 text14 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftmul.c":63 43A text14 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftmul.c":64 43E text14 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftmul.c":66 43F text14 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftmul.c":67 440 text14 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftmul.c":68 446 text14 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftmul.c":69 44C text14 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftmul.c":71 450 text14 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftmul.c":72 452 text14 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftmul.c":73 460 text14 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftmul.c":74 468 text14 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftmul.c":75 470 text14 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftmul.c":76 474 text14 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftmul.c":78 478 text14 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftmul.c":79 47A text14 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftmul.c":80 488 text14 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftmul.c":81 490 text14 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftmul.c":82 498 text14 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftmul.c":83 49C text14 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\fttol.c":49 4B6 text6 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftmul.c":84 4B6 text14 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\fttol.c":50 4D1 text6 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\fttol.c":51 4DC text6 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\fttol.c":52 4F9 text6 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\fttol.c":53 4FC text6 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\fttol.c":54 502 text6 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\fttol.c":55 513 text6 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\fttol.c":56 515 text6 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\fttol.c":57 517 text6 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\fttol.c":58 51C text6 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\fttol.c":60 527 text6 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\fttol.c":61 532 text6 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\fttol.c":63 539 text6 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\fttol.c":64 53D text6 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\fttol.c":66 548 text6 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\fttol.c":67 553 text6 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\fttol.c":65 555 text6 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\fttol.c":70 55A text6 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\fttol.c":71 55D text6 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\fttol.c":72 568 text6 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftdiv.c":55 57F text7 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\fttol.c":73 57F text6 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftdiv.c":56 590 text7 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftdiv.c":57 597 text7 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftdiv.c":58 5A6 text7 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftdiv.c":59 5AD text7 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftdiv.c":60 5B3 text7 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftdiv.c":61 5B8 text7 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftdiv.c":62 5CA text7 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftdiv.c":63 5DC text7 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftdiv.c":64 5E0 text7 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftdiv.c":65 5E1 text7 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftdiv.c":66 5E7 text7 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftdiv.c":67 5E8 text7 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftdiv.c":68 5EE text7 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftdiv.c":70 5F2 text7 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftdiv.c":71 5FA text7 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftdiv.c":72 606 text7 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftdiv.c":73 610 text7 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftdiv.c":75 611 text7 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftdiv.c":76 619 text7 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftdiv.c":77 61D text7 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\aldiv.c":9 637 text10 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftdiv.c":78 637 text7 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\aldiv.c":10 63A text10 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\aldiv.c":11 63C text10 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\aldiv.c":12 647 text10 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\aldiv.c":14 649 text10 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\aldiv.c":15 64B text10 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\aldiv.c":16 656 text10 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\aldiv.c":18 65A text10 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\aldiv.c":19 662 text10 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\aldiv.c":20 668 text10 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\aldiv.c":21 66A text10 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\aldiv.c":22 66C text10 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\aldiv.c":23 675 text10 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\aldiv.c":21 679 text10 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\aldiv.c":26 67A text10 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\aldiv.c":27 683 text10 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\aldiv.c":28 693 text10 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\aldiv.c":29 6A1 text10 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\aldiv.c":31 6A2 text10 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\aldiv.c":32 6AB text10 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\aldiv.c":34 6AF text10 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\aldiv.c":35 6B2 text10 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\aldiv.c":36 6BD text10 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\aldiv.c":37 6C6 text10 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":73 6C6 text26 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":76 6CC text26 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":83 6D4 text26 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":84 6DA text26 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":85 6E0 text26 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":86 6E8 text26 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":87 6F0 text26 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":88 6F8 text26 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":89 700 text26 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":90 708 text26 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":91 710 text26 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":92 718 text26 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":93 720 text26 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":94 728 text26 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":95 730 text26 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":96 738 text26 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":97 740 text26 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":98 748 text26 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":99 74E text26 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":101 755 text26 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":107 755 text21 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":109 75B text21 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":112 75F text21 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":117 760 text21 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":118 76A text21 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":119 76E text21 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":120 773 text21 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":121 778 text21 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":122 77E text21 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":124 77F text21 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":125 781 text21 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":126 785 text21 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":127 78D text21 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":130 790 text21 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":131 798 text21 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":133 79D text21 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":134 7A0 text21 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":112 7A1 text21 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":114 7A9 text21 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":112 7B6 text21 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":140 7B7 text21 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":142 7C1 text21 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":143 7C2 text21 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":7 7C6 text3 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":145 7C6 text21 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":8 7C9 text3 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":9 7CD text3 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":10 7D1 text3 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":13 7D2 text3 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":16 7D4 text3 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":19 7D6 text3 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":21 7DA text3 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":10 7DB text3 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":23 7E7 text3 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":25 7EA text3 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":26 7ED text3 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":27 7EE text3 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":28 7EF text3 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":29 7F2 text3 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":30 7F3 text3 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":32 7F4 text3 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":33 7F7 text3 CODE
+"C:\Users\guilh\AppData\Local\Temp\s4t8.":636 7F8 clrtext CODE
+"C:\Users\guilh\AppData\Local\Temp\s4t8.":638 7F9 clrtext CODE
+"C:\Users\guilh\AppData\Local\Temp\s4t8.":639 7FA clrtext CODE
+"C:\Users\guilh\AppData\Local\Temp\s4t8.":640 7FB clrtext CODE
+"C:\Users\guilh\AppData\Local\Temp\s4t8.":641 7FC clrtext CODE
+"C:\Users\guilh\AppData\Local\Temp\s4t8.":642 7FD clrtext CODE
+"C:\Users\guilh\AppData\Local\Temp\s4t8.":643 7FE clrtext CODE
+"C:\Users\guilh\AppData\Local\Temp\s4t8.":644 7FF clrtext CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":68 A77 text17 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":69 A7B text17 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":78 A7B text22 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":56 A89 text19 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":79 A89 text22 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":57 A8C text19 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":9 A97 text32 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":58 A97 text19 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":11 A99 text32 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":12 A9C text32 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":15 A9E text32 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":17 AA2 text32 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":18 AA4 text32 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":20 AA6 text32 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":113 AA6 text35 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":114 AB7 text35 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":118 AB7 text34 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":113 AC9 text25 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":119 AC9 text34 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":114 ADC text25 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":118 ADC text29 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":61 AF0 text18 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":119 AF0 text29 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":62 AF3 text18 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":63 AF7 text18 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":64 B04 text18 CODE
+"C:\Users\guilh\AppData\Local\Temp\s4t8.":648 B05 cinit CODE
+"C:\Users\guilh\AppData\Local\Temp\s4t8.":651 B06 cinit CODE
+"C:\Users\guilh\AppData\Local\Temp\s4t8.":654 B07 cinit CODE
+"C:\Users\guilh\AppData\Local\Temp\s4t8.":655 B08 cinit CODE
+"C:\Users\guilh\AppData\Local\Temp\s4t8.":656 B09 cinit CODE
+"C:\Users\guilh\AppData\Local\Temp\s4t8.":657 B0A cinit CODE
+"C:\Users\guilh\AppData\Local\Temp\s4t8.":658 B0B cinit CODE
+"C:\Users\guilh\AppData\Local\Temp\s4t8.":661 B10 cinit CODE
+"C:\Users\guilh\AppData\Local\Temp\s4t8.":662 B11 cinit CODE
+"C:\Users\guilh\AppData\Local\Temp\s4t8.":663 B12 cinit CODE
+"C:\Users\guilh\AppData\Local\Temp\s4t8.":664 B13 cinit CODE
+"C:\Users\guilh\AppData\Local\Temp\s4t8.":665 B14 cinit CODE
+"C:\Users\guilh\AppData\Local\Temp\s4t8.":672 B17 cinit CODE
+"C:\Users\guilh\AppData\Local\Temp\s4t8.":673 B18 cinit CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":70 B1B text23 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":71 B29 text23 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":73 B33 text23 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftsub.c":18 B35 text12 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":74 B35 text23 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftsub.c":19 B39 text12 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftsub.c":20 B51 text12 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":38 B51 text30 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":41 B52 text30 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":43 B55 text30 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":44 B57 text30 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":46 B5B text30 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":48 B5C text30 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":49 B5F text30 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":51 B62 text30 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":38 B63 text30 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":52 B6D text30 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":63 B6E text27 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":64 B71 text27 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":65 B7D text27 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":66 B8B text27 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":272 B8B maintext CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":276 B90 maintext CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":277 B95 maintext CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":278 B9A maintext CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":279 B9F maintext CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":280 BA4 maintext CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":274 BA9 maintext CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":23 BAA text2 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":282 BAA maintext CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":24 BAD text2 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":25 BB1 text2 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":26 BB3 text2 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":27 BB7 text2 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":28 BBB text2 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":30 BC3 text2 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":31 BC6 text2 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\ConversorAD.c":32 BC9 text2 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":246 BCA text1 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":247 BCD text1 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":248 BD0 text1 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":249 BD3 text1 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":251 BD6 text1 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":252 BD9 text1 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":253 BDD text1 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":255 BDF text1 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":256 BE5 text1 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":257 BEE text1 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":261 BF2 text1 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":262 BFA text1 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":263 BFC text1 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":264 BFE text1 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":265 C00 text1 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":267 C02 text1 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":268 C06 text1 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\lmul.c":4 C07 text5 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\lmul.c":7 C11 text5 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\lmul.c":8 C13 text5 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\lmul.c":9 C27 text5 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\lmul.c":10 C30 text5 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\lmul.c":11 C39 text5 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\lmul.c":12 C3F text5 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\lmul.c":13 C48 text5 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\altoft.c":45 C48 text9 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\altoft.c":46 C4B text9 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\altoft.c":47 C4F text9 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\altoft.c":48 C51 text9 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\altoft.c":49 C5C text9 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\altoft.c":52 C5E text9 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\altoft.c":53 C62 text9 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\altoft.c":54 C6B text9 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\altoft.c":52 C6F text9 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\altoft.c":56 C70 text9 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":53 C8A text31 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\altoft.c":57 C8A text9 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":54 C8F text31 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":56 C94 text31 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":58 C96 text31 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":59 C97 text31 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":60 C9D text31 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":61 CA3 text31 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":62 CA9 text31 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":63 CAD text31 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":64 CB3 text31 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":65 CB7 text31 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":66 CBD text31 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":67 CC1 text31 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":69 CC7 text31 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":37 CD4 text33 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":39 CDC text33 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":40 CDF text33 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":42 CEB text33 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":46 CF7 text33 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":48 CFB text33 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":49 CFF text33 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":50 D03 text33 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":51 D04 text33 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":54 D05 text33 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":57 D07 text33 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":58 D13 text33 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\awmod.c":8 D21 text8 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":60 D21 text33 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\awmod.c":9 D24 text8 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\awmod.c":10 D26 text8 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\awmod.c":11 D2B text8 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\awmod.c":13 D2D text8 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\awmod.c":14 D2F text8 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\awmod.c":15 D34 text8 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\awmod.c":16 D38 text8 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\awmod.c":17 D3A text8 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\awmod.c":18 D3C text8 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\awmod.c":19 D43 text8 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\awmod.c":17 D47 text8 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\awmod.c":22 D48 text8 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\awmod.c":23 D50 text8 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\awmod.c":24 D56 text8 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\awmod.c":25 D5D text8 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\awmod.c":27 D61 text8 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\awmod.c":28 D64 text8 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\awmod.c":29 D69 text8 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\awmod.c":30 D70 text8 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":165 D70 text20 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":170 D77 text20 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":171 D7B text20 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":172 D7E text20 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":173 D82 text20 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":175 D83 text20 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":176 D86 text20 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":177 D8B text20 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":178 D8F text20 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":179 D97 text20 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":180 D98 text20 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":181 D9C text20 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":183 D9D text20 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":185 D9E text20 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":186 DA2 text20 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":187 DA5 text20 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":188 DAB text20 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":190 DAC text20 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":191 DB0 text20 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":192 DB3 text20 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":194 DB6 text20 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":167 DB7 text20 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":194 DC5 text20 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\TCC_Main.c":196 DC6 text20 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":92 DC7 text37 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":93 DE3 text37 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":94 DF3 text37 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":96 E03 text37 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":97 E13 text37 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":98 E21 text37 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":102 E21 text36 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":104 E50 text36 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":105 E60 text36 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":107 E6D text36 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":108 E7B text36 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":92 E7D text28 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":109 E7D text36 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":93 E9B text28 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":94 EAB text28 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":96 EBB text28 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":97 ECB text28 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":98 ED9 text28 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":102 ED9 text24 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":104 F0A text24 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":105 F1A text24 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":107 F27 text24 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":108 F35 text24 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftge.c":6 F37 text16 CODE
+"C:\Users\guilh\MPLABXProjects\TCC\TCC_mainboard.X\Serial.c":109 F37 text24 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftge.c":7 F3B text16 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftge.c":8 F60 text16 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftge.c":9 F62 text16 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftge.c":10 F87 text16 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftge.c":11 F89 text16 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftge.c":12 F8B text16 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\ftge.c":13 F96 text16 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\float.c":64 F96 text15 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\float.c":65 FA0 text15 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\float.c":67 FA7 text15 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\float.c":68 FAB text15 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\float.c":66 FB3 text15 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\float.c":71 FB8 text15 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\float.c":72 FBC text15 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\float.c":73 FC6 text15 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\float.c":70 FCE text15 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\float.c":76 FD3 text15 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\float.c":77 FD5 text15 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\float.c":75 FDD text15 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\float.c":79 FDF text15 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\float.c":80 FE1 text15 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\float.c":81 FE7 text15 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\float.c":82 FE9 text15 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\float.c":83 FFB text15 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\float.c":84 FFE text15 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.20\sources\pic\float.c":86 FFF text15 CODE
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -376,74 +610,111 @@ $dist/default/production\TCC_mainboard.X.production.obj
 # was defined in a psect then <psect> will be "-". File-name
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
-__end_of_ControleLed 3A8 0 CODE 0 text9 dist/default/production\TCC_mainboard.X.production.obj
-___lwdiv@dividend 64 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
-___lwdiv@counter 69 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+__end_of_ControleLed 1B8E 0 CODE 0 text20 dist/default/production\TCC_mainboard.X.production.obj
+___aldiv@counter 2E 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+___altoft@c 34 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
 __CFG_WRT$OFF 0 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
 __S0 2008 0 ABS 0 - -
-__S1 7E 0 ABS 0 - -
+__S1 1A3 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
-_RTC 20 0 BANK0 1 bssBANK0 dist/default/production\TCC_mainboard.X.production.obj
+_RTC A9 0 BANK1 1 bssBANK1 dist/default/production\TCC_mainboard.X.production.obj
 __Hintentry 24 0 CODE 0 intentry -
 __Lintentry 8 0 CODE 0 intentry -
 __CFG_BOREN$ON 0 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
 __pintentry 8 0 CODE 0 intentry dist/default/production\TCC_mainboard.X.production.obj
-_aux 28 0 BANK0 1 bssBANK0 dist/default/production\TCC_mainboard.X.production.obj
+___ftadd@f1 2D 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
 _TMR0 1 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
-_ADC_Read 852 0 CODE 0 text8 dist/default/production\TCC_mainboard.X.production.obj
-Serial_Write@Valor 67 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
-__end_of_estaVazia 8A0 0 CODE 0 text14 dist/default/production\TCC_mainboard.X.production.obj
-_main 6D4 0 CODE 0 maintext dist/default/production\TCC_mainboard.X.production.obj
+_ADC_Read 1512 0 CODE 0 text19 dist/default/production\TCC_mainboard.X.production.obj
+__size_of___ftsub 0 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
+Serial_Write@Valor 2E 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+__end_of_estaVazia 15B8 0 CODE 0 text25 dist/default/production\TCC_mainboard.X.production.obj
+___ftadd@f2 30 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+?i1_estaCheia 70 0 COMMON 1 cstackCOMMON dist/default/production\TCC_mainboard.X.production.obj
+___ftsub@f1 3D 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+_main 1716 0 CODE 0 maintext dist/default/production\TCC_mainboard.X.production.obj
 btemp 7E 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
-start 24 0 CODE 0 init C:\Users\guilh\AppData\Local\Temp\s724.obj
-TrataComandoESP@Estado 2D 0 BANK0 1 bssBANK0 dist/default/production\TCC_mainboard.X.production.obj
-?_ADC_Read 62 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+start 24 0 CODE 0 init C:\Users\guilh\AppData\Local\Temp\s4t8.obj
+_sqrt 36E 0 CODE 0 text11 dist/default/production\TCC_mainboard.X.production.obj
+?___ftadd 2D 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+TrataComandoESP@Estado B6 0 BANK1 1 bssBANK1 dist/default/production\TCC_mainboard.X.production.obj
+___fttol@f1 66 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+___ftsub@f2 3A 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+___ftmul@f1 2D 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+?_ADC_Read 25 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+__end_of___aldiv D8C 0 CODE 0 text10 dist/default/production\TCC_mainboard.X.production.obj
+___fttol@lval D1 0 BANK1 1 cstackBANK1 dist/default/production\TCC_mainboard.X.production.obj
+___ftdiv@f1 59 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
 _RCREG 1A 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
 _TRISA 85 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
 _RCSTA 18 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
 _TRISB 86 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
 _TXREG 19 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
-reset_vec 0 0 CODE 0 reset_vec C:\Users\guilh\AppData\Local\Temp\s724.obj
+reset_vec 0 0 CODE 0 reset_vec C:\Users\guilh\AppData\Local\Temp\s4t8.obj
 _TRISD 88 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
 _PORTB 6 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
 _SPBRG 99 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
 _TXSTA 98 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
-_BufferWrite 44 0 BANK0 1 bssBANK0 dist/default/production\TCC_mainboard.X.production.obj
+_TRISE 89 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
+_BufferWrite 190 0 BANK3 1 bssBANK3 dist/default/production\TCC_mainboard.X.production.obj
 _PORTD 8 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
 __size_of_Serial_9600_Init 0 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
 wtemp0 7E 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
-__end_of_TrataComandoESP 208 0 CODE 0 text10 dist/default/production\TCC_mainboard.X.production.obj
+__end_of_TrataComandoESP F8C 0 CODE 0 text21 dist/default/production\TCC_mainboard.X.production.obj
+___ftmul@f2 30 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+___ftdiv@f2 56 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
 interrupt_function 8 0 CODE 0 intentry dist/default/production\TCC_mainboard.X.production.obj
 __Hconfig 4010 0 CONFIG 0 config -
 __Lconfig 400E 0 CONFIG 0 config -
-_estaCheia 86E 0 CODE 0 text18 dist/default/production\TCC_mainboard.X.production.obj
-_Interrupcao 208 0 CODE 0 text20 dist/default/production\TCC_mainboard.X.production.obj
+___ftpack 1F2C 0 CODE 0 text15 dist/default/production\TCC_mainboard.X.production.obj
+?___awmod 25 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+SensoresAnalogicos@valorAux DC 0 BANK1 1 cstackBANK1 dist/default/production\TCC_mainboard.X.production.obj
+sqrt@i 4F 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+_estaCheia 15B8 0 CODE 0 text29 dist/default/production\TCC_mainboard.X.production.obj
+___ftdiv@f3 61 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+sqrt@q 50 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+_Interrupcao 1914 0 CODE 0 text31 dist/default/production\TCC_mainboard.X.production.obj
 __Hram 0 0 ABS 0 ram -
+?___ftsub 3A 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
 __Lram 0 0 ABS 0 ram -
-__end_of_ADC_Select_Channel 814 0 CODE 0 text2 dist/default/production\TCC_mainboard.X.production.obj
-_Setup 4AA 0 CODE 0 text1 dist/default/production\TCC_mainboard.X.production.obj
-_ADC_Init 74E 0 CODE 0 text3 dist/default/production\TCC_mainboard.X.production.obj
-_Serial_Write 7BC 0 CODE 0 text16 dist/default/production\TCC_mainboard.X.production.obj
+sqrt@x 53 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+sqrt@y 40 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+sqrt@z 4C 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+___ftge@ff1 25 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+__end_of_ADC_Select_Channel 160A 0 CODE 0 text18 dist/default/production\TCC_mainboard.X.production.obj
+_errno B1 0 BANK1 1 bssBANK1 dist/default/production\TCC_mainboard.X.production.obj
+_Setup 1794 0 CODE 0 text1 dist/default/production\TCC_mainboard.X.production.obj
+?_sqrt 40 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+___ftmul@cntr 3B 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+__size_of___ftadd 0 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
+_ADC_Init 1754 0 CODE 0 text2 dist/default/production\TCC_mainboard.X.production.obj
+_Serial_Write 16DC 0 CODE 0 text27 dist/default/production\TCC_mainboard.X.production.obj
+___ftdiv@cntr 60 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
 __Hfunctab 0 0 CODE 0 functab -
 __Lfunctab 0 0 CODE 0 functab -
-__end_of_remover 5DC 0 CODE 0 text13 dist/default/production\TCC_mainboard.X.production.obj
+__end_of_remover 1E6E 0 CODE 0 text24 dist/default/production\TCC_mainboard.X.production.obj
 _ADCON0 1F 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
 _TRISC3 43B 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
 _ADCON1 9F 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
+___ftge@ff2 28 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
 _TRISC4 43C 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
 _OPTION_REG 81 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
 __Hcommon 0 0 ABS 0 common -
 __Lcommon 0 0 ABS 0 common -
+?___fttol 66 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
 _PIE1bits 8C 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 _PIR1bits C 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
+?___ftmul 2D 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
 _SSPADD 93 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
-?_inserir 62 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
-_estaVazia 888 0 CODE 0 text14 dist/default/production\TCC_mainboard.X.production.obj
-?___lwdiv 62 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+?___aldiv 25 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+?_remover 25 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+?_inserir 25 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+_estaVazia 1592 0 CODE 0 text25 dist/default/production\TCC_mainboard.X.production.obj
+___altoft 1890 0 CODE 0 text9 dist/default/production\TCC_mainboard.X.production.obj
+?___ftdiv 56 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
 _ADRESH 1E 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
-_ADC_Available 8EC 0 CODE 0 text7 dist/default/production\TCC_mainboard.X.production.obj
+_ADC_Available 14EE 0 CODE 0 text17 dist/default/production\TCC_mainboard.X.production.obj
 __Habs1 0 0 ABS 0 abs1 -
 __Labs1 0 0 ABS 0 abs1 -
 _ADRESL 9E 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
@@ -457,63 +728,81 @@ __Hsfr2 0 0 ABS 0 sfr2 -
 __Lsfr2 0 0 ABS 0 sfr2 -
 __Hsfr3 0 0 ABS 0 sfr3 -
 __Lsfr3 0 0 ABS 0 sfr3 -
-_MedirTensao 298 0 CODE 0 text5 dist/default/production\TCC_mainboard.X.production.obj
-_clearPORTB 2E 0 BANK0 1 bssBANK0 dist/default/production\TCC_mainboard.X.production.obj
-__end_of_Interrupcao 298 0 CODE 0 text20 dist/default/production\TCC_mainboard.X.production.obj
-_BufferRead 31 0 BANK0 1 bssBANK0 dist/default/production\TCC_mainboard.X.production.obj
-_ADC_Temporizador 7D 0 COMMON 1 bssCOMMON dist/default/production\TCC_mainboard.X.production.obj
+___ftmul@f3_as_product 38 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+_clearPORTB B7 0 BANK1 1 bssBANK1 dist/default/production\TCC_mainboard.X.production.obj
+__size_of_sqrt 0 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
+__end_of___ftpack 2000 0 CODE 0 text15 dist/default/production\TCC_mainboard.X.production.obj
+?___ftpack 25 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+__end_of_Interrupcao 19A8 0 CODE 0 text31 dist/default/production\TCC_mainboard.X.production.obj
+_BufferRead B9 0 BANK1 1 bssBANK1 dist/default/production\TCC_mainboard.X.production.obj
+_ADC_Temporizador 7C 0 COMMON 1 bssCOMMON dist/default/production\TCC_mainboard.X.production.obj
 __size_of_estaVazia 0 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
+__size_of___ftpack 0 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
 __size_of_Serial_Interrupt 0 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
+__size_of___fttol 0 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
 __size_of_ADC_Read 0 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
-MedirTensao@ultimaLeitura 6B 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+__end_of___awmod 1AE0 0 CODE 0 text8 dist/default/production\TCC_mainboard.X.production.obj
+?_estaCheia 25 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
 __size_of_ADC_Run 0 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
+___ftadd@sign 37 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
 __Hcode 0 0 ABS 0 code -
 __Lcode 0 0 ABS 0 code -
-_conectado 2F 0 BANK0 1 bssBANK0 dist/default/production\TCC_mainboard.X.production.obj
+sqrt@og 49 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+___ftge 1E6E 0 CODE 0 text16 dist/default/production\TCC_mainboard.X.production.obj
+_conectado B8 0 BANK1 1 bssBANK1 dist/default/production\TCC_mainboard.X.production.obj
 __HcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 -
-__end_of_Serial_Read 834 0 CODE 0 text12 dist/default/production\TCC_mainboard.X.production.obj
-_Tensao 6D 0 BANK0 1 dataBANK0 dist/default/production\TCC_mainboard.X.production.obj
-__pcstackBANK0 62 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+__end_of_Serial_Read 166A 0 CODE 0 text23 dist/default/production\TCC_mainboard.X.production.obj
+_Tensao A4 0 BANK1 1 bssBANK1 dist/default/production\TCC_mainboard.X.production.obj
+__pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+___awmod@sign 2B 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
 saved_w 7E 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
+___lmul 180E 0 CODE 0 text5 dist/default/production\TCC_mainboard.X.production.obj
 __Hinit 24 0 CODE 0 init -
 __Linit 24 0 CODE 0 init -
-__end_of_main 712 0 CODE 0 maintext dist/default/production\TCC_mainboard.X.production.obj
+__end_of_main 1754 0 CODE 0 maintext dist/default/production\TCC_mainboard.X.production.obj
+__end_of_SensoresAnalogicos 36E 0 CODE 0 text4 dist/default/production\TCC_mainboard.X.production.obj
 __Htext 0 0 ABS 0 text -
 __Ltext 0 0 ABS 0 text -
-__end_of_ADC_Run 7BC 0 CODE 0 text19 dist/default/production\TCC_mainboard.X.production.obj
-__HdataBANK0 0 0 ABS 0 dataBANK0 -
-__LdataBANK0 0 0 ABS 0 dataBANK0 -
-?_ADC_Init 62 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
-__pdataBANK0 6D 0 BANK0 1 dataBANK0 dist/default/production\TCC_mainboard.X.production.obj
-end_of_initialization 746 0 CODE 0 cinit dist/default/production\TCC_mainboard.X.production.obj
-ControleLed@Estado 2B 0 BANK0 1 bssBANK0 dist/default/production\TCC_mainboard.X.production.obj
-__end_of_Serial_Write 7EA 0 CODE 0 text16 dist/default/production\TCC_mainboard.X.production.obj
-_Serial_9600_Init 528 0 CODE 0 text4 dist/default/production\TCC_mainboard.X.production.obj
-__HnvBANK0 0 0 ABS 0 nvBANK0 -
-__LnvBANK0 0 0 ABS 0 nvBANK0 -
-__pnvBANK0 57 0 BANK0 1 nvBANK0 dist/default/production\TCC_mainboard.X.production.obj
-remover@temp 65 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+__end_of_ADC_Run 16DC 0 CODE 0 text30 dist/default/production\TCC_mainboard.X.production.obj
+___lmul@multiplier 25 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+?_ADC_Init 25 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+___ftmul@sign 3C 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+end_of_initialization 162E 0 CODE 0 cinit dist/default/production\TCC_mainboard.X.production.obj
+ControleLed@Estado B4 0 BANK1 1 bssBANK1 dist/default/production\TCC_mainboard.X.production.obj
+___aldiv@sign 2F 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+__end_of_Serial_Write 1716 0 CODE 0 text27 dist/default/production\TCC_mainboard.X.production.obj
+___ftdiv@sign 65 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+_Serial_9600_Init F8C 0 CODE 0 text3 dist/default/production\TCC_mainboard.X.production.obj
+___lmul@multiplicand 29 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+remover@temp 2D 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
 _SSPCON2 91 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
-__end_of_inserir 630 0 CODE 0 text17 dist/default/production\TCC_mainboard.X.production.obj
-i1remover@temp 73 0 COMMON 1 cstackCOMMON dist/default/production\TCC_mainboard.X.production.obj
-__end_of_Serial_Available 8DC 0 CODE 0 text11 dist/default/production\TCC_mainboard.X.production.obj
+__HnvBANK1 0 0 ABS 0 nvBANK1 -
+__LnvBANK1 0 0 ABS 0 nvBANK1 -
+__pnvBANK1 E0 0 BANK1 1 nvBANK1 dist/default/production\TCC_mainboard.X.production.obj
+__end_of_inserir 1DB2 0 CODE 0 text28 dist/default/production\TCC_mainboard.X.production.obj
+i1remover@temp 78 0 COMMON 1 cstackCOMMON dist/default/production\TCC_mainboard.X.production.obj
+__end_of_Serial_Available 1512 0 CODE 0 text22 dist/default/production\TCC_mainboard.X.production.obj
 __size_of_ADC_Init 0 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
-ADC_Init@config 62 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
-__end_ofi1_estaCheia 8B6 0 CODE 0 text23 dist/default/production\TCC_mainboard.X.production.obj
+ADC_Init@config 25 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+__end_ofi1_estaCheia 1592 0 CODE 0 text34 dist/default/production\TCC_mainboard.X.production.obj
 _RCSTAbits 18 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
+__end_of___ftadd 7C6 0 CODE 0 text13 dist/default/production\TCC_mainboard.X.production.obj
 _TXSTAbits 98 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
-i1_remover 630 0 CODE 0 text25 dist/default/production\TCC_mainboard.X.production.obj
+i1_remover 1C42 0 CODE 0 text36 dist/default/production\TCC_mainboard.X.production.obj
 _PORTDbits 8 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
 __Hstrings 0 0 ABS 0 strings -
 __Lstrings 0 0 ABS 0 strings -
 __size_of_ADC_Available 0 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
-i1_inserir 684 0 CODE 0 text26 dist/default/production\TCC_mainboard.X.production.obj
-_TemporizadorPortb 24 0 BANK0 1 bssBANK0 dist/default/production\TCC_mainboard.X.production.obj
-__end_ofi1_remover 684 0 CODE 0 text25 dist/default/production\TCC_mainboard.X.production.obj
+i1_inserir 1B8E 0 CODE 0 text37 dist/default/production\TCC_mainboard.X.production.obj
+SensoresAnalogicos@n A7 0 BANK1 1 bssBANK1 dist/default/production\TCC_mainboard.X.production.obj
+?_estaVazia 25 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+?___altoft 34 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+_TemporizadorPortb AD 0 BANK1 1 bssBANK1 dist/default/production\TCC_mainboard.X.production.obj
+__end_ofi1_remover 1CFA 0 CODE 0 text36 dist/default/production\TCC_mainboard.X.production.obj
 __size_ofi1_inserir 0 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
-_ADC_Interrupt 834 0 CODE 0 text21 dist/default/production\TCC_mainboard.X.production.obj
-__end_of_Serial_9600_Init 584 0 CODE 0 text4 dist/default/production\TCC_mainboard.X.production.obj
+_ADC_Interrupt 152E 0 CODE 0 text32 dist/default/production\TCC_mainboard.X.production.obj
+__end_of_Serial_9600_Init FF0 0 CODE 0 text3 dist/default/production\TCC_mainboard.X.production.obj
 __size_of_ControleLed 0 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
 __Hbank0 0 0 ABS 0 bank0 -
 __Lbank0 0 0 ABS 0 bank0 -
@@ -521,149 +810,207 @@ __Hbank1 0 0 ABS 0 bank1 -
 __Lbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
 __Lbank2 0 0 ABS 0 bank2 -
-ADC_Run@Estado 2A 0 BANK0 1 bssBANK0 dist/default/production\TCC_mainboard.X.production.obj
+ADC_Run@Estado B3 0 BANK1 1 bssBANK1 dist/default/production\TCC_mainboard.X.production.obj
 __Hbank3 0 0 ABS 0 bank3 -
 __Lbank3 0 0 ABS 0 bank3 -
-___latbits 2 0 ABS 0 - C:\Users\guilh\AppData\Local\Temp\s724.obj
-__end_of_MedirTensao 322 0 CODE 0 text5 dist/default/production\TCC_mainboard.X.production.obj
-_EnvioDadosSerial 2A 0 CODE 0 text15 dist/default/production\TCC_mainboard.X.production.obj
-_ControleLed 322 0 CODE 0 text9 dist/default/production\TCC_mainboard.X.production.obj
+___latbits 2 0 ABS 0 - C:\Users\guilh\AppData\Local\Temp\s4t8.obj
+___ftmul@exp 37 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+_EnvioDadosSerial D8C 0 CODE 0 text26 dist/default/production\TCC_mainboard.X.production.obj
+_ControleLed 1AE0 0 CODE 0 text20 dist/default/production\TCC_mainboard.X.production.obj
+__end_of___lmul 1890 0 CODE 0 text5 dist/default/production\TCC_mainboard.X.production.obj
+___ftdiv@exp 64 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
 __Hpowerup 0 0 CODE 0 powerup -
 _SSPSTAT 94 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
 __Lpowerup 0 0 CODE 0 powerup -
-_ADC_Select_Channel 7EA 0 CODE 0 text2 dist/default/production\TCC_mainboard.X.production.obj
+_ADC_Select_Channel 15E0 0 CODE 0 text18 dist/default/production\TCC_mainboard.X.production.obj
 _SSPCON2bits 91 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
 __size_ofi1_remover 0 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
-__ptext1 4AA 0 CODE 0 text1 dist/default/production\TCC_mainboard.X.production.obj
-__end_ofi1_estaVazia 8CA 0 CODE 0 text24 dist/default/production\TCC_mainboard.X.production.obj
-__ptext2 7EA 0 CODE 0 text2 dist/default/production\TCC_mainboard.X.production.obj
-__end_of_Setup 528 0 CODE 0 text1 dist/default/production\TCC_mainboard.X.production.obj
-__ptext3 74E 0 CODE 0 text3 dist/default/production\TCC_mainboard.X.production.obj
-remover@buf 67 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
-inserir@buf 65 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
-__ptext4 528 0 CODE 0 text4 dist/default/production\TCC_mainboard.X.production.obj
-_Serial_Read 814 0 CODE 0 text12 dist/default/production\TCC_mainboard.X.production.obj
-__ptext5 298 0 CODE 0 text5 dist/default/production\TCC_mainboard.X.production.obj
-ADC_Select_Channel@ch 64 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
-__ptext6 42A 0 CODE 0 text6 dist/default/production\TCC_mainboard.X.production.obj
-__ptext7 8EC 0 CODE 0 text7 dist/default/production\TCC_mainboard.X.production.obj
-__ptext8 852 0 CODE 0 text8 dist/default/production\TCC_mainboard.X.production.obj
-__ptext9 322 0 CODE 0 text9 dist/default/production\TCC_mainboard.X.production.obj
+__ptext1 1794 0 CODE 0 text1 dist/default/production\TCC_mainboard.X.production.obj
+__end_ofi1_estaVazia 156E 0 CODE 0 text35 dist/default/production\TCC_mainboard.X.production.obj
+__ptext2 1754 0 CODE 0 text2 dist/default/production\TCC_mainboard.X.production.obj
+__end_of_Setup 180E 0 CODE 0 text1 dist/default/production\TCC_mainboard.X.production.obj
+__ptext3 F8C 0 CODE 0 text3 dist/default/production\TCC_mainboard.X.production.obj
+remover@buf 25 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+inserir@buf 25 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+__ptext4 2A 0 CODE 0 text4 dist/default/production\TCC_mainboard.X.production.obj
+_Serial_Read 1636 0 CODE 0 text23 dist/default/production\TCC_mainboard.X.production.obj
+__ptext5 180E 0 CODE 0 text5 dist/default/production\TCC_mainboard.X.production.obj
+ADC_Select_Channel@ch 27 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+__ptext6 96C 0 CODE 0 text6 dist/default/production\TCC_mainboard.X.production.obj
+__ptext7 AFE 0 CODE 0 text7 dist/default/production\TCC_mainboard.X.production.obj
+__HcstackBANK1 0 0 ABS 0 cstackBANK1 -
+__LcstackBANK1 0 0 ABS 0 cstackBANK1 -
+__ptext8 1A42 0 CODE 0 text8 dist/default/production\TCC_mainboard.X.production.obj
+__ptext9 1890 0 CODE 0 text9 dist/default/production\TCC_mainboard.X.production.obj
+__size_of___altoft 0 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
+__pcstackBANK1 CC 0 BANK1 1 cstackBANK1 dist/default/production\TCC_mainboard.X.production.obj
 __Hclrtext 0 0 ABS 0 clrtext -
 __Lclrtext 0 0 ABS 0 clrtext -
 __size_of_remover 0 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
-__end_of_Serial_Interrupt 42A 0 CODE 0 text22 dist/default/production\TCC_mainboard.X.production.obj
-_TemporizadorSerialR 26 0 BANK0 1 bssBANK0 dist/default/production\TCC_mainboard.X.production.obj
-_TemporizadorSerialW 57 0 BANK0 1 nvBANK0 dist/default/production\TCC_mainboard.X.production.obj
+__end_of_Serial_Interrupt 1A42 0 CODE 0 text33 dist/default/production\TCC_mainboard.X.production.obj
+_TemporizadorSerialR AF 0 BANK1 1 bssBANK1 dist/default/production\TCC_mainboard.X.production.obj
+_TemporizadorSerialW E0 0 BANK1 1 nvBANK1 dist/default/production\TCC_mainboard.X.production.obj
+_SensoresAnalogicos 2A 0 CODE 0 text4 dist/default/production\TCC_mainboard.X.production.obj
 __size_of_TrataComandoESP 0 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
-i1inserir@Valor 70 0 COMMON 1 cstackCOMMON dist/default/production\TCC_mainboard.X.production.obj
-__end_of__initialization 746 0 CODE 0 cinit dist/default/production\TCC_mainboard.X.production.obj
+i1inserir@Valor 72 0 COMMON 1 cstackCOMMON dist/default/production\TCC_mainboard.X.production.obj
+__end_of__initialization 162E 0 CODE 0 cinit dist/default/production\TCC_mainboard.X.production.obj
 __size_of_Interrupcao 0 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
-__end_of___lwdiv 4AA 0 CODE 0 text6 dist/default/production\TCC_mainboard.X.production.obj
+SensoresAnalogicos@valorAtual DA 0 BANK1 1 cstackBANK1 dist/default/production\TCC_mainboard.X.production.obj
 __size_of_estaCheia 0 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
-i1_estaCheia 8A0 0 CODE 0 text23 dist/default/production\TCC_mainboard.X.production.obj
+i1_estaCheia 156E 0 CODE 0 text34 dist/default/production\TCC_mainboard.X.production.obj
+?i1_estaVazia 70 0 COMMON 1 cstackCOMMON dist/default/production\TCC_mainboard.X.production.obj
+___ftadd 5B4 0 CODE 0 text13 dist/default/production\TCC_mainboard.X.production.obj
 __size_ofi1_estaCheia 0 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
 __Hidloc 0 0 IDLOC 0 idloc -
+?___ftge 25 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
 __Lidloc 0 0 IDLOC 0 idloc -
 __size_ofi1_estaVazia 0 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
-_ADC_Run 78A 0 CODE 0 text19 dist/default/production\TCC_mainboard.X.production.obj
+___awmod 1A42 0 CODE 0 text8 dist/default/production\TCC_mainboard.X.production.obj
+_ADC_Run 16A2 0 CODE 0 text30 dist/default/production\TCC_mainboard.X.production.obj
+___ftsub 166A 0 CODE 0 text12 dist/default/production\TCC_mainboard.X.production.obj
+___ftpack@sign 29 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+___ftadd@exp1 39 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+?___lmul 25 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+___fttol 96C 0 CODE 0 text6 dist/default/production\TCC_mainboard.X.production.obj
 __Hcinit 0 0 ABS 0 cinit -
+___ftmul 7C6 0 CODE 0 text14 dist/default/production\TCC_mainboard.X.production.obj
 __Lcinit 0 0 ABS 0 cinit -
 __CFG_FOSC$HS 0 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
-_remover 584 0 CODE 0 text13 dist/default/production\TCC_mainboard.X.production.obj
-_inserir 5DC 0 CODE 0 text17 dist/default/production\TCC_mainboard.X.production.obj
-___lwdiv 42A 0 CODE 0 text6 dist/default/production\TCC_mainboard.X.production.obj
+___aldiv C6E 0 CODE 0 text10 dist/default/production\TCC_mainboard.X.production.obj
+_remover 1DB2 0 CODE 0 text24 dist/default/production\TCC_mainboard.X.production.obj
+_inserir 1CFA 0 CODE 0 text28 dist/default/production\TCC_mainboard.X.production.obj
+___ftdiv AFE 0 CODE 0 text7 dist/default/production\TCC_mainboard.X.production.obj
 __size_of_main 0 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
-__end_of_EnvioDadosSerial 138 0 CODE 0 text15 dist/default/production\TCC_mainboard.X.production.obj
-_TemporizadorLed 22 0 BANK0 1 bssBANK0 dist/default/production\TCC_mainboard.X.production.obj
-__end_ofi1_inserir 6D4 0 CODE 0 text26 dist/default/production\TCC_mainboard.X.production.obj
-__HidataBANK0 0 0 ABS 0 idataBANK0 -
-__end_of_ADC_Interrupt 852 0 CODE 0 text21 dist/default/production\TCC_mainboard.X.production.obj
-__LidataBANK0 0 0 ABS 0 idataBANK0 -
-Serial_9600_Init@osc_freq 62 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
-__pidataBANK0 8F4 0 CODE 0 idataBANK0 dist/default/production\TCC_mainboard.X.production.obj
-clear_ram0 8DC 0 CODE 0 clrtext dist/default/production\TCC_mainboard.X.production.obj
+__end_of_sqrt 5B4 0 CODE 0 text11 dist/default/production\TCC_mainboard.X.production.obj
+__end_of_EnvioDadosSerial EAA 0 CODE 0 text26 dist/default/production\TCC_mainboard.X.production.obj
+_TemporizadorLed AB 0 BANK1 1 bssBANK1 dist/default/production\TCC_mainboard.X.production.obj
+__end_ofi1_inserir 1C42 0 CODE 0 text37 dist/default/production\TCC_mainboard.X.production.obj
+___fttol@exp1 D5 0 BANK1 1 cstackBANK1 dist/default/production\TCC_mainboard.X.production.obj
+__size_of___ftdiv 0 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
+__end_of_ADC_Interrupt 154C 0 CODE 0 text32 dist/default/production\TCC_mainboard.X.production.obj
+Serial_9600_Init@osc_freq 25 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+__size_of_SensoresAnalogicos 0 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
+___altoft@sign 3B 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+clear_ram0 FF0 0 CODE 0 clrtext dist/default/production\TCC_mainboard.X.production.obj
+___ftpack@arg 25 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
 i1estaCheia@buf 70 0 COMMON 1 cstackCOMMON dist/default/production\TCC_mainboard.X.production.obj
 __size_of_ADC_Interrupt 0 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
-__size_of___lwdiv 0 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
-_Serial_Interrupt 3A8 0 CODE 0 text22 dist/default/production\TCC_mainboard.X.production.obj
-estaCheia@buf 62 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+_Serial_Interrupt 19A8 0 CODE 0 text33 dist/default/production\TCC_mainboard.X.production.obj
+estaCheia@buf 25 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+___ftadd@exp2 38 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
 __HbssBANK0 0 0 ABS 0 bssBANK0 -
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
-Serial_Interrupt@tmp 77 0 COMMON 1 cstackCOMMON dist/default/production\TCC_mainboard.X.production.obj
-__pbssBANK0 20 0 BANK0 1 bssBANK0 dist/default/production\TCC_mainboard.X.production.obj
-estaVazia@buf 62 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
-__ptext10 138 0 CODE 0 text10 dist/default/production\TCC_mainboard.X.production.obj
-__ptext20 208 0 CODE 0 text20 dist/default/production\TCC_mainboard.X.production.obj
+Serial_Interrupt@tmp 7B 0 COMMON 1 cstackCOMMON dist/default/production\TCC_mainboard.X.production.obj
+__pbssBANK0 6A 0 BANK0 1 bssBANK0 dist/default/production\TCC_mainboard.X.production.obj
+__HbssBANK1 0 0 ABS 0 bssBANK1 -
+__LbssBANK1 0 0 ABS 0 bssBANK1 -
+__pbssBANK1 A0 0 BANK1 1 bssBANK1 dist/default/production\TCC_mainboard.X.production.obj
+estaVazia@buf 25 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+__ptext10 C6E 0 CODE 0 text10 dist/default/production\TCC_mainboard.X.production.obj
+__ptext20 1AE0 0 CODE 0 text20 dist/default/production\TCC_mainboard.X.production.obj
 __size_of_ADC_Select_Channel 0 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
-__ptext11 8CA 0 CODE 0 text11 dist/default/production\TCC_mainboard.X.production.obj
-__ptext21 834 0 CODE 0 text21 dist/default/production\TCC_mainboard.X.production.obj
-__ptext12 814 0 CODE 0 text12 dist/default/production\TCC_mainboard.X.production.obj
-ADC_Init@trisa 64 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
-__ptext22 3A8 0 CODE 0 text22 dist/default/production\TCC_mainboard.X.production.obj
-__ptext13 584 0 CODE 0 text13 dist/default/production\TCC_mainboard.X.production.obj
+__ptext11 36E 0 CODE 0 text11 dist/default/production\TCC_mainboard.X.production.obj
+__ptext30 16A2 0 CODE 0 text30 dist/default/production\TCC_mainboard.X.production.obj
+__ptext21 EAA 0 CODE 0 text21 dist/default/production\TCC_mainboard.X.production.obj
+__ptext12 166A 0 CODE 0 text12 dist/default/production\TCC_mainboard.X.production.obj
+__ptext31 1914 0 CODE 0 text31 dist/default/production\TCC_mainboard.X.production.obj
+ADC_Init@trisa 27 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+__ptext22 14F6 0 CODE 0 text22 dist/default/production\TCC_mainboard.X.production.obj
+__ptext13 5B4 0 CODE 0 text13 dist/default/production\TCC_mainboard.X.production.obj
+__ptext32 152E 0 CODE 0 text32 dist/default/production\TCC_mainboard.X.production.obj
 _ADCON0bits 1F 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
-__ptext23 8A0 0 CODE 0 text23 dist/default/production\TCC_mainboard.X.production.obj
-__ptext14 888 0 CODE 0 text14 dist/default/production\TCC_mainboard.X.production.obj
-__ptext24 8B6 0 CODE 0 text24 dist/default/production\TCC_mainboard.X.production.obj
-__ptext15 2A 0 CODE 0 text15 dist/default/production\TCC_mainboard.X.production.obj
-__ptext25 630 0 CODE 0 text25 dist/default/production\TCC_mainboard.X.production.obj
-__ptext16 7BC 0 CODE 0 text16 dist/default/production\TCC_mainboard.X.production.obj
-__ptext26 684 0 CODE 0 text26 dist/default/production\TCC_mainboard.X.production.obj
-__ptext17 5DC 0 CODE 0 text17 dist/default/production\TCC_mainboard.X.production.obj
-__ptext18 86E 0 CODE 0 text18 dist/default/production\TCC_mainboard.X.production.obj
-_Serial_Available 8CA 0 CODE 0 text11 dist/default/production\TCC_mainboard.X.production.obj
+__ptext23 1636 0 CODE 0 text23 dist/default/production\TCC_mainboard.X.production.obj
+__ptext14 7C6 0 CODE 0 text14 dist/default/production\TCC_mainboard.X.production.obj
+__ptext33 19A8 0 CODE 0 text33 dist/default/production\TCC_mainboard.X.production.obj
+__ptext24 1DB2 0 CODE 0 text24 dist/default/production\TCC_mainboard.X.production.obj
+__ptext15 1F2C 0 CODE 0 text15 dist/default/production\TCC_mainboard.X.production.obj
+__ptext34 156E 0 CODE 0 text34 dist/default/production\TCC_mainboard.X.production.obj
+__ptext25 1592 0 CODE 0 text25 dist/default/production\TCC_mainboard.X.production.obj
+__ptext16 1E6E 0 CODE 0 text16 dist/default/production\TCC_mainboard.X.production.obj
+__ptext35 154C 0 CODE 0 text35 dist/default/production\TCC_mainboard.X.production.obj
+__HbssBANK3 0 0 ABS 0 bssBANK3 -
+__ptext26 D8C 0 CODE 0 text26 dist/default/production\TCC_mainboard.X.production.obj
+__LbssBANK3 0 0 ABS 0 bssBANK3 -
+__ptext17 14EE 0 CODE 0 text17 dist/default/production\TCC_mainboard.X.production.obj
+__ptext36 1C42 0 CODE 0 text36 dist/default/production\TCC_mainboard.X.production.obj
+__pbssBANK3 190 0 BANK3 1 bssBANK3 dist/default/production\TCC_mainboard.X.production.obj
+___awmod@divisor 25 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+__ptext27 16DC 0 CODE 0 text27 dist/default/production\TCC_mainboard.X.production.obj
+__ptext18 15E0 0 CODE 0 text18 dist/default/production\TCC_mainboard.X.production.obj
+__ptext37 1B8E 0 CODE 0 text37 dist/default/production\TCC_mainboard.X.production.obj
+_Serial_Available 14F6 0 CODE 0 text22 dist/default/production\TCC_mainboard.X.production.obj
 __CFG_PWRTE$OFF 0 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
+__ptext28 1CFA 0 CODE 0 text28 dist/default/production\TCC_mainboard.X.production.obj
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
-__ptext19 78A 0 CODE 0 text19 dist/default/production\TCC_mainboard.X.production.obj
-__end_of_estaCheia 888 0 CODE 0 text18 dist/default/production\TCC_mainboard.X.production.obj
-__pbssCOMMON 7D 0 COMMON 1 bssCOMMON dist/default/production\TCC_mainboard.X.production.obj
+___fttol@sign1 D0 0 BANK1 1 cstackBANK1 dist/default/production\TCC_mainboard.X.production.obj
+__ptext19 1512 0 CODE 0 text19 dist/default/production\TCC_mainboard.X.production.obj
+__end_of_estaCheia 15E0 0 CODE 0 text29 dist/default/production\TCC_mainboard.X.production.obj
+__pbssCOMMON 7C 0 COMMON 1 bssCOMMON dist/default/production\TCC_mainboard.X.production.obj
+__ptext29 15B8 0 CODE 0 text29 dist/default/production\TCC_mainboard.X.production.obj
+?i1_remover 70 0 COMMON 1 cstackCOMMON dist/default/production\TCC_mainboard.X.production.obj
 _INTCONbits B 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
 ?i1_inserir 70 0 COMMON 1 cstackCOMMON dist/default/production\TCC_mainboard.X.production.obj
 __Hend_init 2A 0 CODE 0 end_init -
 __Lend_init 24 0 CODE 0 end_init -
-i1_estaVazia 8B6 0 CODE 0 text24 dist/default/production\TCC_mainboard.X.production.obj
-___lwdiv@divisor 62 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+___aldiv@divisor 25 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+___ftpack@exp 28 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+i1_estaVazia 154C 0 CODE 0 text35 dist/default/production\TCC_mainboard.X.production.obj
 __size_of_EnvioDadosSerial 0 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
 i1estaVazia@buf 70 0 COMMON 1 cstackCOMMON dist/default/production\TCC_mainboard.X.production.obj
-i1remover@buf 75 0 COMMON 1 cstackCOMMON dist/default/production\TCC_mainboard.X.production.obj
-i1inserir@buf 73 0 COMMON 1 cstackCOMMON dist/default/production\TCC_mainboard.X.production.obj
+SensoresAnalogicos@somatorio A0 0 BANK1 1 bssBANK1 dist/default/production\TCC_mainboard.X.production.obj
+i1remover@buf 70 0 COMMON 1 cstackCOMMON dist/default/production\TCC_mainboard.X.production.obj
+i1inserir@buf 70 0 COMMON 1 cstackCOMMON dist/default/production\TCC_mainboard.X.production.obj
+__end_of___ftmul 96C 0 CODE 0 text14 dist/default/production\TCC_mainboard.X.production.obj
 __Hreset_vec 6 0 CODE 0 reset_vec -
 __Lreset_vec 0 0 CODE 0 reset_vec -
-MedirTensao@n 2C 0 BANK0 1 bssBANK0 dist/default/production\TCC_mainboard.X.production.obj
-_TrataComandoESP 138 0 CODE 0 text10 dist/default/production\TCC_mainboard.X.production.obj
-intlevel0 0 0 CODE 0 functab C:\Users\guilh\AppData\Local\Temp\s724.obj
+_TrataComandoESP EAA 0 CODE 0 text21 dist/default/production\TCC_mainboard.X.production.obj
+__size_of___aldiv 0 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
+intlevel0 0 0 CODE 0 functab C:\Users\guilh\AppData\Local\Temp\s4t8.obj
 __CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
-intlevel1 0 0 CODE 0 functab C:\Users\guilh\AppData\Local\Temp\s724.obj
+intlevel1 0 0 CODE 0 functab C:\Users\guilh\AppData\Local\Temp\s4t8.obj
 __size_of_inserir 0 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
-intlevel2 0 0 CODE 0 functab C:\Users\guilh\AppData\Local\Temp\s724.obj
-intlevel3 0 0 CODE 0 functab C:\Users\guilh\AppData\Local\Temp\s724.obj
-intlevel4 0 0 CODE 0 functab C:\Users\guilh\AppData\Local\Temp\s724.obj
-intlevel5 0 0 CODE 0 functab C:\Users\guilh\AppData\Local\Temp\s724.obj
-__end_of_ADC_Read 86E 0 CODE 0 text8 dist/default/production\TCC_mainboard.X.production.obj
+___altoft@exp 3A 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+intlevel2 0 0 CODE 0 functab C:\Users\guilh\AppData\Local\Temp\s4t8.obj
+intlevel3 0 0 CODE 0 functab C:\Users\guilh\AppData\Local\Temp\s4t8.obj
+__size_of___lmul 0 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
+intlevel4 0 0 CODE 0 functab C:\Users\guilh\AppData\Local\Temp\s4t8.obj
+intlevel5 0 0 CODE 0 functab C:\Users\guilh\AppData\Local\Temp\s4t8.obj
+__end_of_ADC_Read 152E 0 CODE 0 text19 dist/default/production\TCC_mainboard.X.production.obj
 __size_of_Serial_Read 0 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
-inserir@Valor 62 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
-__size_of_MedirTensao 0 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
-_ModuloCM 59 0 BANK0 1 nvBANK0 dist/default/production\TCC_mainboard.X.production.obj
+inserir@Valor 27 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+_ModuloCM E2 0 BANK1 1 nvBANK1 dist/default/production\TCC_mainboard.X.production.obj
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\TCC_mainboard.X.production.obj
 __size_of_Setup 0 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
 __CFG_CPD$OFF 0 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
-start_initialization 712 0 CODE 0 cinit dist/default/production\TCC_mainboard.X.production.obj
-___lwdiv@quotient 67 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
-_dadoDisponivel 30 0 BANK0 1 bssBANK0 dist/default/production\TCC_mainboard.X.production.obj
-__end_of_ADC_Init 78A 0 CODE 0 text3 dist/default/production\TCC_mainboard.X.production.obj
-__end_of_ADC_Available 8F4 0 CODE 0 text7 dist/default/production\TCC_mainboard.X.production.obj
+start_initialization 160A 0 CODE 0 cinit dist/default/production\TCC_mainboard.X.production.obj
+__end_of___altoft 1914 0 CODE 0 text9 dist/default/production\TCC_mainboard.X.production.obj
+___aldiv@quotient 30 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+__size_of___ftge 0 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
+_dadoDisponivel 6A 0 BANK0 1 bssBANK0 dist/default/production\TCC_mainboard.X.production.obj
+__end_of_ADC_Init 1794 0 CODE 0 text2 dist/default/production\TCC_mainboard.X.production.obj
+__end_of_ADC_Available 14F6 0 CODE 0 text17 dist/default/production\TCC_mainboard.X.production.obj
 __Hmaintext 0 0 ABS 0 maintext -
 __Lmaintext 0 0 ABS 0 maintext -
-__pmaintext 6D4 0 CODE 0 maintext dist/default/production\TCC_mainboard.X.production.obj
+__pmaintext 1716 0 CODE 0 maintext dist/default/production\TCC_mainboard.X.production.obj
+__end_of___fttol AFE 0 CODE 0 text6 dist/default/production\TCC_mainboard.X.production.obj
 __size_of_Serial_Write 0 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
-__initialization 712 0 CODE 0 cinit dist/default/production\TCC_mainboard.X.production.obj
-TrataComandoESP@cmd 69 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+__size_of___awmod 0 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
+SensoresAnalogicos@index B5 0 BANK1 1 bssBANK1 dist/default/production\TCC_mainboard.X.production.obj
+__end_of___ftsub 16A2 0 CODE 0 text12 dist/default/production\TCC_mainboard.X.production.obj
+__initialization 160A 0 CODE 0 cinit dist/default/production\TCC_mainboard.X.production.obj
+__end_of___ftge 1F2C 0 CODE 0 text16 dist/default/production\TCC_mainboard.X.production.obj
+TrataComandoESP@cmd 30 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+___awmod@dividend 27 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+___lmul@product 2E 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
+___awmod@counter 2A 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
 __CFG_CP$OFF 0 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
+__size_of___ftmul 0 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
 __CFG_LVP$OFF 0 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
+__end_of___ftdiv C6E 0 CODE 0 text7 dist/default/production\TCC_mainboard.X.production.obj
+___aldiv@dividend 29 0 BANK0 1 cstackBANK0 dist/default/production\TCC_mainboard.X.production.obj
 __size_of_Serial_Available 0 0 ABS 0 - dist/default/production\TCC_mainboard.X.production.obj
 # %DABS Section
 # This section contains a table of all usuage of the assember
@@ -683,7 +1030,38 @@ __size_of_Serial_Available 0 0 ABS 0 - dist/default/production\TCC_mainboard.X.p
 # All other numeric quantities are in decimal.
 %SEGMENTS
 reset_vec 0 0 0 3 2 CODE
-intentry 0 4 8 479 2 CODE
+intentry 0 4 8 7FC 2 CODE
 config 0 2007 400E 1 2 CONFIG
-cstackCOMMON 1 70 70 E 1 COMMON
-bssBANK0 1 20 20 50 1 BANK0
+cstackCOMMON 1 70 70 D 1 COMMON
+cstackBANK0 1 20 20 4B 1 BANK0
+bssBANK1 1 A0 A0 4B 1 BANK1
+bssBANK3 1 190 190 13 1 BANK3
+text15 0 F96 1F2C 6A 2 CODE
+text16 0 F37 1E6E 5F 2 CODE
+text24 0 ED9 1DB2 5E 2 CODE
+text28 0 E7D 1CFA 5C 2 CODE
+text36 0 E21 1C42 5C 2 CODE
+text37 0 DC7 1B8E 5A 2 CODE
+text20 0 D70 1AE0 57 2 CODE
+text8 0 D21 1A42 4F 2 CODE
+text33 0 CD4 19A8 4D 2 CODE
+text31 0 C8A 1914 4A 2 CODE
+text9 0 C48 1890 42 2 CODE
+text5 0 C07 180E 41 2 CODE
+text1 0 BCA 1794 3D 2 CODE
+text2 0 BAA 1754 20 2 CODE
+maintext 0 B8B 1716 1F 2 CODE
+text27 0 B6E 16DC 1D 2 CODE
+text30 0 B51 16A2 1D 2 CODE
+text12 0 B35 166A 1C 2 CODE
+text23 0 B1B 1636 1A 2 CODE
+cinit 0 B05 160A 16 2 CODE
+text18 0 AF0 15E0 15 2 CODE
+text29 0 ADC 15B8 14 2 CODE
+text25 0 AC9 1592 13 2 CODE
+text34 0 AB7 156E 12 2 CODE
+text35 0 AA6 154C 11 2 CODE
+text32 0 A97 152E F 2 CODE
+text19 0 A89 1512 E 2 CODE
+text22 0 A7B 14F6 E 2 CODE
+text17 0 A77 14EE 4 2 CODE

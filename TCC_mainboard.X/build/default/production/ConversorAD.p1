@@ -20,6 +20,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _PIR1bits `VS21 ~T0 @X0 0 e@12 ]
 "1283
 [v _TRISA `Vuc ~T0 @X0 0 e@133 ]
+"1515
+[v _TRISE `Vuc ~T0 @X0 0 e@137 ]
 "1119
 [v _ADCON0 `Vuc ~T0 @X0 0 e@31 ]
 "2170
@@ -1138,141 +1140,144 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ConversorAD.c: 24: TRISA = trisa;
 "24
 [e = _TRISA _trisa ]
-[; ;ConversorAD.c: 25: ADCON0 = 0b10000001;
+[; ;ConversorAD.c: 25: TRISE = 0b00000111;
 "25
-[e = _ADCON0 -> -> 129 `i `uc ]
-[; ;ConversorAD.c: 26: ADCON1 = 0b10000000;
+[e = _TRISE -> -> 7 `i `uc ]
+[; ;ConversorAD.c: 26: ADCON0 = 0b10000001;
 "26
-[e = _ADCON1 -> -> 128 `i `uc ]
-[; ;ConversorAD.c: 27: ADCON1 |= config;
+[e = _ADCON0 -> -> 129 `i `uc ]
+[; ;ConversorAD.c: 27: ADCON1 = 0b10000000;
 "27
+[e = _ADCON1 -> -> 128 `i `uc ]
+[; ;ConversorAD.c: 28: ADCON1 |= config;
+"28
 [e =| _ADCON1 _config ]
-[; ;ConversorAD.c: 29: PIR1bits.ADIF = 0;
-"29
-[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
-[; ;ConversorAD.c: 30: PIE1bits.ADIE = 1;
+[; ;ConversorAD.c: 30: PIR1bits.ADIF = 0;
 "30
-[e = . . _PIE1bits 0 6 -> -> 1 `i `uc ]
-[; ;ConversorAD.c: 31: }
+[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
+[; ;ConversorAD.c: 31: PIE1bits.ADIE = 1;
 "31
+[e = . . _PIE1bits 0 6 -> -> 1 `i `uc ]
+[; ;ConversorAD.c: 32: }
+"32
 [e :UE 100 ]
 }
-"34
+"35
 [v _ADC_Run `(v ~T0 @X0 1 ef ]
 {
-[; ;ConversorAD.c: 33: void ADC_Run()
-[; ;ConversorAD.c: 34: {
+[; ;ConversorAD.c: 34: void ADC_Run()
+[; ;ConversorAD.c: 35: {
 [e :U _ADC_Run ]
 [f ]
-"35
+"36
 [v F1099 `uc ~T0 @X0 1 s Estado ]
 [i F1099
 -> -> 0 `i `uc
 ]
-[; ;ConversorAD.c: 35: static char Estado = 0;
-[; ;ConversorAD.c: 37: switch(Estado)
-"37
-[e $U 103  ]
-[; ;ConversorAD.c: 38: {
+[; ;ConversorAD.c: 36: static char Estado = 0;
+[; ;ConversorAD.c: 38: switch(Estado)
 "38
-{
-[; ;ConversorAD.c: 39: case 0:
+[e $U 103  ]
+[; ;ConversorAD.c: 39: {
 "39
-[e :U 104 ]
-[; ;ConversorAD.c: 40: if(ADC_Temporizador == 0)
-"40
-[e $ ! == -> _ADC_Temporizador `i -> 0 `i 105  ]
-[; ;ConversorAD.c: 41: {
-"41
 {
-[; ;ConversorAD.c: 42: ADC_Temporizador = 1;
+[; ;ConversorAD.c: 40: case 0:
+"40
+[e :U 104 ]
+[; ;ConversorAD.c: 41: if(ADC_Temporizador == 0)
+"41
+[e $ ! == -> _ADC_Temporizador `i -> 0 `i 105  ]
+[; ;ConversorAD.c: 42: {
 "42
-[e = _ADC_Temporizador -> -> 1 `i `uc ]
-[; ;ConversorAD.c: 43: Estado = 1;
+{
+[; ;ConversorAD.c: 43: ADC_Temporizador = 1;
 "43
-[e = F1099 -> -> 1 `i `uc ]
+[e = _ADC_Temporizador -> -> 1 `i `uc ]
+[; ;ConversorAD.c: 44: Estado = 1;
 "44
+[e = F1099 -> -> 1 `i `uc ]
+"45
 }
 [e :U 105 ]
-[; ;ConversorAD.c: 44: }
-[; ;ConversorAD.c: 45: break;
-"45
-[e $U 102  ]
-[; ;ConversorAD.c: 46: case 1:
+[; ;ConversorAD.c: 45: }
+[; ;ConversorAD.c: 46: break;
 "46
-[e :U 106 ]
-[; ;ConversorAD.c: 47: ADCON0bits.GO = 1;
+[e $U 102  ]
+[; ;ConversorAD.c: 47: case 1:
 "47
-[e = . . _ADCON0bits 1 1 -> -> 1 `i `uc ]
-[; ;ConversorAD.c: 48: Estado = 0;
+[e :U 106 ]
+[; ;ConversorAD.c: 48: ADCON0bits.GO = 1;
 "48
-[e = F1099 -> -> 0 `i `uc ]
-[; ;ConversorAD.c: 49: break;
+[e = . . _ADCON0bits 1 1 -> -> 1 `i `uc ]
+[; ;ConversorAD.c: 49: Estado = 0;
 "49
-[e $U 102  ]
+[e = F1099 -> -> 0 `i `uc ]
+[; ;ConversorAD.c: 50: break;
 "50
-}
-[; ;ConversorAD.c: 50: }
 [e $U 102  ]
-"37
+"51
+}
+[; ;ConversorAD.c: 51: }
+[e $U 102  ]
+"38
 [e :U 103 ]
 [e [\ F1099 , $ -> -> 0 `i `uc 104
  , $ -> -> 1 `i `uc 106
  102 ]
-"50
-[e :U 102 ]
-[; ;ConversorAD.c: 51: }
 "51
+[e :U 102 ]
+[; ;ConversorAD.c: 52: }
+"52
 [e :UE 101 ]
 }
-"54
+"55
 [v _ADC_Read `(i ~T0 @X0 1 ef ]
 {
-[; ;ConversorAD.c: 53: int ADC_Read()
-[; ;ConversorAD.c: 54: {
+[; ;ConversorAD.c: 54: int ADC_Read()
+[; ;ConversorAD.c: 55: {
 [e :U _ADC_Read ]
 [f ]
-[; ;ConversorAD.c: 55: dadoDisponivel = 0;
-"55
-[e = _dadoDisponivel -> -> 0 `i `uc ]
-[; ;ConversorAD.c: 56: return ((ADRESH<<8) | ADRESL);
+[; ;ConversorAD.c: 56: dadoDisponivel = 0;
 "56
+[e = _dadoDisponivel -> -> 0 `i `uc ]
+[; ;ConversorAD.c: 57: return ((ADRESH<<8) | ADRESL);
+"57
 [e ) | << -> _ADRESH `i -> 8 `i -> _ADRESL `i ]
 [e $UE 107  ]
-[; ;ConversorAD.c: 57: }
-"57
+[; ;ConversorAD.c: 58: }
+"58
 [e :UE 107 ]
 }
-"60
+"61
 [v _ADC_Select_Channel `(v ~T0 @X0 1 ef1`uc ]
 {
-[; ;ConversorAD.c: 59: void ADC_Select_Channel(char ch)
-[; ;ConversorAD.c: 60: {
+[; ;ConversorAD.c: 60: void ADC_Select_Channel(char ch)
+[; ;ConversorAD.c: 61: {
 [e :U _ADC_Select_Channel ]
 [v _ch `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;ConversorAD.c: 61: ADCON0 &= 0b11000111;
-"61
-[e =& _ADCON0 -> -> 199 `i `uc ]
-[; ;ConversorAD.c: 62: ADCON0 |= (ch<<3);
+[; ;ConversorAD.c: 62: ADCON0 &= 0b11000111;
 "62
-[e =| _ADCON0 -> << -> _ch `i -> 3 `i `uc ]
-[; ;ConversorAD.c: 63: }
+[e =& _ADCON0 -> -> 199 `i `uc ]
+[; ;ConversorAD.c: 63: ADCON0 |= (ch<<3);
 "63
+[e =| _ADCON0 -> << -> _ch `i -> 3 `i `uc ]
+[; ;ConversorAD.c: 64: }
+"64
 [e :UE 108 ]
 }
-"66
+"67
 [v _ADC_Available `(uc ~T0 @X0 1 ef ]
 {
-[; ;ConversorAD.c: 65: char ADC_Available()
-[; ;ConversorAD.c: 66: {
+[; ;ConversorAD.c: 66: char ADC_Available()
+[; ;ConversorAD.c: 67: {
 [e :U _ADC_Available ]
 [f ]
-[; ;ConversorAD.c: 67: return dadoDisponivel;
-"67
+[; ;ConversorAD.c: 68: return dadoDisponivel;
+"68
 [e ) _dadoDisponivel ]
 [e $UE 109  ]
-[; ;ConversorAD.c: 68: }
-"68
+[; ;ConversorAD.c: 69: }
+"69
 [e :UE 109 ]
 }

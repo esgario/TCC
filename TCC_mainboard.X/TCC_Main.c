@@ -1,10 +1,11 @@
 #include <xc.h>
+#include <math.h>
 #include "Serial.h"
 #include "ConversorAD.h"
 
 // CONFIG
 #pragma config FOSC = HS        // Oscillator Selection bits (RC oscillator)
-#pragma config WDTE = OFF       // Watchdog Timer Enable bit (WDT disabled)
+#pragma config WDTE = OFF      // Watchdog Timer Enable bit (WDT disabled)
 #pragma config PWRTE = OFF      // Power-up Timer Enable bit (PWRT disabled)
 #pragma config BOREN = ON      // Brown-out Reset Enable bit (BOR enabled)
 #pragma config LVP = OFF        // Low-Voltage (Single-Supply) In-Circuit Serial Programming Enable bit (RB3/PGM pin has PGM function; low-voltage programming enabled)
@@ -20,6 +21,7 @@
 #define CMD_CONNECTION 0x0F
 #define TRUE  1
 #define FALSE 0
+#define NUM_AMOSTRAS 500
 
 typedef char boolean;
 
@@ -40,9 +42,7 @@ unsigned int TemporizadorLed=0;
 unsigned int TemporizadorSerialW=0;
 unsigned int TemporizadorSerialR=0;
 unsigned int TemporizadorPortb = 0;
-char Tensao[3] = {123,122,0};
-
-unsigned int aux = 0;
+char Tensao[3] = {0,0,0};
 
 boolean clearPORTB = FALSE;
 boolean conectado = FALSE;
@@ -72,6 +72,14 @@ void EnvioDadosSerial()
 {
     if(TemporizadorSerialW == 0)
     {
+        char i;
+        ModuloCM.status = 0xFF;
+        /*for(i=0;i<4;i++)
+        {
+            if(ModuloCM.corrente[i] > 200)
+                SetBit(ModuloCM.status,i);
+        }*/
+        
         Serial_Write(0xFF); // Cabeçalho
         Serial_Write(0xFF);
         Serial_Write(Tensao[0]); // tensao
@@ -187,26 +195,48 @@ void ControleLed()
     }
 }
 
-void MedirTensao()
+void SensoresAnalogicos()
 {
-    static char n = 0;
-    unsigned int ultimaLeitura;
+    static int n = 0;
+    static char index = 0;
+    signed long valorAux = 0;
+    static long somatorio = 0;
 
-    if( n < 150 )
+    if( n < NUM_AMOSTRAS )
     {
         if(ADC_Available())
         {
-            ultimaLeitura = ADC_Read();
-            if(ultimaLeitura > aux)
-                aux = ultimaLeitura;
+            if(index < 4){
+                //valorAux = ADC_Read() - 511;
+                //somatorio += valorAux*valorAux;
+                valorAux = ADC_Read();
+                if( somatorio < valorAux ) somatorio = valorAux;
+            }
+            else{
+                valorAux = ADC_Read();
+                somatorio += valorAux*valorAux;
+            }
             n++;
         }
     }
     else
     {
-        Tensao[0] = aux / 6;
-        //PORTB = Tensao[0];
-        aux = 0;
+        if(index < 4)
+            //ModuloCM.corrente[index] = sqrt(somatorio/NUM_AMOSTRAS)*4.883;
+            ModuloCM.corrente[index] = somatorio;
+        else
+        {
+            Tensao[index-4] = sqrt(somatorio/NUM_AMOSTRAS)/3.2;
+            if(Tensao[index-4] < 70) Tensao[index-4] = 0;
+        }
+        somatorio = 0;
+        index++;
+        index = index%7;
+
+        if(index < 4)
+            ADC_Select_Channel(index);
+        else
+            ADC_Select_Channel(index+1);
         n = 0;
     }
 }
@@ -228,9 +258,9 @@ void Setup()
     //I2C_Master_Init();
     //----------- inicializando variaveis
 
-    ModuloCM.status = 0b00001100;
-    ModuloCM.corrente[0] = 50;
-    ModuloCM.corrente[1] = 34;
+    ModuloCM.status = 0b00000011;
+    ModuloCM.corrente[0] = 0;
+    ModuloCM.corrente[1] = 0;
     ModuloCM.corrente[2] = 0;
     ModuloCM.corrente[3] = 0;
 
@@ -247,6 +277,6 @@ int main(void)
         EnvioDadosSerial();
         TrataComandoESP();
         ADC_Run();
-        MedirTensao();
+        SensoresAnalogicos();
     }
 }

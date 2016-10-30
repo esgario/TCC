@@ -22,6 +22,7 @@ void ADC_Interrupt()
 void ADC_Init(char trisa, char config)
 {
     TRISA = trisa;
+    TRISE = 0b00000111;
     ADCON0 = 0b10000001;
     ADCON1 = 0b10000000;
     ADCON1 |= config;

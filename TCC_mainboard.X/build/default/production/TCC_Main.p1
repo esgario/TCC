@@ -1,8 +1,8 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"31 TCC_Main.c
+"33 TCC_Main.c
 [s S97 `uc 1 `i -> 4 `i ]
 [n S97 ModuloCM status corrente ]
-"36
+"38
 [s S98 `uc 1 `uc 1 ]
 [n S98 RTC hora minuto ]
 "25 Serial.h
@@ -62,6 +62,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _ADC_Available `(uc ~T0 @X0 0 ef ]
 "22
 [v _ADC_Read `(i ~T0 @X0 0 ef ]
+"7 C:\Program Files (x86)\Microchip\xc8\v1.20\include\math.h
+[v _sqrt `(d ~T0 @X0 0 ef1`d ]
+"21 ConversorAD.h
+[v _ADC_Select_Channel `(v ~T0 @X0 0 ef1`uc ]
 "1332 C:\Program Files (x86)\Microchip\xc8\v1.20\include\pic16f877a.h
 [v _TRISB `Vuc ~T0 @X0 0 e@134 ]
 "1454
@@ -76,8 +80,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _Serial_9600_Init `(v ~T0 @X0 0 ef1`uc ]
 "18 ConversorAD.h
 [v _ADC_Init `(v ~T0 @X0 0 ef2`uc`uc ]
-"21
-[v _ADC_Select_Channel `(v ~T0 @X0 0 ef1`uc ]
 [p mainexit ]
 "20
 [v _ADC_Run `(v ~T0 @X0 0 ef ]
@@ -1092,6 +1094,32 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;eeprom_routines.h: 43: extern void eecpymem(volatile unsigned char *to, __eeprom unsigned char *from, unsigned char size);
 [; ;eeprom_routines.h: 44: extern void memcpyee(__eeprom unsigned char *to, const unsigned char *from, unsigned char size);
 [; ;pic.h: 151: extern void _delay(unsigned long);
+[; ;math.h: 3: extern double fabs(double);
+[; ;math.h: 4: extern double floor(double);
+[; ;math.h: 5: extern double ceil(double);
+[; ;math.h: 6: extern double modf(double, double *);
+[; ;math.h: 7: extern double sqrt(double);
+[; ;math.h: 8: extern double atof(const char *);
+[; ;math.h: 9: extern double sin(double);
+[; ;math.h: 10: extern double cos(double);
+[; ;math.h: 11: extern double tan(double);
+[; ;math.h: 12: extern double asin(double);
+[; ;math.h: 13: extern double acos(double);
+[; ;math.h: 14: extern double atan(double);
+[; ;math.h: 15: extern double atan2(double, double);
+[; ;math.h: 16: extern double log(double);
+[; ;math.h: 17: extern double log10(double);
+[; ;math.h: 18: extern double pow(double, double);
+[; ;math.h: 19: extern double exp(double);
+[; ;math.h: 20: extern double sinh(double);
+[; ;math.h: 21: extern double cosh(double);
+[; ;math.h: 22: extern double tanh(double);
+[; ;math.h: 23: extern double eval_poly(double, const double *, int);
+[; ;math.h: 24: extern double frexp(double, int *);
+[; ;math.h: 25: extern double ldexp(double, int);
+[; ;math.h: 26: extern double fmod(double, double);
+[; ;math.h: 27: extern double trunc(double);
+[; ;math.h: 28: extern double round(double);
 [; ;Serial.h: 15: typedef struct fila {
 [; ;Serial.h: 16: char dados[16];
 [; ;Serial.h: 17: char primeiro;
@@ -1114,75 +1142,69 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ConversorAD.h: 21: void ADC_Select_Channel(char);
 [; ;ConversorAD.h: 22: int ADC_Read();
 [; ;ConversorAD.h: 23: char ADC_Available();
-"6 TCC_Main.c
+"7 TCC_Main.c
 [p x FOSC=HS ]
-"7
-[p x WDTE=OFF ]
 "8
-[p x PWRTE=OFF ]
+[p x WDTE=OFF ]
 "9
-[p x BOREN=ON ]
+[p x PWRTE=OFF ]
 "10
-[p x LVP=OFF ]
+[p x BOREN=ON ]
 "11
-[p x CPD=OFF ]
+[p x LVP=OFF ]
 "12
-[p x WRT=OFF ]
+[p x CPD=OFF ]
 "13
+[p x WRT=OFF ]
+"14
 [p x CP=OFF ]
-[; ;TCC_Main.c: 24: typedef char boolean;
-"31
+[; ;TCC_Main.c: 26: typedef char boolean;
+"33
 [v _ModuloCM `S97 ~T0 @X0 1 e ]
-[; ;TCC_Main.c: 28: struct ModuloCM {
-[; ;TCC_Main.c: 29: char status;
-[; ;TCC_Main.c: 30: int corrente[4];
-[; ;TCC_Main.c: 31: }ModuloCM;
-"36
+[; ;TCC_Main.c: 30: struct ModuloCM {
+[; ;TCC_Main.c: 31: char status;
+[; ;TCC_Main.c: 32: int corrente[4];
+[; ;TCC_Main.c: 33: }ModuloCM;
+"38
 [v _RTC `S98 ~T0 @X0 1 e ]
-[; ;TCC_Main.c: 33: struct RTC {
-[; ;TCC_Main.c: 34: char hora;
-[; ;TCC_Main.c: 35: char minuto;
-[; ;TCC_Main.c: 36: }RTC;
-"39
+[; ;TCC_Main.c: 35: struct RTC {
+[; ;TCC_Main.c: 36: char hora;
+[; ;TCC_Main.c: 37: char minuto;
+[; ;TCC_Main.c: 38: }RTC;
+"41
 [v _TemporizadorLed `ui ~T0 @X0 1 e ]
 [i _TemporizadorLed
 -> -> 0 `i `ui
 ]
-[; ;TCC_Main.c: 39: unsigned int TemporizadorLed=0;
-"40
+[; ;TCC_Main.c: 41: unsigned int TemporizadorLed=0;
+"42
 [v _TemporizadorSerialW `ui ~T0 @X0 1 e ]
 [i _TemporizadorSerialW
 -> -> 0 `i `ui
 ]
-[; ;TCC_Main.c: 40: unsigned int TemporizadorSerialW=0;
-"41
+[; ;TCC_Main.c: 42: unsigned int TemporizadorSerialW=0;
+"43
 [v _TemporizadorSerialR `ui ~T0 @X0 1 e ]
 [i _TemporizadorSerialR
 -> -> 0 `i `ui
 ]
-[; ;TCC_Main.c: 41: unsigned int TemporizadorSerialR=0;
-"42
+[; ;TCC_Main.c: 43: unsigned int TemporizadorSerialR=0;
+"44
 [v _TemporizadorPortb `ui ~T0 @X0 1 e ]
 [i _TemporizadorPortb
 -> -> 0 `i `ui
 ]
-[; ;TCC_Main.c: 42: unsigned int TemporizadorPortb = 0;
-"43
+[; ;TCC_Main.c: 44: unsigned int TemporizadorPortb = 0;
+"45
 [v _Tensao `uc ~T0 @X0 -> 3 `i e ]
 [i _Tensao
 :U ..
--> -> 123 `i `uc
--> -> 122 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
 -> -> 0 `i `uc
 ..
 ]
-[; ;TCC_Main.c: 43: char Tensao[3] = {123,122,0};
-"45
-[v _aux `ui ~T0 @X0 1 e ]
-[i _aux
--> -> 0 `i `ui
-]
-[; ;TCC_Main.c: 45: unsigned int aux = 0;
+[; ;TCC_Main.c: 45: char Tensao[3] = {0,0,0};
 "47
 [v _clearPORTB `uc ~T0 @X0 1 e ]
 [i _clearPORTB
@@ -1196,8 +1218,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 ]
 [; ;TCC_Main.c: 48: boolean conectado = 0;
 "52
-[v F1137 `(v ~T0 @X0 1 tf ]
-[v _Interrupcao `IF1137 ~T0 @X0 1 e ]
+[v F1196 `(v ~T0 @X0 1 tf ]
+[v _Interrupcao `IF1196 ~T0 @X0 1 e ]
 {
 [; ;TCC_Main.c: 51: void interrupt Interrupcao(void)
 [; ;TCC_Main.c: 52: {
@@ -1270,551 +1292,633 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;TCC_Main.c: 74: {
 "74
 {
-[; ;TCC_Main.c: 75: Serial_Write(0xFF);
 "75
-[e ( _Serial_Write (1 -> -> 255 `i `uc ]
-[; ;TCC_Main.c: 76: Serial_Write(0xFF);
+[v _i `uc ~T0 @X0 1 a ]
+[; ;TCC_Main.c: 75: char i;
+[; ;TCC_Main.c: 76: ModuloCM.status = 0xFF;
 "76
-[e ( _Serial_Write (1 -> -> 255 `i `uc ]
-[; ;TCC_Main.c: 77: Serial_Write(Tensao[0]);
-"77
-[e ( _Serial_Write (1 *U + &U _Tensao * -> -> -> 0 `i `ui `ux -> -> # *U &U _Tensao `ui `ux ]
-[; ;TCC_Main.c: 78: Serial_Write(Tensao[1]);
-"78
-[e ( _Serial_Write (1 *U + &U _Tensao * -> -> -> 1 `i `ui `ux -> -> # *U &U _Tensao `ui `ux ]
-[; ;TCC_Main.c: 79: Serial_Write(Tensao[2]);
-"79
-[e ( _Serial_Write (1 *U + &U _Tensao * -> -> -> 2 `i `ui `ux -> -> # *U &U _Tensao `ui `ux ]
-[; ;TCC_Main.c: 80: Serial_Write(ModuloCM.status);
-"80
-[e ( _Serial_Write (1 . _ModuloCM 0 ]
-[; ;TCC_Main.c: 81: Serial_Write(ModuloCM.corrente[0]>>8);
-"81
-[e ( _Serial_Write (1 -> >> *U + &U . _ModuloCM 1 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _ModuloCM 1 `ui `ux -> 8 `i `uc ]
-[; ;TCC_Main.c: 82: Serial_Write(ModuloCM.corrente[0]&0x00FF);
-"82
-[e ( _Serial_Write (1 -> & *U + &U . _ModuloCM 1 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _ModuloCM 1 `ui `ux -> 255 `i `uc ]
-[; ;TCC_Main.c: 83: Serial_Write(ModuloCM.corrente[1]>>8);
+[e = . _ModuloCM 0 -> -> 255 `i `uc ]
+[; ;TCC_Main.c: 83: Serial_Write(0xFF);
 "83
-[e ( _Serial_Write (1 -> >> *U + &U . _ModuloCM 1 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _ModuloCM 1 `ui `ux -> 8 `i `uc ]
-[; ;TCC_Main.c: 84: Serial_Write(ModuloCM.corrente[1]&0x00FF);
+[e ( _Serial_Write (1 -> -> 255 `i `uc ]
+[; ;TCC_Main.c: 84: Serial_Write(0xFF);
 "84
-[e ( _Serial_Write (1 -> & *U + &U . _ModuloCM 1 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _ModuloCM 1 `ui `ux -> 255 `i `uc ]
-[; ;TCC_Main.c: 85: Serial_Write(ModuloCM.corrente[2]>>8);
+[e ( _Serial_Write (1 -> -> 255 `i `uc ]
+[; ;TCC_Main.c: 85: Serial_Write(Tensao[0]);
 "85
-[e ( _Serial_Write (1 -> >> *U + &U . _ModuloCM 1 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _ModuloCM 1 `ui `ux -> 8 `i `uc ]
-[; ;TCC_Main.c: 86: Serial_Write(ModuloCM.corrente[2]&0x00FF);
+[e ( _Serial_Write (1 *U + &U _Tensao * -> -> -> 0 `i `ui `ux -> -> # *U &U _Tensao `ui `ux ]
+[; ;TCC_Main.c: 86: Serial_Write(Tensao[1]);
 "86
-[e ( _Serial_Write (1 -> & *U + &U . _ModuloCM 1 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _ModuloCM 1 `ui `ux -> 255 `i `uc ]
-[; ;TCC_Main.c: 87: Serial_Write(ModuloCM.corrente[3]>>8);
+[e ( _Serial_Write (1 *U + &U _Tensao * -> -> -> 1 `i `ui `ux -> -> # *U &U _Tensao `ui `ux ]
+[; ;TCC_Main.c: 87: Serial_Write(Tensao[2]);
 "87
-[e ( _Serial_Write (1 -> >> *U + &U . _ModuloCM 1 * -> -> -> 3 `i `ui `ux -> -> # *U &U . _ModuloCM 1 `ui `ux -> 8 `i `uc ]
-[; ;TCC_Main.c: 88: Serial_Write(ModuloCM.corrente[3]&0x00FF);
+[e ( _Serial_Write (1 *U + &U _Tensao * -> -> -> 2 `i `ui `ux -> -> # *U &U _Tensao `ui `ux ]
+[; ;TCC_Main.c: 88: Serial_Write(ModuloCM.status);
 "88
-[e ( _Serial_Write (1 -> & *U + &U . _ModuloCM 1 * -> -> -> 3 `i `ui `ux -> -> # *U &U . _ModuloCM 1 `ui `ux -> 255 `i `uc ]
-[; ;TCC_Main.c: 89: Serial_Write(RTC.hora);
+[e ( _Serial_Write (1 . _ModuloCM 0 ]
+[; ;TCC_Main.c: 89: Serial_Write(ModuloCM.corrente[0]>>8);
 "89
-[e ( _Serial_Write (1 . _RTC 0 ]
-[; ;TCC_Main.c: 90: Serial_Write(RTC.minuto);
+[e ( _Serial_Write (1 -> >> *U + &U . _ModuloCM 1 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _ModuloCM 1 `ui `ux -> 8 `i `uc ]
+[; ;TCC_Main.c: 90: Serial_Write(ModuloCM.corrente[0]&0x00FF);
 "90
-[e ( _Serial_Write (1 . _RTC 1 ]
-[; ;TCC_Main.c: 91: TemporizadorSerialW = 30000;
+[e ( _Serial_Write (1 -> & *U + &U . _ModuloCM 1 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _ModuloCM 1 `ui `ux -> 255 `i `uc ]
+[; ;TCC_Main.c: 91: Serial_Write(ModuloCM.corrente[1]>>8);
 "91
-[e = _TemporizadorSerialW -> -> 30000 `i `ui ]
+[e ( _Serial_Write (1 -> >> *U + &U . _ModuloCM 1 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _ModuloCM 1 `ui `ux -> 8 `i `uc ]
+[; ;TCC_Main.c: 92: Serial_Write(ModuloCM.corrente[1]&0x00FF);
 "92
+[e ( _Serial_Write (1 -> & *U + &U . _ModuloCM 1 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _ModuloCM 1 `ui `ux -> 255 `i `uc ]
+[; ;TCC_Main.c: 93: Serial_Write(ModuloCM.corrente[2]>>8);
+"93
+[e ( _Serial_Write (1 -> >> *U + &U . _ModuloCM 1 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _ModuloCM 1 `ui `ux -> 8 `i `uc ]
+[; ;TCC_Main.c: 94: Serial_Write(ModuloCM.corrente[2]&0x00FF);
+"94
+[e ( _Serial_Write (1 -> & *U + &U . _ModuloCM 1 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _ModuloCM 1 `ui `ux -> 255 `i `uc ]
+[; ;TCC_Main.c: 95: Serial_Write(ModuloCM.corrente[3]>>8);
+"95
+[e ( _Serial_Write (1 -> >> *U + &U . _ModuloCM 1 * -> -> -> 3 `i `ui `ux -> -> # *U &U . _ModuloCM 1 `ui `ux -> 8 `i `uc ]
+[; ;TCC_Main.c: 96: Serial_Write(ModuloCM.corrente[3]&0x00FF);
+"96
+[e ( _Serial_Write (1 -> & *U + &U . _ModuloCM 1 * -> -> -> 3 `i `ui `ux -> -> # *U &U . _ModuloCM 1 `ui `ux -> 255 `i `uc ]
+[; ;TCC_Main.c: 97: Serial_Write(RTC.hora);
+"97
+[e ( _Serial_Write (1 . _RTC 0 ]
+[; ;TCC_Main.c: 98: Serial_Write(RTC.minuto);
+"98
+[e ( _Serial_Write (1 . _RTC 1 ]
+[; ;TCC_Main.c: 99: TemporizadorSerialW = 30000;
+"99
+[e = _TemporizadorSerialW -> -> 30000 `i `ui ]
+"100
 }
 [e :U 106 ]
-[; ;TCC_Main.c: 92: }
-[; ;TCC_Main.c: 93: }
-"93
+[; ;TCC_Main.c: 100: }
+[; ;TCC_Main.c: 101: }
+"101
 [e :UE 105 ]
 }
-"96
+"104
 [v _TrataComandoESP `(v ~T0 @X0 1 ef ]
 {
-[; ;TCC_Main.c: 95: void TrataComandoESP()
-[; ;TCC_Main.c: 96: {
+[; ;TCC_Main.c: 103: void TrataComandoESP()
+[; ;TCC_Main.c: 104: {
 [e :U _TrataComandoESP ]
 [f ]
-"97
-[v F1140 `uc ~T0 @X0 1 s Estado ]
-[i F1140
+"105
+[v F1200 `uc ~T0 @X0 1 s Estado ]
+[i F1200
 -> -> 0 `i `uc
 ]
-[; ;TCC_Main.c: 97: static char Estado = 0;
-[; ;TCC_Main.c: 99: if(TemporizadorSerialR == 0)
-"99
+[; ;TCC_Main.c: 105: static char Estado = 0;
+[; ;TCC_Main.c: 107: if(TemporizadorSerialR == 0)
+"107
 [e $ ! == _TemporizadorSerialR -> -> 0 `i `ui 108  ]
-[; ;TCC_Main.c: 100: {
-"100
+[; ;TCC_Main.c: 108: {
+"108
 {
-[; ;TCC_Main.c: 101: TemporizadorSerialR = 5000;
-"101
+[; ;TCC_Main.c: 109: TemporizadorSerialR = 5000;
+"109
 [e = _TemporizadorSerialR -> -> 5000 `i `ui ]
-"102
+"110
 [v _cmd `uc ~T0 @X0 1 a ]
-[; ;TCC_Main.c: 102: char cmd;
-[; ;TCC_Main.c: 104: while(Serial_Available())
-"104
+[; ;TCC_Main.c: 110: char cmd;
+[; ;TCC_Main.c: 112: while(Serial_Available())
+"112
 [e $U 109  ]
 [e :U 110 ]
-[; ;TCC_Main.c: 105: {
-"105
-{
-[; ;TCC_Main.c: 106: switch(Estado)
-"106
-[e $U 113  ]
-[; ;TCC_Main.c: 107: {
-"107
-{
-[; ;TCC_Main.c: 108: case 0:
-"108
-[e :U 114 ]
-[; ;TCC_Main.c: 109: cmd = Serial_Read();
-"109
-[e = _cmd ( _Serial_Read ..  ]
-[; ;TCC_Main.c: 110: if(cmd == 0xF0)
-"110
-[e $ ! == -> _cmd `i -> 240 `i 115  ]
-[; ;TCC_Main.c: 111: Estado = 1;
-"111
-[e = F1140 -> -> 1 `i `uc ]
-[e $U 116  ]
-"112
-[e :U 115 ]
-[; ;TCC_Main.c: 112: else if(cmd == 0x0F)
-[e $ ! == -> _cmd `i -> 15 `i 117  ]
-[; ;TCC_Main.c: 113: Estado = 2;
+[; ;TCC_Main.c: 113: {
 "113
-[e = F1140 -> -> 2 `i `uc ]
-[e :U 117 ]
+{
+[; ;TCC_Main.c: 114: switch(Estado)
 "114
-[e :U 116 ]
-[; ;TCC_Main.c: 114: break;
-[e $U 112  ]
-[; ;TCC_Main.c: 115: case 1:
+[e $U 113  ]
+[; ;TCC_Main.c: 115: {
 "115
-[e :U 118 ]
-[; ;TCC_Main.c: 116: clearPORTB = 1;
+{
+[; ;TCC_Main.c: 116: case 0:
 "116
-[e = _clearPORTB -> -> 1 `i `uc ]
-[; ;TCC_Main.c: 117: TemporizadorPortb = 10000;
+[e :U 114 ]
+[; ;TCC_Main.c: 117: cmd = Serial_Read();
 "117
-[e = _TemporizadorPortb -> -> 10000 `i `ui ]
-[; ;TCC_Main.c: 118: PORTB = Serial_Read();
+[e = _cmd ( _Serial_Read ..  ]
+[; ;TCC_Main.c: 118: if(cmd == 0xF0)
 "118
-[e = _PORTB ( _Serial_Read ..  ]
-[; ;TCC_Main.c: 119: Estado = 0;
+[e $ ! == -> _cmd `i -> 240 `i 115  ]
+[; ;TCC_Main.c: 119: Estado = 1;
 "119
-[e = F1140 -> -> 0 `i `uc ]
-[; ;TCC_Main.c: 120: break;
+[e = F1200 -> -> 1 `i `uc ]
+[e $U 116  ]
 "120
-[e $U 112  ]
-[; ;TCC_Main.c: 121: case 2:
+[e :U 115 ]
+[; ;TCC_Main.c: 120: else if(cmd == 0x0F)
+[e $ ! == -> _cmd `i -> 15 `i 117  ]
+[; ;TCC_Main.c: 121: Estado = 2;
 "121
-[e :U 119 ]
-[; ;TCC_Main.c: 122: if(Serial_Read() == 1)
+[e = F1200 -> -> 2 `i `uc ]
+[e :U 117 ]
 "122
-[e $ ! == -> ( _Serial_Read ..  `i -> 1 `i 120  ]
-[; ;TCC_Main.c: 123: conectado = 1;
+[e :U 116 ]
+[; ;TCC_Main.c: 122: break;
+[e $U 112  ]
+[; ;TCC_Main.c: 123: case 1:
 "123
+[e :U 118 ]
+[; ;TCC_Main.c: 124: clearPORTB = 1;
+"124
+[e = _clearPORTB -> -> 1 `i `uc ]
+[; ;TCC_Main.c: 125: TemporizadorPortb = 10000;
+"125
+[e = _TemporizadorPortb -> -> 10000 `i `ui ]
+[; ;TCC_Main.c: 126: PORTB = Serial_Read();
+"126
+[e = _PORTB ( _Serial_Read ..  ]
+[; ;TCC_Main.c: 127: Estado = 0;
+"127
+[e = F1200 -> -> 0 `i `uc ]
+[; ;TCC_Main.c: 128: break;
+"128
+[e $U 112  ]
+[; ;TCC_Main.c: 129: case 2:
+"129
+[e :U 119 ]
+[; ;TCC_Main.c: 130: if(Serial_Read() == 1)
+"130
+[e $ ! == -> ( _Serial_Read ..  `i -> 1 `i 120  ]
+[; ;TCC_Main.c: 131: conectado = 1;
+"131
 [e = _conectado -> -> 1 `i `uc ]
 [e $U 121  ]
-"124
+"132
 [e :U 120 ]
-[; ;TCC_Main.c: 124: else
-[; ;TCC_Main.c: 125: conectado = 0;
-"125
+[; ;TCC_Main.c: 132: else
+[; ;TCC_Main.c: 133: conectado = 0;
+"133
 [e = _conectado -> -> 0 `i `uc ]
 [e :U 121 ]
-[; ;TCC_Main.c: 126: Estado = 0;
-"126
-[e = F1140 -> -> 0 `i `uc ]
-[; ;TCC_Main.c: 127: break;
-"127
+[; ;TCC_Main.c: 134: Estado = 0;
+"134
+[e = F1200 -> -> 0 `i `uc ]
+[; ;TCC_Main.c: 135: break;
+"135
 [e $U 112  ]
-"128
+"136
 }
-[; ;TCC_Main.c: 128: }
+[; ;TCC_Main.c: 136: }
 [e $U 112  ]
-"106
+"114
 [e :U 113 ]
-[e [\ F1140 , $ -> -> 0 `i `uc 114
+[e [\ F1200 , $ -> -> 0 `i `uc 114
  , $ -> -> 1 `i `uc 118
  , $ -> -> 2 `i `uc 119
  112 ]
-"128
+"136
 [e :U 112 ]
-"129
+"137
 }
 [e :U 109 ]
-"104
+"112
 [e $ != -> ( _Serial_Available ..  `i -> -> -> 0 `i `uc `i 110  ]
 [e :U 111 ]
-"130
+"138
 }
 [e :U 108 ]
-[; ;TCC_Main.c: 129: }
-[; ;TCC_Main.c: 130: }
-[; ;TCC_Main.c: 132: if(clearPORTB == 1 && TemporizadorPortb == 0)
-"132
+[; ;TCC_Main.c: 137: }
+[; ;TCC_Main.c: 138: }
+[; ;TCC_Main.c: 140: if(clearPORTB == 1 && TemporizadorPortb == 0)
+"140
 [e $ ! && == -> _clearPORTB `i -> 1 `i == _TemporizadorPortb -> -> 0 `i `ui 122  ]
-[; ;TCC_Main.c: 133: {
-"133
+[; ;TCC_Main.c: 141: {
+"141
 {
-[; ;TCC_Main.c: 134: clearPORTB = 0;
-"134
+[; ;TCC_Main.c: 142: clearPORTB = 0;
+"142
 [e = _clearPORTB -> -> 0 `i `uc ]
-[; ;TCC_Main.c: 135: PORTB = 0;
-"135
+[; ;TCC_Main.c: 143: PORTB = 0;
+"143
 [e = _PORTB -> -> 0 `i `uc ]
-"136
+"144
 }
 [e :U 122 ]
-[; ;TCC_Main.c: 136: }
-[; ;TCC_Main.c: 137: }
-"137
+[; ;TCC_Main.c: 144: }
+[; ;TCC_Main.c: 145: }
+"145
 [e :UE 107 ]
 }
-"140
+"148
 [v _I2C_Master_Start `(v ~T0 @X0 1 ef ]
 {
-[; ;TCC_Main.c: 139: void I2C_Master_Start()
-[; ;TCC_Main.c: 140: {
+[; ;TCC_Main.c: 147: void I2C_Master_Start()
+[; ;TCC_Main.c: 148: {
 [e :U _I2C_Master_Start ]
 [f ]
-[; ;TCC_Main.c: 141: SSPCON2bits.SEN = 1;
-"141
+[; ;TCC_Main.c: 149: SSPCON2bits.SEN = 1;
+"149
 [e = . . _SSPCON2bits 0 0 -> -> 1 `i `uc ]
-[; ;TCC_Main.c: 142: }
-"142
+[; ;TCC_Main.c: 150: }
+"150
 [e :UE 123 ]
 }
-"145
+"153
 [v _I2C_Master_Init `(v ~T0 @X0 1 ef ]
 {
-[; ;TCC_Main.c: 144: void I2C_Master_Init()
-[; ;TCC_Main.c: 145: {
+[; ;TCC_Main.c: 152: void I2C_Master_Init()
+[; ;TCC_Main.c: 153: {
 [e :U _I2C_Master_Init ]
 [f ]
-[; ;TCC_Main.c: 146: SSPCON = 0b00101000;
-"146
+[; ;TCC_Main.c: 154: SSPCON = 0b00101000;
+"154
 [e = _SSPCON -> -> 40 `i `uc ]
-[; ;TCC_Main.c: 147: SSPCON2 = 0;
-"147
+[; ;TCC_Main.c: 155: SSPCON2 = 0;
+"155
 [e = _SSPCON2 -> -> 0 `i `uc ]
-[; ;TCC_Main.c: 148: SSPADD = 24;
-"148
+[; ;TCC_Main.c: 156: SSPADD = 24;
+"156
 [e = _SSPADD -> -> 24 `i `uc ]
-[; ;TCC_Main.c: 149: SSPSTAT = 0;
-"149
+[; ;TCC_Main.c: 157: SSPSTAT = 0;
+"157
 [e = _SSPSTAT -> -> 0 `i `uc ]
-[; ;TCC_Main.c: 150: TRISC3 = 1;
-"150
+[; ;TCC_Main.c: 158: TRISC3 = 1;
+"158
 [e = _TRISC3 -> -> 1 `i `b ]
-[; ;TCC_Main.c: 151: TRISC4 = 1;
-"151
+[; ;TCC_Main.c: 159: TRISC4 = 1;
+"159
 [e = _TRISC4 -> -> 1 `i `b ]
-[; ;TCC_Main.c: 152: }
-"152
+[; ;TCC_Main.c: 160: }
+"160
 [e :UE 124 ]
 }
-"155
+"163
 [v _ControleLed `(v ~T0 @X0 1 ef ]
 {
-[; ;TCC_Main.c: 154: void ControleLed()
-[; ;TCC_Main.c: 155: {
+[; ;TCC_Main.c: 162: void ControleLed()
+[; ;TCC_Main.c: 163: {
 [e :U _ControleLed ]
 [f ]
-"156
-[v F1145 `uc ~T0 @X0 1 s Estado ]
-[i F1145
+"164
+[v F1205 `uc ~T0 @X0 1 s Estado ]
+[i F1205
 -> -> 0 `i `uc
 ]
-[; ;TCC_Main.c: 156: static char Estado = 0;
-[; ;TCC_Main.c: 157: if (TemporizadorLed == 0)
-"157
-[e $ ! == _TemporizadorLed -> -> 0 `i `ui 126  ]
-[; ;TCC_Main.c: 158: {
-"158
-{
-[; ;TCC_Main.c: 159: switch(Estado)
-"159
-[e $U 128  ]
-[; ;TCC_Main.c: 160: {
-"160
-{
-[; ;TCC_Main.c: 161: case 0:
-"161
-[e :U 129 ]
-[; ;TCC_Main.c: 162: TemporizadorLed = 2000;
-"162
-[e = _TemporizadorLed -> -> 2000 `i `ui ]
-[; ;TCC_Main.c: 163: PORTDbits.RD0 = 1;
-"163
-[e = . . _PORTDbits 0 0 -> -> 1 `i `uc ]
-[; ;TCC_Main.c: 164: Estado = 1;
-"164
-[e = F1145 -> -> 1 `i `uc ]
-[; ;TCC_Main.c: 165: break;
+[; ;TCC_Main.c: 164: static char Estado = 0;
+[; ;TCC_Main.c: 165: if (TemporizadorLed == 0)
 "165
-[e $U 127  ]
-[; ;TCC_Main.c: 166: case 1:
+[e $ ! == _TemporizadorLed -> -> 0 `i `ui 126  ]
+[; ;TCC_Main.c: 166: {
 "166
-[e :U 130 ]
-[; ;TCC_Main.c: 167: PORTDbits.RD0 = 0;
+{
+[; ;TCC_Main.c: 167: switch(Estado)
 "167
-[e = . . _PORTDbits 0 0 -> -> 0 `i `uc ]
-[; ;TCC_Main.c: 168: if(conectado) {
+[e $U 128  ]
+[; ;TCC_Main.c: 168: {
 "168
+{
+[; ;TCC_Main.c: 169: case 0:
+"169
+[e :U 129 ]
+[; ;TCC_Main.c: 170: TemporizadorLed = 2000;
+"170
+[e = _TemporizadorLed -> -> 2000 `i `ui ]
+[; ;TCC_Main.c: 171: PORTDbits.RD0 = 1;
+"171
+[e = . . _PORTDbits 0 0 -> -> 1 `i `uc ]
+[; ;TCC_Main.c: 172: Estado = 1;
+"172
+[e = F1205 -> -> 1 `i `uc ]
+[; ;TCC_Main.c: 173: break;
+"173
+[e $U 127  ]
+[; ;TCC_Main.c: 174: case 1:
+"174
+[e :U 130 ]
+[; ;TCC_Main.c: 175: PORTDbits.RD0 = 0;
+"175
+[e = . . _PORTDbits 0 0 -> -> 0 `i `uc ]
+[; ;TCC_Main.c: 176: if(conectado) {
+"176
 [e $ ! != -> _conectado `i -> -> -> 0 `i `uc `i 131  ]
 {
-[; ;TCC_Main.c: 169: TemporizadorLed = 2000;
-"169
-[e = _TemporizadorLed -> -> 2000 `i `ui ]
-[; ;TCC_Main.c: 170: Estado = 2;
-"170
-[e = F1145 -> -> 2 `i `uc ]
-"171
-}
-[; ;TCC_Main.c: 171: } else {
-[e $U 132  ]
-[e :U 131 ]
-{
-[; ;TCC_Main.c: 172: TemporizadorLed = 10000;
-"172
-[e = _TemporizadorLed -> -> 10000 `i `ui ]
-[; ;TCC_Main.c: 173: Estado = 0;
-"173
-[e = F1145 -> -> 0 `i `uc ]
-"174
-}
-[e :U 132 ]
-[; ;TCC_Main.c: 174: }
-[; ;TCC_Main.c: 175: break;
-"175
-[e $U 127  ]
-[; ;TCC_Main.c: 176: case 2:
-"176
-[e :U 133 ]
 [; ;TCC_Main.c: 177: TemporizadorLed = 2000;
 "177
 [e = _TemporizadorLed -> -> 2000 `i `ui ]
-[; ;TCC_Main.c: 178: PORTDbits.RD0 = 1;
+[; ;TCC_Main.c: 178: Estado = 2;
 "178
-[e = . . _PORTDbits 0 0 -> -> 1 `i `uc ]
-[; ;TCC_Main.c: 179: Estado = 3;
+[e = F1205 -> -> 2 `i `uc ]
 "179
-[e = F1145 -> -> 3 `i `uc ]
-[; ;TCC_Main.c: 180: break;
-"180
-[e $U 127  ]
-[; ;TCC_Main.c: 181: case 3:
-"181
-[e :U 134 ]
-[; ;TCC_Main.c: 182: TemporizadorLed = 10000;
-"182
-[e = _TemporizadorLed -> -> 10000 `i `ui ]
-[; ;TCC_Main.c: 183: PORTDbits.RD0 = 0;
-"183
-[e = . . _PORTDbits 0 0 -> -> 0 `i `uc ]
-[; ;TCC_Main.c: 184: Estado = 0;
-"184
-[e = F1145 -> -> 0 `i `uc ]
-[; ;TCC_Main.c: 185: break;
-"185
-[e $U 127  ]
-"186
 }
-[; ;TCC_Main.c: 186: }
+[; ;TCC_Main.c: 179: } else {
+[e $U 132  ]
+[e :U 131 ]
+{
+[; ;TCC_Main.c: 180: TemporizadorLed = 10000;
+"180
+[e = _TemporizadorLed -> -> 10000 `i `ui ]
+[; ;TCC_Main.c: 181: Estado = 0;
+"181
+[e = F1205 -> -> 0 `i `uc ]
+"182
+}
+[e :U 132 ]
+[; ;TCC_Main.c: 182: }
+[; ;TCC_Main.c: 183: break;
+"183
 [e $U 127  ]
-"159
+[; ;TCC_Main.c: 184: case 2:
+"184
+[e :U 133 ]
+[; ;TCC_Main.c: 185: TemporizadorLed = 2000;
+"185
+[e = _TemporizadorLed -> -> 2000 `i `ui ]
+[; ;TCC_Main.c: 186: PORTDbits.RD0 = 1;
+"186
+[e = . . _PORTDbits 0 0 -> -> 1 `i `uc ]
+[; ;TCC_Main.c: 187: Estado = 3;
+"187
+[e = F1205 -> -> 3 `i `uc ]
+[; ;TCC_Main.c: 188: break;
+"188
+[e $U 127  ]
+[; ;TCC_Main.c: 189: case 3:
+"189
+[e :U 134 ]
+[; ;TCC_Main.c: 190: TemporizadorLed = 10000;
+"190
+[e = _TemporizadorLed -> -> 10000 `i `ui ]
+[; ;TCC_Main.c: 191: PORTDbits.RD0 = 0;
+"191
+[e = . . _PORTDbits 0 0 -> -> 0 `i `uc ]
+[; ;TCC_Main.c: 192: Estado = 0;
+"192
+[e = F1205 -> -> 0 `i `uc ]
+[; ;TCC_Main.c: 193: break;
+"193
+[e $U 127  ]
+"194
+}
+[; ;TCC_Main.c: 194: }
+[e $U 127  ]
+"167
 [e :U 128 ]
-[e [\ F1145 , $ -> -> 0 `i `uc 129
+[e [\ F1205 , $ -> -> 0 `i `uc 129
  , $ -> -> 1 `i `uc 130
  , $ -> -> 2 `i `uc 133
  , $ -> -> 3 `i `uc 134
  127 ]
-"186
+"194
 [e :U 127 ]
-"187
+"195
 }
 [e :U 126 ]
-[; ;TCC_Main.c: 187: }
-[; ;TCC_Main.c: 188: }
-"188
+[; ;TCC_Main.c: 195: }
+[; ;TCC_Main.c: 196: }
+"196
 [e :UE 125 ]
 }
-"191
-[v _MedirTensao `(v ~T0 @X0 1 ef ]
+"199
+[v _SensoresAnalogicos `(v ~T0 @X0 1 ef ]
 {
-[; ;TCC_Main.c: 190: void MedirTensao()
-[; ;TCC_Main.c: 191: {
-[e :U _MedirTensao ]
+[; ;TCC_Main.c: 198: void SensoresAnalogicos()
+[; ;TCC_Main.c: 199: {
+[e :U _SensoresAnalogicos ]
 [f ]
-"192
-[v F1147 `uc ~T0 @X0 1 s n ]
-[i F1147
+"200
+[v F1207 `i ~T0 @X0 1 s n ]
+[i F1207
+-> 0 `i
+]
+"201
+[v F1208 `uc ~T0 @X0 1 s index ]
+[i F1208
 -> -> 0 `i `uc
 ]
-"193
-[v _ultimaLeitura `ui ~T0 @X0 1 a ]
-[; ;TCC_Main.c: 192: static char n = 0;
-[; ;TCC_Main.c: 193: unsigned int ultimaLeitura;
-[; ;TCC_Main.c: 195: if( n < 150 )
-"195
-[e $ ! < -> F1147 `i -> 150 `i 136  ]
-[; ;TCC_Main.c: 196: {
-"196
-{
-[; ;TCC_Main.c: 197: if(ADC_Available())
-"197
-[e $ ! != -> ( _ADC_Available ..  `i -> -> -> 0 `i `uc `i 137  ]
-[; ;TCC_Main.c: 198: {
-"198
-{
-[; ;TCC_Main.c: 199: ultimaLeitura = ADC_Read();
-"199
-[e = _ultimaLeitura -> ( _ADC_Read ..  `ui ]
-[; ;TCC_Main.c: 200: if(ultimaLeitura > aux)
-"200
-[e $ ! > _ultimaLeitura _aux 138  ]
-[; ;TCC_Main.c: 201: aux = ultimaLeitura;
-"201
-[e = _aux _ultimaLeitura ]
-[e :U 138 ]
-[; ;TCC_Main.c: 202: n++;
 "202
-[e ++ F1147 -> -> 1 `i `uc ]
+[v _valorAux `l ~T0 @X0 1 a ]
+[; ;TCC_Main.c: 200: static int n = 0;
+[; ;TCC_Main.c: 201: static char index = 0;
+[; ;TCC_Main.c: 202: signed long valorAux = 0;
+[e = _valorAux -> -> 0 `i `l ]
 "203
-}
-[e :U 137 ]
-"204
-}
-[; ;TCC_Main.c: 203: }
-[; ;TCC_Main.c: 204: }
-[e $U 139  ]
+[v F1210 `l ~T0 @X0 1 s somatorio ]
+[i F1210
+-> -> 0 `i `l
+]
+[; ;TCC_Main.c: 203: static long somatorio = 0;
+[; ;TCC_Main.c: 205: if( n < 500 )
 "205
-[e :U 136 ]
-[; ;TCC_Main.c: 205: else
+[e $ ! < F1207 -> 500 `i 136  ]
 [; ;TCC_Main.c: 206: {
 "206
 {
-[; ;TCC_Main.c: 207: Tensao[0] = aux / 6;
+[; ;TCC_Main.c: 207: if(ADC_Available())
 "207
-[e = *U + &U _Tensao * -> -> -> 0 `i `ui `ux -> -> # *U &U _Tensao `ui `ux -> / _aux -> -> 6 `i `ui `uc ]
-[; ;TCC_Main.c: 209: aux = 0;
+[e $ ! != -> ( _ADC_Available ..  `i -> -> -> 0 `i `uc `i 137  ]
+[; ;TCC_Main.c: 208: {
+"208
+{
+[; ;TCC_Main.c: 209: if(index < 4){
 "209
-[e = _aux -> -> 0 `i `ui ]
-[; ;TCC_Main.c: 210: n = 0;
-"210
-[e = F1147 -> -> 0 `i `uc ]
-"211
-}
-[e :U 139 ]
-[; ;TCC_Main.c: 211: }
-[; ;TCC_Main.c: 212: }
+[e $ ! < -> F1208 `i -> 4 `i 138  ]
+{
 "212
+[v _valorAtual `i ~T0 @X0 1 a ]
+[; ;TCC_Main.c: 212: int valorAtual = ADC_Read();
+[e = _valorAtual ( _ADC_Read ..  ]
+[; ;TCC_Main.c: 213: if( somatorio < valorAtual ) somatorio = valorAtual;
+"213
+[e $ ! < F1210 -> _valorAtual `l 139  ]
+[e = F1210 -> _valorAtual `l ]
+[e :U 139 ]
+"214
+}
+[; ;TCC_Main.c: 214: }
+[e $U 140  ]
+"215
+[e :U 138 ]
+[; ;TCC_Main.c: 215: else{
+{
+[; ;TCC_Main.c: 216: valorAux = ADC_Read();
+"216
+[e = _valorAux -> ( _ADC_Read ..  `l ]
+[; ;TCC_Main.c: 217: somatorio += valorAux*valorAux;
+"217
+[e =+ F1210 * _valorAux _valorAux ]
+"218
+}
+[e :U 140 ]
+[; ;TCC_Main.c: 218: }
+[; ;TCC_Main.c: 219: n++;
+"219
+[e ++ F1207 -> 1 `i ]
+"220
+}
+[e :U 137 ]
+"221
+}
+[; ;TCC_Main.c: 220: }
+[; ;TCC_Main.c: 221: }
+[e $U 141  ]
+"222
+[e :U 136 ]
+[; ;TCC_Main.c: 222: else
+[; ;TCC_Main.c: 223: {
+"223
+{
+[; ;TCC_Main.c: 224: if(index < 4)
+"224
+[e $ ! < -> F1208 `i -> 4 `i 142  ]
+[; ;TCC_Main.c: 226: ModuloCM.corrente[index] = somatorio;
+"226
+[e = *U + &U . _ModuloCM 1 * -> F1208 `ux -> -> # *U &U . _ModuloCM 1 `ui `ux -> F1210 `i ]
+[e $U 143  ]
+"227
+[e :U 142 ]
+[; ;TCC_Main.c: 227: else
+[; ;TCC_Main.c: 228: {
+"228
+{
+[; ;TCC_Main.c: 229: Tensao[index-4] = sqrt(somatorio/500)/3.2;
+"229
+[e = *U + &U _Tensao * -> -> - -> F1208 `i -> 4 `i `ui `ux -> -> # *U &U _Tensao `ui `ux -> / ( _sqrt (1 -> / F1210 -> -> 500 `i `l `d .3.2 `uc ]
+[; ;TCC_Main.c: 230: if(Tensao[index-4] < 70) Tensao[index-4] = 0;
+"230
+[e $ ! < -> *U + &U _Tensao * -> -> - -> F1208 `i -> 4 `i `ui `ux -> -> # *U &U _Tensao `ui `ux `i -> 70 `i 144  ]
+[e = *U + &U _Tensao * -> -> - -> F1208 `i -> 4 `i `ui `ux -> -> # *U &U _Tensao `ui `ux -> -> 0 `i `uc ]
+[e :U 144 ]
+"231
+}
+[e :U 143 ]
+[; ;TCC_Main.c: 231: }
+[; ;TCC_Main.c: 232: somatorio = 0;
+"232
+[e = F1210 -> -> 0 `i `l ]
+[; ;TCC_Main.c: 233: index++;
+"233
+[e ++ F1208 -> -> 1 `i `uc ]
+[; ;TCC_Main.c: 234: index = index%7;
+"234
+[e = F1208 -> % -> F1208 `i -> 7 `i `uc ]
+[; ;TCC_Main.c: 236: if(index < 4)
+"236
+[e $ ! < -> F1208 `i -> 4 `i 145  ]
+[; ;TCC_Main.c: 237: ADC_Select_Channel(index);
+"237
+[e ( _ADC_Select_Channel (1 F1208 ]
+[e $U 146  ]
+"238
+[e :U 145 ]
+[; ;TCC_Main.c: 238: else
+[; ;TCC_Main.c: 239: ADC_Select_Channel(index+1);
+"239
+[e ( _ADC_Select_Channel (1 -> + -> F1208 `i -> 1 `i `uc ]
+[e :U 146 ]
+[; ;TCC_Main.c: 240: n = 0;
+"240
+[e = F1207 -> 0 `i ]
+"241
+}
+[e :U 141 ]
+[; ;TCC_Main.c: 241: }
+[; ;TCC_Main.c: 242: }
+"242
 [e :UE 135 ]
 }
-"215
+"245
 [v _Setup `(v ~T0 @X0 1 ef ]
 {
-[; ;TCC_Main.c: 214: void Setup()
-[; ;TCC_Main.c: 215: {
+[; ;TCC_Main.c: 244: void Setup()
+[; ;TCC_Main.c: 245: {
 [e :U _Setup ]
 [f ]
-[; ;TCC_Main.c: 216: TRISB = 0;
-"216
+[; ;TCC_Main.c: 246: TRISB = 0;
+"246
 [e = _TRISB -> -> 0 `i `uc ]
-[; ;TCC_Main.c: 217: PORTB = 0;
-"217
+[; ;TCC_Main.c: 247: PORTB = 0;
+"247
 [e = _PORTB -> -> 0 `i `uc ]
-[; ;TCC_Main.c: 218: TRISD = 0;
-"218
+[; ;TCC_Main.c: 248: TRISD = 0;
+"248
 [e = _TRISD -> -> 0 `i `uc ]
-[; ;TCC_Main.c: 219: PORTD = 0;
-"219
+[; ;TCC_Main.c: 249: PORTD = 0;
+"249
 [e = _PORTD -> -> 0 `i `uc ]
-[; ;TCC_Main.c: 221: OPTION_REG = 0b00000000;
-"221
+[; ;TCC_Main.c: 251: OPTION_REG = 0b00000000;
+"251
 [e = _OPTION_REG -> -> 0 `i `uc ]
-[; ;TCC_Main.c: 222: TMR0 = 130;
-"222
+[; ;TCC_Main.c: 252: TMR0 = 130;
+"252
 [e = _TMR0 -> -> 130 `i `uc ]
-[; ;TCC_Main.c: 223: INTCON = 0b11100000;
-"223
+[; ;TCC_Main.c: 253: INTCON = 0b11100000;
+"253
 [e = _INTCON -> -> 224 `i `uc ]
-[; ;TCC_Main.c: 225: Serial_9600_Init(10);
-"225
+[; ;TCC_Main.c: 255: Serial_9600_Init(10);
+"255
 [e ( _Serial_9600_Init (1 -> -> 10 `i `uc ]
-[; ;TCC_Main.c: 226: ADC_Init(0xFF, 0x00);
-"226
+[; ;TCC_Main.c: 256: ADC_Init(0xFF, 0x00);
+"256
 [e ( _ADC_Init (2 , -> -> 255 `i `uc -> -> 0 `i `uc ]
-[; ;TCC_Main.c: 227: ADC_Select_Channel(0);
-"227
+[; ;TCC_Main.c: 257: ADC_Select_Channel(0);
+"257
 [e ( _ADC_Select_Channel (1 -> -> 0 `i `uc ]
-[; ;TCC_Main.c: 231: ModuloCM.status = 0b00001100;
-"231
-[e = . _ModuloCM 0 -> -> 12 `i `uc ]
-[; ;TCC_Main.c: 232: ModuloCM.corrente[0] = 50;
-"232
-[e = *U + &U . _ModuloCM 1 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _ModuloCM 1 `ui `ux -> 50 `i ]
-[; ;TCC_Main.c: 233: ModuloCM.corrente[1] = 34;
-"233
-[e = *U + &U . _ModuloCM 1 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _ModuloCM 1 `ui `ux -> 34 `i ]
-[; ;TCC_Main.c: 234: ModuloCM.corrente[2] = 0;
-"234
+[; ;TCC_Main.c: 261: ModuloCM.status = 0b00000011;
+"261
+[e = . _ModuloCM 0 -> -> 3 `i `uc ]
+[; ;TCC_Main.c: 262: ModuloCM.corrente[0] = 0;
+"262
+[e = *U + &U . _ModuloCM 1 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _ModuloCM 1 `ui `ux -> 0 `i ]
+[; ;TCC_Main.c: 263: ModuloCM.corrente[1] = 0;
+"263
+[e = *U + &U . _ModuloCM 1 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _ModuloCM 1 `ui `ux -> 0 `i ]
+[; ;TCC_Main.c: 264: ModuloCM.corrente[2] = 0;
+"264
 [e = *U + &U . _ModuloCM 1 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _ModuloCM 1 `ui `ux -> 0 `i ]
-[; ;TCC_Main.c: 235: ModuloCM.corrente[3] = 0;
-"235
+[; ;TCC_Main.c: 265: ModuloCM.corrente[3] = 0;
+"265
 [e = *U + &U . _ModuloCM 1 * -> -> -> 3 `i `ui `ux -> -> # *U &U . _ModuloCM 1 `ui `ux -> 0 `i ]
-[; ;TCC_Main.c: 237: TemporizadorSerialW = 20000;
-"237
+[; ;TCC_Main.c: 267: TemporizadorSerialW = 20000;
+"267
 [e = _TemporizadorSerialW -> -> 20000 `i `ui ]
-[; ;TCC_Main.c: 238: }
-"238
-[e :UE 140 ]
+[; ;TCC_Main.c: 268: }
+"268
+[e :UE 147 ]
 }
-"241
+"271
 [v _main `(i ~T0 @X0 1 ef ]
 {
-[; ;TCC_Main.c: 240: int main(void)
-[; ;TCC_Main.c: 241: {
+[; ;TCC_Main.c: 270: int main(void)
+[; ;TCC_Main.c: 271: {
 [e :U _main ]
 [f ]
-[; ;TCC_Main.c: 242: Setup();
-"242
+[; ;TCC_Main.c: 272: Setup();
+"272
 [e ( _Setup ..  ]
-[; ;TCC_Main.c: 244: while(1)
-"244
-[e :U 143 ]
-[; ;TCC_Main.c: 245: {
-"245
+[; ;TCC_Main.c: 274: while(1)
+"274
+[e :U 150 ]
+[; ;TCC_Main.c: 275: {
+"275
 {
-[; ;TCC_Main.c: 246: ControleLed();
-"246
+[; ;TCC_Main.c: 276: ControleLed();
+"276
 [e ( _ControleLed ..  ]
-[; ;TCC_Main.c: 247: EnvioDadosSerial();
-"247
+[; ;TCC_Main.c: 277: EnvioDadosSerial();
+"277
 [e ( _EnvioDadosSerial ..  ]
-[; ;TCC_Main.c: 248: TrataComandoESP();
-"248
+[; ;TCC_Main.c: 278: TrataComandoESP();
+"278
 [e ( _TrataComandoESP ..  ]
-[; ;TCC_Main.c: 249: ADC_Run();
-"249
+[; ;TCC_Main.c: 279: ADC_Run();
+"279
 [e ( _ADC_Run ..  ]
-[; ;TCC_Main.c: 250: MedirTensao();
-"250
-[e ( _MedirTensao ..  ]
-"251
+[; ;TCC_Main.c: 280: SensoresAnalogicos();
+"280
+[e ( _SensoresAnalogicos ..  ]
+"281
 }
-[e :U 142 ]
-"244
-[e $U 143  ]
-[e :U 144 ]
-[; ;TCC_Main.c: 251: }
-[; ;TCC_Main.c: 252: }
-"252
-[e :UE 141 ]
+[e :U 149 ]
+"274
+[e $U 150  ]
+[e :U 151 ]
+[; ;TCC_Main.c: 281: }
+[; ;TCC_Main.c: 282: }
+"282
+[e :UE 148 ]
 }
